@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Getinvolved() {
-  return (
-    <div>Getinvolved</div>
-  )
+  return <div>Getinvolved</div>;
 }
 
-export default Getinvolved
+export default Getinvolved;
