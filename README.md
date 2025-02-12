@@ -1,8 +1,4 @@
-# React + Vite
+# Real Happiness Of Life Foundation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Real Happiness of Life Foundation a Non-Governmental Organization has been founded in Bhiwandi City of Maharashtra. We through our Home For Homeless. will aim to save people young and old, men and women, sick, lost or abandoned, from the streets and railway platforms of Bhiwandi And Mumbai.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
