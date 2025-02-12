@@ -1,0 +1,39 @@
+/* src/CSS/RefundPolicy.css */
+.refund-policy-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.refund-policy-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

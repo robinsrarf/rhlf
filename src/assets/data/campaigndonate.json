@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "image": "campaignimg1.png",
+      "title": "Help a young child fight blood cancer",
+      "description": "Eight-year-old Aaditya needs urgent treatment that his daily wage laborer parents can't afford. Your donation can help save his life.",
+      "amountRaised": "8,12,500",
+      "goal": "12,50,000",
+      "timeLeft": "9 days"
+    },
+    {
+      "id": 2,
+      "image": "campaignimg2.png",
+      "title": "Help a mother fight breast cancer",
+      "description": "Lakshmi is a domestic help and single mother of three young children, fighting breast cancer. Help her defeat this disease by contributing.",
+      "amountRaised": "22,500 ",
+      "goal": "4,50,000",
+      "timeLeft": "12 days"
+    },
+    {
+      "id": 3,
+      "image": "campaignimg3.png",
+      "title": "Contribute to Cancer Institute",
+      "description": "Help Cancer Institute save lives and put smiles on people’s faces by making a contribution today!",
+      "amountRaised": " 25,000 ",
+      "goal": "5,25,000",
+      "timeLeft": "12 days"
+    }
+    
+  ]
+  

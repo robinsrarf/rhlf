@@ -1,0 +1,15 @@
+#root {
+  /* max-width: 1280px; */
+  overflow-x: hidden;
+}
+.container{
+  min-width: 100%;
+  padding: 2rem 1rem;
+}
+.dropdown {
+  display: none; /* Default state */
+}
+
+.dropdown.group-hover\:block {
+  display: block; /* Show on hover */
+}
