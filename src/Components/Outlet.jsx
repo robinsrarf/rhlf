@@ -1,10 +1,10 @@
-import React from 'react';
-import Footer from './Footer';
-import Header from './Header';
-import { Outlet } from 'react-router-dom';
-import WhatsAppButton from './WhatsAppButton'; // Import the WhatsApp button
-import { motion } from 'framer-motion';
-
+import React from "react";
+import Footer from "./Footer";
+import Header from "./Header";
+import { Outlet } from "react-router-dom";
+import WhatsAppButton from "./WhatsAppButton"; 
+import { motion } from "framer-motion";
+import Navbar from "../Pages/Header_comp/Navbar";
 
 function Layout() {
   return (
@@ -14,12 +14,12 @@ function Layout() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-    <div className="w-full">
-        <Header />
+      <div className="w-full">
+        <Navbar></Navbar>
         <Outlet />
         <Footer />
         <WhatsAppButton /> {/* Add the WhatsApp button here */}
-    </div>
+      </div>
     </motion.div>
   );
 }
