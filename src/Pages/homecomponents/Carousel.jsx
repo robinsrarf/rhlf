@@ -2,12 +2,11 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import img1 from "/src/assets/images/carouselimages/img1.jpg";
+import img2 from "/src/assets/images/carouselimages/img2.jpg";
+import img3 from "/src/assets/images/carouselimages/img3.jpg";
 
-const images = [
-  "src/assets/images/carouselimages/img1.jpg",
-  "src/assets/images/carouselimages/img2.jpg",
-  "src/assets/images/carouselimages/img3.jpg",
-];
+const images = [img1, img2, img3];
 
 const Carousel = () => {
   const settings = {
