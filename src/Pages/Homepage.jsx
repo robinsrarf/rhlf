@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import "../CSS/Homepage.css";
+import Carousel from "./homecomponents/Carousel";
 
 // Lazy-loaded components for performance optimization
 const CampaignCard = lazy(() => import("./homecomponents/CampaignCard"));
@@ -22,24 +23,10 @@ const SectionHeader = ({ title }) => (
 function Homepage() {
   return (
     <div className="w-full flex flex-col gap-0 bg-white justify-center items-center">
-      <h1 className="heading text-5xl text-center font-light mt-8">
-        <span className="text-gray-700 font-medium">Together</span> We Make a{" "}
-        <span className="text-black font-bold">Difference</span>
-      </h1>
-
-      <div className="subtext text-lg text-gray-500 max-w-4xl text-center">
-        <p>
-          Real Happiness Of Life Foundation for social change and inclusion
-          works for the social
-        </p>
-        <p>
-          development and integration of underprivileged individuals, groups,
-          and communities in India.
-        </p>
-      </div>
 
       <Suspense fallback={<div>Loading...</div>}>
-        <ThreeTab />
+        {/* <ThreeTab /> */}
+        <Carousel/>
 
         <div className="flex w-full pl-28">
           <SectionHeader title="Campaign Details" />

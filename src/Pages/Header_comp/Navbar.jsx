@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail, Phone, ChevronDown } from "lucide-react";
 import logo from "/src/assets/images/LOGO1.jpg";
+import SideBar from "./SideBar";
 
 // Function for active NavLink styling
 function navClass({ isActive }) {
@@ -34,7 +35,7 @@ function DropDownItem({ programName, directTo }) {
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when user scrolls down
@@ -54,7 +55,11 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className={`flex fixed top-0 bg-white items-center w-full pl-5 pr-10 py-3 shadow-md hover:shadow-sm transition duration-300 z-50 ${isVisible?"opacity-0 pointer-events-none":" opacity-100"}`}>
+      <nav
+        className={`flex fixed top-0 bg-white items-center w-full pl-5 pr-10 py-3 shadow-md hover:shadow-sm transition duration-300 z-50 ${
+          isVisible ? "opacity-0 pointer-events-none" : " opacity-100"
+        }`}
+      >
         {/* LOGO */}
         <div>
           <a href="/">
@@ -153,61 +158,18 @@ function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="lg:hidden ml-auto" onClick={() => setIsOpen(true)}>
+        <div className="lg:hidden ml-auto">
+          <NavLink to="/donate" className={donateButtonClass}>
+            ❤️ DONATE
+          </NavLink>
+        </div>
+        <button className="lg:hidden ml-2" onClick={() => setIsOpen(true)}>
           <Menu size={32} />
         </button>
       </nav>
-
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Mobile Sidebar */}
-      <motion.div
-        initial={{ x: "-100%" }}
-        animate={{ x: isOpen ? "0%" : "-100%" }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-5 flex flex-col space-y-6"
-      >
-        {/* Close Button */}
-        <button className="self-end" onClick={() => setIsOpen(false)}>
-          <X size={32} />
-        </button>
-
-        {/* Sidebar Links */}
-        {[
-          { name: "Home", path: "/" },
-          { name: "Programmes", path: "/programmes" },
-          { name: "Media", path: "/media" },
-          { name: "About Us", path: "/about" },
-          { name: "Get Involved", path: "/get-involved" },
-        ].map(({ name, path }) => (
-          <NavLink
-            key={path}
-            to={path}
-            className="text-lg font-bold hover:text-pink-400 hover:no-underline"
-            onClick={() => setIsOpen(false)}
-          >
-            {name}
-          </NavLink>
-        ))}
-
-        {/* Donate Button */}
-        <NavLink
-          to="/donate"
-          className="p-2 border-2 border-black rounded-3xl hover:bg-pink-400 hover:text-white text-center hover:no-underline"
-          onClick={() => setIsOpen(false)}
-        >
-          ❤️ DONATE
-        </NavLink>
-      </motion.div>
+      <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="h-32"></div>
     </>
   );
 }
-
 export default Navbar;
