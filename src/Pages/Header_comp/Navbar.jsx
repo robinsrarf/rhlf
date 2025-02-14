@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "/src/assets/images/LOGO1.jpg";
@@ -35,10 +35,26 @@ function DropDownItem({ programName, directTo }) {
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show button when user scrolls down
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   return (
     <>
       {/* Navbar */}
-      <nav className="flex bg-white sticky items-center w-full pl-5 pr-10 py-3 shadow-md hover:shadow-sm transition duration-300">
+      <nav className={`flex fixed top-0 bg-white items-center w-full pl-5 pr-10 py-3 shadow-md hover:shadow-sm transition duration-300 z-50 ${isVisible?"opacity-0 pointer-events-none":" opacity-100"}`}>
         {/* LOGO */}
         <div>
           <a href="/">
@@ -54,7 +70,7 @@ function Navbar() {
             </NavLink>
 
             {/* Programmes Dropdown */}
-            <div className="relative group">
+            <div className="relative group z-50">
               <NavLink to="/programmes" className={navClass}>
                 Programmes
               </NavLink>
@@ -189,7 +205,7 @@ function Navbar() {
           ❤️ DONATE
         </NavLink>
       </motion.div>
-      <div className="h-30"></div>
+      <div className="h-32"></div>
     </>
   );
 }

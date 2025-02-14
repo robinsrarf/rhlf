@@ -15,7 +15,7 @@ function Layout() {
       transition={{ duration: 0.5 }}
     >
       <div className="w-full">
-        <Navbar></Navbar>
+        <Navbar />
         <Outlet />
         <Footer />
         <div className="fixed flex flex-col z-50 w-[55px] bottom-[0.1px] right-5 mb-8 gap-3">
