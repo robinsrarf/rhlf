@@ -38,7 +38,7 @@ function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="flex items-center w-full pl-5 pr-10 py-3 shadow-md hover:shadow-sm transition duration-300">
+      <nav className="flex bg-white sticky items-center w-full pl-5 pr-10 py-3 shadow-md hover:shadow-sm transition duration-300">
         {/* LOGO */}
         <div>
           <a href="/">
@@ -189,6 +189,7 @@ function Navbar() {
           ❤️ DONATE
         </NavLink>
       </motion.div>
+      <div className="h-30"></div>
     </>
   );
 }

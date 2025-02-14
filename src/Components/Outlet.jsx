@@ -1,10 +1,10 @@
 import React from "react";
 import Footer from "./Footer";
-import Header from "./Header";
 import { Outlet } from "react-router-dom";
-import WhatsAppButton from "./WhatsAppButton"; 
+import WhatsAppButton from "./WhatsAppButton";
 import { motion } from "framer-motion";
 import Navbar from "../Pages/Header_comp/Navbar";
+import BackToTop from "./BackToTop";
 
 function Layout() {
   return (
@@ -18,7 +18,10 @@ function Layout() {
         <Navbar></Navbar>
         <Outlet />
         <Footer />
-        <WhatsAppButton /> {/* Add the WhatsApp button here */}
+        <div className="fixed flex flex-col z-50 w-[55px] bottom-[0.1px] right-5 mb-8 gap-3">
+          <WhatsAppButton />
+          <BackToTop />
+        </div>
       </div>
     </motion.div>
   );
