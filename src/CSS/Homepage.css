@@ -1,5 +1,5 @@
 .firstsection {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 @media (max-width: 600px) {
@@ -28,7 +28,8 @@
   margin-bottom: 250px;
 }
 
-.tabs-img, .children-img {
+.tabs-img,
+.children-img {
   width: 100%;
 }
 
@@ -59,14 +60,34 @@
 
 .marquee {
   display: inline-flex;
-  animation: scroll 60s linear infinite;
+  animation: scroll 200s linear infinite;
+}
+
+@keyframes expand-contract {
+  0% {
+    width: 900px;
+  }
+  50% {
+    width: 870px;
+  }
+  100% {
+    width: 900px;
+  }
+}
+
+.animated-div {
+  width: 900px;
+  opacity: 1;
+  border-width: 4px;
+  border-style: solid;
+  animation: expand-contract 2s infinite ease-in-out;
 }
 
 .logo {
   width: 150px;
   margin-right: 0;
 }
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .logo {
     width: 300px;
     margin-right: 0;
@@ -169,7 +190,7 @@
   .images-container img {
     padding-bottom: 20px;
   }
-  .sectionimg{
+  .sectionimg {
     width: 60%;
   }
 }

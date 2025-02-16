@@ -1,8 +1,9 @@
 import React, { lazy, Suspense } from "react";
 import "../CSS/Homepage.css";
-import Carousel from "./homecomponents/Carousel";
 
 // Lazy-loaded components for performance optimization
+const Carousel = lazy(() => import("./homecomponents/Carousel"));
+const AboutCleanHeat = lazy(()=> import("./homecomponents/AboutCleanHeart"))
 const CampaignCard = lazy(() => import("./homecomponents/CampaignCard"));
 const Medicalemg = lazy(() => import("./homecomponents/Medicalemg"));
 const Partners = lazy(() => import("./homecomponents/Partners"));
@@ -23,10 +24,10 @@ const SectionHeader = ({ title }) => (
 function Homepage() {
   return (
     <div className="w-full flex flex-col gap-0 bg-white justify-center items-center">
-
       <Suspense fallback={<div>Loading...</div>}>
         {/* <ThreeTab /> */}
-        <Carousel/>
+        <Carousel />
+        <AboutCleanHeat/>
 
         <div className="flex w-full pl-28">
           <SectionHeader title="Campaign Details" />
