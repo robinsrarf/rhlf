@@ -10,7 +10,6 @@ const images = [img1, img2, img3];
 
 const Carousel = () => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
@@ -22,7 +21,7 @@ const Carousel = () => {
   const CarouselImageClass = "rounded-lg";
 
   return (
-    <div className="carousel-container w-[90%] m-auto p-0">
+    <div className="carousel-container w-[98%] m-auto p-0">
       <Slider {...settings} className=" rounded-lg">
         {images.map((src) => {
           return (

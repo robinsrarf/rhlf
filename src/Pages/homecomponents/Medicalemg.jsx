@@ -1,16 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; 
-import '../../CSS/MedicalEmg.css';
-import social1 from '../../assets/images/Causes/social/social1.png';
-import social2 from '../../assets/images/Causes/social/social2.png';
-import Clinic from '../Clinic';
-
+import React from "react";
+import { CircleAlert, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import "../../CSS/MedicalEmg.css";
+import social1 from "../../assets/images/Causes/social/social1.png";
+import social2 from "../../assets/images/Causes/social/social2.png";
+import Clinic from "../Clinic";
+import SectionHeader from "../../Components/SectionHeader";
+import DonateCard from "./DonateCard";
 const emergencyData = [
   {
     id: 1,
     title: "This Man With Elephant Foot Support, Help Him Get Surgery",
     author: "By Krishna Prasad",
-    image: "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
+    image:
+      "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
     totalRaised: "₹1,04,960",
     totalRequired: "₹2,500,000",
     backers: 114,
@@ -40,82 +43,33 @@ const emergencyData = [
 
 export default function MedicalEmergency() {
   return (
-    <div className='flex flex-col gap-2'>
-      <div className='flex items-center justify-between'>
-        <div className="section-header xl:ml-24 ml-28 ">
-          <div className="section-straight"></div>
-          <p className="section-head">Medical Emergency</p>
-        </div>
-        <Link className="view-all-link" to="/clinic">View All →</Link> 
+    <>
+      <div className="flex items-center w-full">
+        <SectionHeader title={"Medical Emergency"} />
+        <Link
+          to="/clinic"
+          className="ml-auto pt-6 pb-2 pr-5 flex items-center text-pink-500 hover:no-underline hover:text-pink-700"
+        >
+          <p>View All</p>
+          <ArrowRight size={15} />
+        </Link>
       </div>
-      
-      <div className='flex cardcont xl:gap-10 justify-center items-center '> 
-        {emergencyData.map((emergency) => (
-          <div className="emergency-card" key={emergency.id}>
-            <div className="emergency-card_mainSection">
-              <div className="emergency-card_imageSection">
-                <img
-                  src={emergency.image}
-                  alt="Campaign"
-                  className="emergency-card_image"
-                  loading="lazy"
-                />
-                <span className="tax-benefit-tooltip">
-                  Tax Benefit <span className="tooltip-icon">i</span>
-                </span>
-              </div>
-              <div className="emergency-card_details">
-                <div className="emergency-card_summary">
-                  <h4 className="emergency-card_title">{emergency.title}</h4>
-                  <div className="emergency-card_author">
-                    <span className="author-img">{emergency.author.charAt(3)}</span>
-                    <span>{emergency.author}</span>
-                  </div>
-                </div>
-                <div className="emergency-card_stats">
-                  <div className="emergency-card_statsWrapper">
-                    <div className="emergency-card_progressBarHeading">
-                      <span className="emergency-card_totalRaised">{emergency.totalRaised}</span>
-                      <span className="emergency-card_totalRequired">Raised</span>
-                    </div>
-                    <div className="emergency-card_totalBackers">{emergency.backers} Backers</div>
-                  </div>
-                  <div 
-                    className="dk-progress-bar_backgroundBar" 
-                    title={`${emergency.progress} Raised`} 
-                    style={{ height: '8px', borderRadius: '4px', marginTop: '8px' }}
-                  >
-                    <div 
-                      className="dk-progress-bar_progressBar" 
-                      style={{ 
-                        width: emergency.progress, 
-                        height: '8px', 
-                        borderRadius: '4px', 
-                        background: '#EC4899' 
-                      }}
-                    >
-                      <div className="dk-progress-bar_animatedProgressBar" style={{ borderRadius: '4px' }}></div>
-                    </div>
-                  </div>
-                </div>
-                <div className="emergency-card_buttonSection">
-                  <button className="emergency-card_shareButton">Share</button>
-                  <Link
-                    to={`/donate/${emergency.id}`} // Updated link
-                    className="emergency-card_donateButton"
-                    style={{
-                      background: '#EC4899',
-                      color: 'white',
-                    }}
-                  >
-                    Donate Now
-                  </Link>
-                </div>
-              </div>
-            </div>
+
+      <section className="hidden lg:block w-full ">
+        {/* Emergency Cards */}
+        <div className="max-w-6xl mx-auto py-1 px-5">
+          <div className="flex flex-wrap justify-center gap-6">
+            <DonateCard DonationData={emergencyData} />
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </section>
+      <section>
+        <div className="lg:hidden max-w-6xl mx-auto py-1">
+          <div className="flex flex-wrap justify-center gap-5">
+            <DonateCard DonationData={emergencyData} />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

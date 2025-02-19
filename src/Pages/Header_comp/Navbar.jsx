@@ -56,14 +56,14 @@ function Navbar() {
     <>
       {/* Navbar */}
       <nav
-        className={`flex fixed top-0 bg-white items-center w-full pl-5 pr-10 py-3 shadow-md hover:shadow-sm transition duration-300 z-50 ${
+        className={`flex fixed top-0 bg-white items-center w-full pl-5 pr-3 lg:pr-10 py-1 shadow-md hover:shadow-sm transition duration-300 z-50 ${
           isVisible ? "opacity-0 pointer-events-none" : " opacity-100"
         }`}
       >
         {/* LOGO */}
         <div>
           <a href="/">
-            <img className="w-24" src={logo} alt="Logo" />
+            <img className="w-20 lg:w-24" src={logo} alt="Logo" />
           </a>
         </div>
 
@@ -164,7 +164,7 @@ function Navbar() {
           </NavLink>
         </div>
         <button className="lg:hidden ml-2" onClick={() => setIsOpen(true)}>
-          <Menu size={32} />
+          <Menu size={30} />
         </button>
       </nav>
       <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />

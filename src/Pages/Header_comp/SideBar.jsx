@@ -62,11 +62,11 @@ export default function SideBar({ isOpen, setIsOpen }) {
           className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-5 flex flex-col space-y-6"
         >
           {/* Close Button */}
-          <div className="flex justify-center gap-20">
+          <div className="flex justify-center items-center gap-20">
             <a href="/">
-              <img className="w-24" src={logo} alt="Logo" />
+              <img className="w-20" src={logo} alt="Logo" />
             </a>
-            <button className="self-end" onClick={() => setIsOpen(false)}>
+            <button onClick={() => setIsOpen(false)}>
               <X size={32} />
             </button>
           </div>
