@@ -2,7 +2,7 @@ import { CircleDotDashed } from "lucide-react";
 export default function SectionHeader({ title }) {
   return (
     <>
-      <div className="w-full hidden pl-28 lg:flex gap-4 items-center mt-5 md:mt-16 md:mb-5 hover:animate-pulse transition duration-300">
+      <div className="mr-auto hidden pl-28 lg:flex gap-4 items-center mt-5 md:mt-16 md:mb-5 hover:animate-pulse transition duration-300">
         <CircleDotDashed size={25} className="text-pink-600" />
         <p className="text-lg font-semibold">{title}</p>
       </div>
