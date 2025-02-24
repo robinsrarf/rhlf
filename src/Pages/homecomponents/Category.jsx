@@ -218,7 +218,7 @@ function CategorySection() {
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 w-[65%] pb-5 mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 w-[65%] py-2 mx-auto">
             {/* Now we filter the campaigns based on the selected category */}
             <DonateCard
               DonationData={campaigns.filter(
@@ -253,7 +253,7 @@ function CategorySection() {
             ))}
           </div>
           <div className="w-full bg-pink-200 py-3">
-            <div className="flex flex-wrap justify-center gap-8 h-[65%] pb-5 mx-auto">
+            <div className="flex flex-wrap justify-center gap-8 h-[65%] py-5 mx-auto">
               {/* Now we filter the campaigns based on the selected category */}
               <DonateCard
                 DonationData={campaigns.filter(

@@ -4,7 +4,6 @@ import { Outlet } from "react-router-dom";
 import WhatsAppButton from "./WhatsAppButton";
 import { motion } from "framer-motion";
 import Navbar from "../Pages/Header_comp/Navbar";
-
 import BackToTop from "./BackToTop";
 
 function Layout() {
@@ -19,7 +18,7 @@ function Layout() {
         <Navbar />
 
         <Outlet />
-        <Footer />
+        {/* <Footer /> */}
         <div className="fixed flex flex-col z-50 w-[55px] bottom-[0.1px] right-5 mb-8 gap-3">
           <WhatsAppButton />
           <BackToTop />

@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-800 py-8">
+    <footer className="w-full border-t-8 border-pink-600 bg-gray-100 text-gray-800 py-4">
       <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Address Section */}
         <div className="text-center md:text-left">
@@ -117,7 +117,7 @@ function Footer() {
               </p>
             </form>
           </div>
-          <div className="flex justify-center md:justify-start space-x-4">
+          <div className="flex justify-center md:justify-start space-x-4 lg:place-self-center">
             <img src={visa} alt="Visa" className="h-8" />
             <img src={mastercard} alt="Mastercard" className="h-8" />
             <img src={paytm} alt="Paytm" className="h-8" />
@@ -128,7 +128,10 @@ function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-10 border-t pt-6 text-center">
+      <div
+        className="mt-10 border-t pt-6 text-center"
+        
+      >
         <div className="flex justify-center space-x-4 mb-4">
           <a href="#" className="text-blue-900">
             <FaFacebookF size={24} />
@@ -160,5 +163,4 @@ function Footer() {
     </footer>
   );
 }
-
 export default Footer;

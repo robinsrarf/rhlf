@@ -26,7 +26,7 @@ const Testimonals = () => {
     <section className="w-full py-5">
       <div className="flex flex-col items-center gap-y-6 px-4 md:px-0">
         {/* Upper Section */}
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-10 w-full">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-10 w-full lg:px-10">
           {/* Left Side */}
           <div className="flex flex-col md:flex-row items-center text-center md:text-right gap-x-2">
             <div className="flex flex-col items-center md:items-end">
@@ -38,7 +38,7 @@ const Testimonals = () => {
             <img
               src={testimonalsData[0].photo}
               alt="Testimonial"
-              className="w-12 h-12 md:w-16 md:h-16 rounded-full"
+              className="w-12 h-12 md:w-16 md:h-16  rounded-full"
             />
           </div>
           {/* Right Side */}
@@ -46,19 +46,19 @@ const Testimonals = () => {
             <img
               src={photo1}
               alt="Background"
-              className="w-full h-36 md:w-full md:h-52 object-cover"
+              className="w-full h-36 md:w-full md:h-52 object-cover lg:rounded-3xl rounded-2xl"
             />
           </div>
         </div>
 
         {/* Lower Section */}
-        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-10 w-full">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-x-10 w-full lg:px-10">
           {/* Left Side */}
           <div>
             <img
               src={photo2}
               alt="Background"
-              className="w-full h-36 md:w-full md:h-52 object-cover"
+              className="w-full h-36 md:w-full md:h-52 object-cover lg:rounded-3xl rounded-2xl"
             />
           </div>
           {/* Right Side */}

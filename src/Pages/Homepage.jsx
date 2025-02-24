@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import "../CSS/Homepage.css";
+import Footer from "../Components/Footer";
 
 // Lazy-loaded components for performance optimization
 const Carousel = lazy(() => import("./homecomponents/Carousel"));
@@ -36,6 +37,7 @@ function Homepage() {
         <Assureyou />
         <Partners />
       </Suspense>
+      <Footer />
     </div>
   );
 }

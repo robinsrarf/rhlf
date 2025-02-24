@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import img1 from "/src/assets/images/carouselimages/img1.jpg";
 import img2 from "/src/assets/images/carouselimages/img2.jpg";
 import img3 from "/src/assets/images/carouselimages/img3.jpg";
-
-const images = [img1, img2, img3];
+import img4 from "/src/assets/images/carouselimages/img4.jpg";
+const images = [img1, img2, img3, img4];
 
 const Carousel = () => {
   const settings = {
@@ -22,7 +22,7 @@ const Carousel = () => {
 
   return (
     <div className="carousel-container w-[98%] m-auto p-0">
-      <Slider {...settings} className=" rounded-lg">
+      <Slider {...settings} className="rounded-lg">
         {images.map((src) => {
           return (
             <div className=" rounded-lg">

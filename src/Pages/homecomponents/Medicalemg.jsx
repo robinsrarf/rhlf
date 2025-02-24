@@ -57,16 +57,18 @@ export default function MedicalEmergency() {
 
       <section className="hidden lg:block w-full ">
         {/* Emergency Cards */}
-        <div className="max-w-6xl mx-auto py-1 px-5">
-          <div className="flex flex-wrap justify-center gap-6">
-            <DonateCard DonationData={emergencyData} />
-          </div>
+        <div className="flex flex-wrap justify-center gap-8 w-[65%] py-2 mx-auto">
+          {/* Now we filter the campaigns based on the selected category */}
+          <DonateCard DonationData={emergencyData} />
         </div>
       </section>
-      <section>
-        <div className="lg:hidden max-w-6xl mx-auto py-1">
-          <div className="flex flex-wrap justify-center gap-5">
-            <DonateCard DonationData={emergencyData} />
+      <section className="lg:hidden w-full">
+        <div className="w-full bg-pink-200 py-3">
+          <div className="flex flex-wrap justify-center gap-8 h-[65%] py-5 mx-auto">
+            {/* Now we filter the campaigns based on the selected category */}
+            <DonateCard
+              DonationData={emergencyData}
+            />
           </div>
         </div>
       </section>
