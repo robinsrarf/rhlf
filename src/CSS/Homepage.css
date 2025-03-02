@@ -60,7 +60,7 @@
 
 .marquee {
   display: inline-flex;
-  animation: scroll 200s linear infinite;
+  animation: scroll 100s linear infinite;
 }
 
 @keyframes expand-contract {

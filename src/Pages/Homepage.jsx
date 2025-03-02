@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import "../CSS/Homepage.css";
 import Footer from "../Components/Footer";
-
+import icon from "../assets/images/LOGO1.png";
 // Lazy-loaded components for performance optimization
 const Carousel = lazy(() => import("./homecomponents/Carousel"));
 const AboutCleanHeat = lazy(() => import("./homecomponents/AboutCleanHeart"));
@@ -12,21 +12,20 @@ const Category = lazy(() => import("./homecomponents/Category"));
 const ProgramImpact = lazy(() => import("./homecomponents/ProgramImpact"));
 const Assureyou = lazy(() => import("./homecomponents/Assureyou"));
 const Testimonals = lazy(() => import("./homecomponents/Testimonals"));
-const SectionHeader = lazy(() => import("../Components//SectionHeader"));
 const ThreeTab = lazy(() => import("./homecomponents/ThreeTab"));
-
-// Reusable Section Header Component
-// const SectionHeader = ({ title }) => (
-//   <div className="section-header mt-5 md:mt-16 md:mb-5">
-//     <div className="section-straight"></div>
-//     <p className="section-head">{title}</p>
-//   </div>
-// );
 
 function Homepage() {
   return (
-    <div className="w-full flex flex-col gap-0 bg-white justify-center items-center">
-      <Suspense fallback={<div>Loading...</div>}>
+    <div className="w-full  flex flex-col gap-0 justify-center items-center">
+      <Suspense
+        fallback={
+          <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center w-screen h-[60vh] text-white ">
+              <img src={icon} alt="Loading..." className=" animate-pulse" />
+            </div>
+          </div>
+        }
+      >
         <Carousel />
         <AboutCleanHeat />
         <CampaignDetails />
@@ -36,8 +35,8 @@ function Homepage() {
         <Testimonals />
         <Assureyou />
         <Partners />
+        <Footer />
       </Suspense>
-      <Footer />
     </div>
   );
 }

@@ -168,7 +168,7 @@ function Navbar() {
         </button>
       </nav>
       <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="h-32"></div>
+      <div className="h-24"></div>
     </>
   );
 }

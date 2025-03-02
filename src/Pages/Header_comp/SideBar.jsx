@@ -159,31 +159,31 @@ export default function SideBar({ isOpen, setIsOpen }) {
           </NavLink>
 
           {/* Contact Links */}
-          <a
-            href="mailto:needhelp@cleanhearts.com"
-            className="hover:no-underline hover:text-pink-400"
-          >
-            <div className="flex gap-5 items-center">
+          <div className="flex flex-col space-y-4">
+            <a
+              href="mailto:needhelp@cleanhearts.com"
+              className="flex items-center gap-3 p-3 hover:no-underline"
+            >
               <Mail
-                size={35}
-                className="text-gray-900 bg-pink-500 p-1 rounded-3xl"
+                size={30}
+                className="text-white bg-pink-500 p-2 rounded-xl"
               />
-              contact@rhlf.org
-            </div>
-          </a>
+              <span className="text-gray-800 font-medium">
+                contact@rhlf.org
+              </span>
+            </a>
 
-          <a
-            href="tel:+9102269719935"
-            className="hover:no-underline hover:text-pink-400"
-          >
-            <div className="flex gap-5 items-center">
+            <a
+              href="tel:+9102269719935"
+              className="flex items-center gap-3 p-3 hover:no-underline"
+            >
               <Phone
                 size={30}
-                className="text-gray-900 bg-pink-500 p-1 rounded-3xl"
+                className="text-white bg-pink-500 p-2 rounded-xl"
               />
-              +91-02269719935
-            </div>
-          </a>
+              <span className="text-gray-800 font-medium">+91-02269719935</span>
+            </a>
+          </div>
         </motion.div>
       </nav>
     </>
