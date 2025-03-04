@@ -13,6 +13,7 @@ const ProgramImpact = lazy(() => import("./homecomponents/ProgramImpact"));
 const Assureyou = lazy(() => import("./homecomponents/Assureyou"));
 const Testimonals = lazy(() => import("./homecomponents/Testimonals"));
 const ThreeTab = lazy(() => import("./homecomponents/ThreeTab"));
+const HelpPeopleNow = lazy(() => import("./homecomponents/HelpPeopleNow"));
 
 function Homepage() {
   return (
@@ -33,6 +34,7 @@ function Homepage() {
         <Category />
         <ProgramImpact />
         <Testimonals />
+        <HelpPeopleNow />
         <Assureyou />
         <Partners />
         <Footer />
