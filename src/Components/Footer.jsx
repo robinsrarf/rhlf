@@ -128,24 +128,33 @@ function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div
-        className="mt-10 border-t pt-6 text-center"
-        
-      >
+      <div className="mt-10 border-t pt-6 text-center">
         <div className="flex justify-center space-x-4 mb-4">
           <a href="#" className="text-blue-900">
             <FaFacebookF size={24} />
           </a>
-          <a href="#" className="text-blue-500">
+          <a
+            href="https://x.com/rhlfofficial"
+            target="_"
+            className="text-blue-500"
+          >
             <FaTwitter size={24} />
           </a>
-          <a href="#" className="text-red-500">
+          <a
+            href="https://www.youtube.com/@rhlfofficialngo"
+            target="_"
+            className="text-red-500"
+          >
             <FaYoutube size={24} />
           </a>
-          <a href="#" className="text-pink-600">
+          <a
+            href="https://www.instagram.com/rhlfofficial/"
+            target="_"
+            className="text-pink-600"
+          >
             <FaInstagram size={24} />
           </a>
-          <a href="#" className="text-blue-700">
+          <a href="#" className="text-blue-700" target="_">
             <FaLinkedin size={24} />
           </a>
         </div>
