@@ -17,7 +17,6 @@ import DonorList from "./Pages/Donorlist";
 import { HelmetProvider } from "react-helmet-async";
 import NotFound from "./Pages/NotFound";
 
-
 // Motion Wrapper for animations
 const MotionWrapper = ({ children }) => (
   <motion.div

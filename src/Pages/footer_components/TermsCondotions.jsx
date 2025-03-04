@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const TermsCondotions = () => {
-  return (
-    <div>TermsCondotions</div>
-  )
-}
+  return <div>TermsCondotions</div>;
+};
 
-export default TermsCondotions
+export default TermsCondotions;

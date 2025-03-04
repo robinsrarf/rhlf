@@ -16,12 +16,12 @@ const ThreeTab = lazy(() => import("./homecomponents/ThreeTab"));
 
 function Homepage() {
   return (
-    <div className="w-full  flex flex-col gap-0 justify-center items-center">
+    <div className="flex w-full flex-col items-center justify-center gap-0">
       <Suspense
         fallback={
           <div class="flex items-center justify-center">
-            <div class="flex items-center justify-center w-screen h-[60vh] text-white ">
-              <img src={icon} alt="Loading..." className=" animate-pulse" />
+            <div class="flex h-[60vh] w-screen items-center justify-center text-white">
+              <img src={icon} alt="Loading..." className="animate-pulse" />
             </div>
           </div>
         }

@@ -56,8 +56,8 @@ function Navbar() {
     <>
       {/* Navbar */}
       <nav
-        className={`flex fixed top-0 bg-white items-center w-full pl-5 pr-3 lg:pr-10 py-1 shadow-md hover:shadow-sm transition duration-300 z-50 ${
-          isVisible ? "opacity-0 pointer-events-none" : " opacity-100"
+        className={`fixed top-0 z-50 flex w-full items-center bg-white py-1 pl-5 pr-3 shadow-md transition duration-300 hover:shadow-sm lg:pr-10 ${
+          isVisible ? "pointer-events-none opacity-0" : "opacity-100"
         }`}
       >
         {/* LOGO */}
@@ -68,21 +68,21 @@ function Navbar() {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex ml-auto">
+        <div className="ml-auto hidden lg:flex">
           <ul className="flex space-x-6">
             <NavLink to="/" className={navClass}>
               Home
             </NavLink>
 
             {/* Programmes Dropdown */}
-            <div className="relative group z-50">
+            <div className="group relative z-50">
               <NavLink to="/programmes" className={navClass}>
                 Programmes
               </NavLink>
-              <div className="absolute left-0 w-48 bg-white shadow-lg rounded hidden group-hover:block">
+              <div className="absolute left-0 hidden w-48 rounded bg-white shadow-lg group-hover:block">
                 {/* Main Programmes */}
                 <div>
-                  <h4 className="font-bold px-4 py-2">Main Programmes</h4>
+                  <h4 className="px-4 py-2 font-bold">Main Programmes</h4>
                   <ul className="py-2">
                     <DropDownItem
                       programName="Emergency Medical Support"
@@ -101,7 +101,7 @@ function Navbar() {
 
                 {/* Health & Wellness */}
                 <div>
-                  <h4 className="font-bold px-4 py-2">Health & Wellness</h4>
+                  <h4 className="px-4 py-2 font-bold">Health & Wellness</h4>
                   <ul className="py-2">
                     <DropDownItem
                       programName="Public Health And Nutrition"
@@ -121,11 +121,11 @@ function Navbar() {
             </div>
 
             {/*About Us Drop Down*/}
-            <div className="relative group">
+            <div className="group relative">
               <NavLink to="/about" className={navClass}>
                 About Us
               </NavLink>
-              <div className="absolute left-0 w-48 bg-white shadow-lg rounded hidden group-hover:block">
+              <div className="absolute left-0 hidden w-48 rounded bg-white shadow-lg group-hover:block">
                 <ul className="py-2">
                   <DropDownItem
                     programName="Our Clinics"
@@ -158,12 +158,12 @@ function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden ml-auto">
+        <div className="ml-auto lg:hidden">
           <NavLink to="/donate" className={donateButtonClass}>
             ❤️ DONATE
           </NavLink>
         </div>
-        <button className="lg:hidden ml-2" onClick={() => setIsOpen(true)}>
+        <button className="ml-2 lg:hidden" onClick={() => setIsOpen(true)}>
           <Menu size={30} />
         </button>
       </nav>

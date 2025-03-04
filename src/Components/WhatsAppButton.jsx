@@ -1,7 +1,6 @@
 import React from "react";
 import whatsappIcon from "../assets/images/whatsapp.png"; // Adjust the path if necessary
 
-
 function WhatsAppButton() {
   const handleClick = () => {
     // This will open a new WhatsApp chat window
@@ -10,10 +9,10 @@ function WhatsAppButton() {
 
   return (
     <div
-      className="z-50 cursor-pointer hover:scale-110 transition duration-300"
+      className="z-50 cursor-pointer transition duration-300 hover:scale-110"
       onClick={handleClick}
     >
-      <img className="w-[100%] h-[100%]" src={whatsappIcon} alt="WhatsApp" />
+      <img className="h-[100%] w-[100%]" src={whatsappIcon} alt="WhatsApp" />
     </div>
   );
 }

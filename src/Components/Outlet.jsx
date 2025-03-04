@@ -19,7 +19,7 @@ function Layout() {
 
         <Outlet />
         {/* <Footer /> */}
-        <div className="fixed flex flex-col z-50 w-[55px] bottom-[0.1px] right-5 mb-8 gap-3">
+        <div className="fixed bottom-[0.1px] right-5 z-50 mb-8 flex w-[55px] flex-col gap-3">
           <WhatsAppButton />
           <BackToTop />
         </div>

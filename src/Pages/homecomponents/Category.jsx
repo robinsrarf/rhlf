@@ -184,24 +184,24 @@ function CategorySection() {
 
   return (
     <>
-      <div className="flex items-center w-full pb-2">
+      <div className="flex w-full items-center pb-2">
         <SectionHeader title={"Categories"} />
         <Link
           to="/clinic"
-          className="ml-auto pt-6 pb-2 pr-5 flex items-center text-pink-500 hover:no-underline hover:text-pink-700"
+          className="ml-auto flex items-center pb-2 pr-5 pt-6 text-pink-500 hover:text-pink-700 hover:no-underline"
         >
           <p>View All</p>
           <ArrowRight size={15} />
         </Link>
       </div>
-      <section className="w-full hidden lg:block">
-        <div className="flex flex-col gap-2 w-full content-center overflow-hidden maindiv">
-          <div className="flex overflow-x-auto gap-6 pb-4 w-[85%] ml-[15%] scrollbar">
+      <section className="hidden w-full lg:block">
+        <div className="maindiv flex w-full flex-col content-center gap-2 overflow-hidden">
+          <div className="scrollbar ml-[15%] flex w-[85%] gap-6 overflow-x-auto pb-4">
             {categories.map((category) => (
               <div
                 key={category.id}
                 onClick={() => filterType(category.name)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium flex cursor-pointer gap-x-2 items-center justify-center ${
+                className={`flex cursor-pointer items-center justify-center gap-x-2 rounded-lg px-4 py-2 text-sm font-medium ${
                   selectedCategory === category.name
                     ? "bg-pink-500 text-white"
                     : "bg-gray-200 text-gray-700"
@@ -218,11 +218,11 @@ function CategorySection() {
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 w-[65%] py-2 mx-auto">
+          <div className="mx-auto flex w-[65%] flex-wrap justify-center gap-8 py-2">
             {/* Now we filter the campaigns based on the selected category */}
             <DonateCard
               DonationData={campaigns.filter(
-                (campaign) => campaign.category === selectedCategory
+                (campaign) => campaign.category === selectedCategory,
               )}
             />
           </div>
@@ -230,14 +230,14 @@ function CategorySection() {
       </section>
       {/* Mobile View */}
 
-      <section className="lg:hidden w-full">
-        <div className="flex flex-col gap-2 w-full content-center overflow-hidden">
-          <div className="w-full flex overflow-x-auto gap-1 px-3 pb-0 scrollbar">
+      <section className="w-full lg:hidden">
+        <div className="flex w-full flex-col content-center gap-2 overflow-hidden">
+          <div className="scrollbar flex w-full gap-1 overflow-x-auto px-3 pb-0">
             {categories.map((category) => (
               <div
                 key={category.id}
                 onClick={() => filterType(category.name)}
-                className={`px-2 py-1 rounded-lg text-sm font-medium flex cursor-pointer gap-x-1 items-center justify-center ${
+                className={`flex cursor-pointer items-center justify-center gap-x-1 rounded-lg px-2 py-1 text-sm font-medium ${
                   selectedCategory === category.name
                     ? "bg-pink-500 text-white"
                     : "bg-gray-200 text-gray-700"
@@ -253,11 +253,11 @@ function CategorySection() {
             ))}
           </div>
           <div className="w-full bg-pink-200 py-3">
-            <div className="flex flex-wrap justify-center gap-8 h-[65%] py-5 mx-auto">
+            <div className="mx-auto flex h-[65%] flex-wrap justify-center gap-8 py-5">
               {/* Now we filter the campaigns based on the selected category */}
               <DonateCard
                 DonationData={campaigns.filter(
-                  (campaign) => campaign.category === selectedCategory
+                  (campaign) => campaign.category === selectedCategory,
                 )}
               />
             </div>

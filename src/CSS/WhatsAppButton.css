@@ -1,8 +1,7 @@
 .fixed-button {
-    transition: transform 0.2s;
-  }
-  
-  .fixed-button:hover {
-    transform: scale(1.1); /* Scale up the button on hover */
-  }
-  
+  transition: transform 0.2s;
+}
+
+.fixed-button:hover {
+  transform: scale(1.1); /* Scale up the button on hover */
+}

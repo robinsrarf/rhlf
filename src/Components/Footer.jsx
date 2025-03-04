@@ -17,11 +17,11 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="w-full border-t-8 border-pink-600 bg-gray-100 text-gray-800 py-4">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer className="w-full border-t-8 border-pink-600 bg-gray-100 py-4 text-gray-800">
+      <div className="container mx-auto grid grid-cols-1 gap-12 px-6 md:grid-cols-3 lg:px-20">
         {/* Address Section */}
         <div className="text-center md:text-left">
-          <h3 className="text-xl font-bold mb-3">Address</h3>
+          <h3 className="mb-3 text-xl font-bold">Address</h3>
           <p className="leading-relaxed">
             H.no. 4453, Sathe Nagar near Manoj Kirana Store, Narpoli, Bhiwandi,
             Thane, Maharashtra-421305
@@ -33,7 +33,7 @@ function Footer() {
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.360039332275!2d73.0417286!3d19.2713426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bdaa5aaaaaab%3A0x6cfa52641767c98!2sReal%20Happiness%20Of%20Life%20Foundation!5e0!3m2!1sen!2sin!4v1700000000000"
-            className="w-full h-40 rounded-lg mt-4 border"
+            className="mt-4 h-40 w-full rounded-lg border"
             allowFullScreen=""
             loading="lazy"
           ></iframe>
@@ -42,7 +42,7 @@ function Footer() {
         {/* Get in Touch & Quick Links */}
         <div className="space-y-8">
           <div>
-            <h3 className="text-xl font-bold mb-3">Get in Touch!</h3>
+            <h3 className="mb-3 text-xl font-bold">Get in Touch!</h3>
             <p className="flex items-center gap-2">
               <i className="fa-solid fa-location-dot text-pink-500"></i> THANE,
               MAHARASHTRA, INDIA
@@ -56,7 +56,7 @@ function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-3">Quick Links</h3>
+            <h3 className="mb-3 text-xl font-bold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
               <Link to="/privacyPolicy" className="hover:text-pink-500">
                 Privacy Policy
@@ -88,36 +88,36 @@ function Footer() {
         {/* Newsletter & Payments */}
         <div className="space-y-8 text-center md:text-left">
           <div>
-            <h3 className="text-xl font-bold mb-3">Stay Updated</h3>
+            <h3 className="mb-3 text-xl font-bold">Stay Updated</h3>
             <form className="space-y-2">
               <input
                 type="text"
                 placeholder="First Name"
-                className="w-full p-2 border rounded"
+                className="w-full rounded border p-2"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="w-full p-2 border rounded"
+                className="w-full rounded border p-2"
               />
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full p-2 border rounded"
+                className="w-full rounded border p-2"
               />
               <button
                 type="submit"
-                className="w-full p-2 bg-pink-500 text-white rounded hover:bg-pink-600"
+                className="w-full rounded bg-pink-500 p-2 text-white hover:bg-pink-600"
               >
                 Subscribe
               </button>
-              <p className="text-neutral-500 text-sm">
+              <p className="text-sm text-neutral-500">
                 By subscribing, you agree with our privacy policy and our terms
                 of service.
               </p>
             </form>
           </div>
-          <div className="flex justify-center md:justify-start space-x-4 lg:place-self-center">
+          <div className="flex justify-center space-x-4 md:justify-start lg:place-self-center">
             <img src={visa} alt="Visa" className="h-8" />
             <img src={mastercard} alt="Mastercard" className="h-8" />
             <img src={paytm} alt="Paytm" className="h-8" />
@@ -129,7 +129,7 @@ function Footer() {
 
       {/* Bottom Section */}
       <div className="mt-10 border-t pt-6 text-center">
-        <div className="flex justify-center space-x-4 mb-4">
+        <div className="mb-4 flex justify-center space-x-4">
           <a href="#" className="text-blue-900">
             <FaFacebookF size={24} />
           </a>

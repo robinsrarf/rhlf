@@ -1,32 +1,30 @@
-import React from 'react'
+import React from "react";
 
 export default function SearchComp() {
   return (
-    <div className="flex items-center justify-center w-full p-10 flex-col ">
-
-        
-      <div className="flex items-center w-full max-w-xl border-2 border-[#FF7400]  rounded-xl shadow-md relative ">
+    <div className="flex w-full flex-col items-center justify-center p-10">
+      <div className="relative flex w-full max-w-xl items-center rounded-xl border-2 border-[#FF7400] shadow-md">
         {/* Custom Gradient Border */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FF8E00] to-[#FF1F00] rounded-lg "></div>
-        
+        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#FF8E00] to-[#FF1F00]"></div>
+
         {/* Input Group */}
         <input
           type="text"
           id="searchBar"
-          className="w-full py-3 px-7 text-gray-700 placeholder-gray-400 focus:outline-none  rounded-lg relative z-10"
+          className="relative z-10 w-full rounded-lg px-7 py-3 text-gray-700 placeholder-gray-400 focus:outline-none"
           placeholder="Search By Campaign Title Or NGO Name"
           autoComplete="off"
         />
-        
+
         {/* Search Button */}
-        <div className="bg-gradient-to-r from-[#FF8E00] to-[#FF1F00] text-white p-3 rounded-r-lg cursor-pointer">
+        <div className="cursor-pointer rounded-r-lg bg-gradient-to-r from-[#FF8E00] to-[#FF1F00] p-3 text-white">
           <button className="flex items-center">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="search"
-              className="w-7 h-8"
+              className="h-8 w-7"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -40,5 +38,5 @@ export default function SearchComp() {
         </div>
       </div>
     </div>
-  )
+  );
 }

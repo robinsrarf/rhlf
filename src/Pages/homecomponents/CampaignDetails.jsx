@@ -37,13 +37,16 @@ export default function CampaignDetails() {
     <>
       <SectionHeader title={"Campaign Details"} />
       <section className="w-full px-4 sm:px-8 md:px-12">
-        <div className="flex items-center justify-center flex-col gap-3 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-light">
-            <span className="text-gray-700 font-medium">Donate to one of our </span>
-            <span className="text-pink-400 font-bold">campaigns</span>
+        <div className="flex flex-col items-center justify-center gap-3 text-center">
+          <h1 className="text-2xl font-light sm:text-3xl md:text-4xl">
+            <span className="font-medium text-gray-700">
+              Donate to one of our{" "}
+            </span>
+            <span className="font-bold text-pink-400">campaigns</span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-[#5a5a5a] mt-3">
-            By donating, you take a step towards creating a better world. Every rupee counts!
+          <p className="mt-3 text-sm text-[#5a5a5a] sm:text-base md:text-lg">
+            By donating, you take a step towards creating a better world. Every
+            rupee counts!
           </p>
           <CampaignCard />
         </div>
@@ -63,41 +66,48 @@ function CampaignCard() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <div className="overflow-hidden rounded-xl p-1 shadow-lg bg-white">
+    <div className="relative mx-auto w-full max-w-4xl">
+      <div className="overflow-hidden rounded-xl bg-white p-1 shadow-lg">
         <div
           className="flex transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {campaignData.map((campaign) => (
             <div key={campaign.id} className="min-w-full p-4 sm:p-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+              <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3">
                 {/* Image Section */}
                 <img
                   src={campaign.image}
                   alt={campaign.title}
-                  className="w-full h-48 sm:h-40 md:h-60 object-cover rounded-lg"
+                  className="h-48 w-full rounded-lg object-cover sm:h-40 md:h-60"
                 />
 
                 {/* Content Section */}
-                <div className="md:col-span-2 flex flex-col space-y-3 text-center md:text-left">
-                  <span className="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full self-center md:self-start">
+                <div className="flex flex-col space-y-3 text-center md:col-span-2 md:text-left">
+                  <span className="self-center rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-white md:self-start">
                     Featured
                   </span>
-                  <div className="flex items-center justify-center md:justify-start space-x-2">
-                    <img src={lady} alt="lady icon" className="w-5 h-5" />
-                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800">
+                  <div className="flex items-center justify-center space-x-2 md:justify-start">
+                    <img src={lady} alt="lady icon" className="h-5 w-5" />
+                    <h3 className="text-base font-semibold text-gray-800 sm:text-lg md:text-xl">
                       {campaign.title}
                     </h3>
                   </div>
-                  <div className="flex items-start justify-center md:justify-start space-x-2">
-                    <img src={connect} alt="connect icon" className="w-4 h-4 mt-1 hidden md:block" />
-                    <p className="text-xs sm:text-sm md:text-base p-2 rounded-2xl">
+                  <div className="flex items-start justify-center space-x-2 md:justify-start">
+                    <img
+                      src={connect}
+                      alt="connect icon"
+                      className="mt-1 hidden h-4 w-4 md:block"
+                    />
+                    <p className="rounded-2xl p-2 text-xs sm:text-sm md:text-base">
                       {campaign.description}
                     </p>
                   </div>
-                  <Link to={`/donate/${campaign.id}`} className="self-center md:self-start">
-                    <button className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition-all">
+                  <Link
+                    to={`/donate/${campaign.id}`}
+                    className="self-center md:self-start"
+                  >
+                    <button className="rounded-lg bg-pink-500 px-4 py-2 text-white transition-all hover:bg-pink-600">
                       Donate Now
                     </button>
                   </Link>
@@ -108,7 +118,7 @@ function CampaignCard() {
         </div>
       </div>
       {/* Dots Navigation */}
-      <div className="flex justify-center mt-4 space-x-2">
+      <div className="mt-4 flex justify-center space-x-2">
         {campaignData.map((_, index) => (
           <button
             key={index}

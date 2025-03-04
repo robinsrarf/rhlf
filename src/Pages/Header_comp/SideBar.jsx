@@ -29,7 +29,7 @@ function DropDownItem({ Items }) {
       <li key={link}>
         <NavLink
           to={link}
-          className="hover:no-underline hover:text-pink-400"
+          className="hover:text-pink-400 hover:no-underline"
           onClick={() => setIsOpen(false)}
         >
           {name}
@@ -50,7 +50,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
       <nav>
         {isOpen && (
           <div
-            className="fixed inset-0 bg-pink-900 bg-opacity-50 z-40"
+            className="fixed inset-0 z-40 bg-pink-900 bg-opacity-50"
             onClick={() => setIsOpen(false)}
           />
         )}
@@ -59,10 +59,10 @@ export default function SideBar({ isOpen, setIsOpen }) {
           initial={{ x: "-100%" }}
           animate={{ x: isOpen ? "0%" : "-100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 p-5 flex flex-col space-y-6"
+          className="fixed left-0 top-0 z-50 flex h-full w-64 flex-col space-y-6 bg-white p-5 shadow-lg"
         >
           {/* Close Button */}
-          <div className="flex justify-center items-center gap-20">
+          <div className="flex items-center justify-center gap-20">
             <a href="/">
               <img className="w-20" src={logo} alt="Logo" />
             </a>
@@ -91,13 +91,13 @@ export default function SideBar({ isOpen, setIsOpen }) {
           {/*Programmes Drop Down */}
           <div>
             <button
-              className="flex justify-between items-center w-full pl-2 font-bold hover:text-pink-400 focus:outline-none"
+              className="flex w-full items-center justify-between pl-2 font-bold hover:text-pink-400 focus:outline-none"
               onClick={() => setIsProgramOpen(!isProgramOpen)}
             >
               <span>Programmes</span>
               <ChevronDown
                 size={20}
-                className={` text-gray-900 bg-pink-500 p-1 rounded-3xl transition-transform duration-300 ${
+                className={`rounded-3xl bg-pink-500 p-1 text-gray-900 transition-transform duration-300 ${
                   isProgramOpen ? "rotate-180" : ""
                 }`}
               />
@@ -112,7 +112,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <ul className="pl-5 mt-2 space-y-2">
+              <ul className="mt-2 space-y-2 pl-5">
                 <DropDownItem Items={programmes} />{" "}
                 {/* Adding Programes sub links */}
               </ul>
@@ -122,13 +122,13 @@ export default function SideBar({ isOpen, setIsOpen }) {
           {/*About Us Dropdown Section */}
           <div>
             <button
-              className="flex justify-between items-center w-full pl-2 font-bold hover:text-pink-400 focus:outline-none"
+              className="flex w-full items-center justify-between pl-2 font-bold hover:text-pink-400 focus:outline-none"
               onClick={() => setIsAboutOpen(!isAboutOpen)}
             >
               <span>About Us</span>
               <ChevronDown
                 size={20}
-                className={`text-gray-900 bg-pink-500 p-1 rounded-3xl transition-transform duration-300 ${
+                className={`rounded-3xl bg-pink-500 p-1 text-gray-900 transition-transform duration-300 ${
                   isAboutOpen ? "rotate-180" : ""
                 }`}
               />
@@ -143,7 +143,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <ul className="pl-5 mt-2 space-y-2">
+              <ul className="mt-2 space-y-2 pl-5">
                 <DropDownItem Items={About} /> {/* Adding About Us sub links */}
               </ul>
             </motion.div>
@@ -152,7 +152,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
           {/* Donate Button */}
           <NavLink
             to="/donate"
-            className="p-2 font-bold border-2 border-black rounded-3xl hover:bg-pink-400 hover:text-white text-center hover:no-underline"
+            className="rounded-3xl border-2 border-black p-2 text-center font-bold hover:bg-pink-400 hover:text-white hover:no-underline"
             onClick={() => setIsOpen(false)}
           >
             ❤️ DONATE
@@ -166,9 +166,9 @@ export default function SideBar({ isOpen, setIsOpen }) {
             >
               <Mail
                 size={30}
-                className="text-white bg-pink-500 p-2 rounded-xl"
+                className="rounded-xl bg-pink-500 p-2 text-white"
               />
-              <span className="text-gray-800 font-medium">
+              <span className="font-medium text-gray-800">
                 contact@rhlf.org
               </span>
             </a>
@@ -179,9 +179,9 @@ export default function SideBar({ isOpen, setIsOpen }) {
             >
               <Phone
                 size={30}
-                className="text-white bg-pink-500 p-2 rounded-xl"
+                className="rounded-xl bg-pink-500 p-2 text-white"
               />
-              <span className="text-gray-800 font-medium">+91-02269719935</span>
+              <span className="font-medium text-gray-800">+91-02269719935</span>
             </a>
           </div>
         </motion.div>

@@ -57,26 +57,26 @@ const Testimonals = () => {
 
   return (
     <section
-      className="w-full p-6 bg-cover h-[700px] flex flex-col items-center justify-center"
+      className="flex h-[700px] w-full flex-col items-center justify-center bg-cover p-6"
       style={{
         backgroundImage: `linear-gradient(rgba(219, 39, 119, 0.7), rgba(219, 39, 119, 0.7)), url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className=" w-full lg:ml-[620px] my-3 flex items-center gap-2 pb-2">
+      <div className="my-3 flex w-full items-center gap-2 pb-2 lg:ml-[620px]">
         <CircleDotDashed size={25} className="text-white" />
         <p className="text-white">TESTIMONIALS</p>
       </div>
-      <div className="lg:w-2/3 w-full lg:mx-auto mx-1">
+      <div className="mx-1 w-full lg:mx-auto lg:w-2/3">
         {/* Heading Box */}
-        <div className="flex flex-col justify-center h-52 items-start border-2 border-white rounded-t-lg lg:p-10 p-5 bg-transparent backdrop-blur-lg">
-          <div className="flex flex-col lg:flex-row lg:gap-20 items-center">
-            <p className=" w-full text-white lg:text-4xl text-3xl font-bold text-center">
+        <div className="flex h-52 flex-col items-start justify-center rounded-t-lg border-2 border-white bg-transparent p-5 backdrop-blur-lg lg:p-10">
+          <div className="flex flex-col items-center lg:flex-row lg:gap-20">
+            <p className="w-full text-center text-3xl font-bold text-white lg:text-4xl">
               What They're Saying About Clean Heart
             </p>
             <img
-              className=" w-56 mt-2 lg:w-80 rounded-full"
+              className="mt-2 w-56 rounded-full lg:w-80"
               src={bgtestimonial}
               alt="image"
             />
@@ -97,12 +97,12 @@ const Testimonals = () => {
 const TestimonialCard = ({ testimonial }) => {
   return (
     <div
-      className="p-10 lg:h-64 h-72 rounded-b-lg shadow-md bg-white flex flex-col justify-between bg-cover"
+      className="flex h-72 flex-col justify-between rounded-b-lg bg-white bg-cover p-10 shadow-md lg:h-64"
       style={{ backgroundImage: `url(${bgtexture})` }}
     >
-      <div className="flex lg:gap-11 gap-5 items-center">
-        <div className=" lg:pr-11 pr-5 border-r-2">
-          <p className="text-xl  font-semibold">{testimonial.author}</p>
+      <div className="flex items-center gap-5 lg:gap-11">
+        <div className="border-r-2 pr-5 lg:pr-11">
+          <p className="text-xl font-semibold">{testimonial.author}</p>
           <p className="font-semibold text-pink-600">{testimonial.role}</p>
         </div>
         <div className="flex gap-1">
@@ -112,7 +112,7 @@ const TestimonialCard = ({ testimonial }) => {
         </div>
       </div>
 
-      <p className="lg:mt-1 mt-1 font-bold text-gray-700 text-xl lg:text-2xl italic">
+      <p className="mt-1 text-xl font-bold italic text-gray-700 lg:mt-1 lg:text-2xl">
         "{testimonial.testimonial}"
       </p>
     </div>

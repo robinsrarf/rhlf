@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const RefundPolicy = () => {
-  return (
-    <div>RefundPolicy</div>
-  )
-}
+  return <div>RefundPolicy</div>;
+};
 
-export default RefundPolicy
+export default RefundPolicy;

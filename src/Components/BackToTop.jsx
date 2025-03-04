@@ -26,7 +26,7 @@ function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`flex right-5 bg-pink-500 text-white p-4 rounded-full shadow-md z-50 transition duration-300 ${
+      className={`right-5 z-50 flex rounded-full bg-pink-500 p-4 text-white shadow-md transition duration-300 ${
         isVisible ? "" : "hidden"
       }`}
     >

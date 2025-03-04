@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ChildProtection = () => {
-  return (
-    <div>ChildProtection</div>
-  )
-}
+  return <div>ChildProtection</div>;
+};
 
-export default ChildProtection
+export default ChildProtection;

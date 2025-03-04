@@ -35,7 +35,7 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 function Footer() {
     return (
         <div className='footer-container'>
-            {/* ... other sections *//*}
+            {/* ... other sections */ /*}
             <div className="section-3 text-start">
                 <h3 className='section-title font-bold text-xl max-md:ml-10'>Quick Links</h3>
                 <div className='space-y-2 lg:text-start flex flex-col max-md:ml-1 max-md:text-center'>

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const PoshPolicy = () => {
-  return (
-    <div>PoshPolicy</div>
-  )
-}
+  return <div>PoshPolicy</div>;
+};
 
-export default PoshPolicy
+export default PoshPolicy;

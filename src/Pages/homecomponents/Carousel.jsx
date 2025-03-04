@@ -20,12 +20,12 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel-container w-[98%] m-auto p-0">
+    <div className="carousel-container m-auto w-[98%] p-0">
       <Slider {...settings} className="rounded-lg">
         {images.map((src) => {
           return (
-            <div className=" rounded-lg">
-              <img src={src} alt={src} className=""/>
+            <div className="rounded-lg">
+              <img src={src} alt={src} className="" />
             </div>
           );
         })}

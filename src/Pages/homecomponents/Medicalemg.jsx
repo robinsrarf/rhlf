@@ -44,31 +44,29 @@ const emergencyData = [
 export default function MedicalEmergency() {
   return (
     <>
-      <div className="flex items-center w-full">
+      <div className="flex w-full items-center">
         <SectionHeader title={"Medical Emergency"} />
         <Link
           to="/clinic"
-          className="ml-auto pt-6 pb-2 pr-5 flex items-center text-pink-500 hover:no-underline hover:text-pink-700"
+          className="ml-auto flex items-center pb-2 pr-5 pt-6 text-pink-500 hover:text-pink-700 hover:no-underline"
         >
           <p>View All</p>
           <ArrowRight size={15} />
         </Link>
       </div>
 
-      <section className="hidden lg:block w-full ">
+      <section className="hidden w-full lg:block">
         {/* Emergency Cards */}
-        <div className="flex flex-wrap justify-center gap-8 w-[65%] py-2 mx-auto">
+        <div className="mx-auto flex w-[65%] flex-wrap justify-center gap-8 py-2">
           {/* Now we filter the campaigns based on the selected category */}
           <DonateCard DonationData={emergencyData} />
         </div>
       </section>
-      <section className="lg:hidden w-full">
+      <section className="w-full lg:hidden">
         <div className="w-full bg-pink-200 py-3">
-          <div className="flex flex-wrap justify-center gap-8 h-[65%] py-5 mx-auto">
+          <div className="mx-auto flex h-[65%] flex-wrap justify-center gap-8 py-5">
             {/* Now we filter the campaigns based on the selected category */}
-            <DonateCard
-              DonationData={emergencyData}
-            />
+            <DonateCard DonationData={emergencyData} />
           </div>
         </div>
       </section>
