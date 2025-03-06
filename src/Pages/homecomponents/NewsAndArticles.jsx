@@ -103,7 +103,7 @@ export default function NewsAndArticles() {
       <SectionHeader title="Our Latest News" />
 
       <div className="w-full max-w-7xl">
-        <h2 className="mb-6 text-2xl font-bold text-gray-800 md:text-4xl">
+        <h2 className="mb-6 ml-4 text-2xl font-bold text-gray-800 md:text-4xl">
           Latest News & Articles
         </h2>
         <Slider {...settings}>
