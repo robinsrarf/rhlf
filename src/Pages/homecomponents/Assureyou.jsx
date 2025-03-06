@@ -32,19 +32,21 @@ export default function Assureyou() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center gap-y-5 py-5">
-      <h1 className="text-3xl font-semibold text-black">
+    <section className="flex flex-col items-center justify-center gap-y-5 my-10 lg:my-20">
+      <h1 className="text-4xl font-semibold text-black">
         We <span className="text-pink-500">assure</span> you that
       </h1>
-      <div className="mt-10 flex flex-col gap-x-5 lg:max-w-[80%] lg:flex-row">
+      <div className="mt-10 flex flex-col gap-3 lg:w-full lg:flex-row lg:items-center lg:gap-32">
         {assurance.map((assure) => {
           return (
-            <div className="flex flex-col items-center justify-center gap-y-3">
+            <div className="flex flex-col items-center justify-center gap-3">
               {React.createElement(assure.icon, {
-                size: 30,
+                size: 35,
                 className: "w-30 h-30",
               })}
-              <h2 className="text-base text-gray-700">{assure.title}</h2>
+              <h2 className="w-56 text-center text-base text-gray-700">
+                {assure.title}
+              </h2>
             </div>
           );
         })}
@@ -53,6 +55,6 @@ export default function Assureyou() {
         <p className="text-base">View Details</p>
         <ArrowRight size={15} />
       </div>
-    </div>
+    </section>
   );
 }

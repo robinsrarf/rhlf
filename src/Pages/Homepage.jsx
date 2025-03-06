@@ -1,9 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import "../CSS/Homepage.css";
-import Footer from "../Components/Footer";
+
+
 import icon from "../assets/images/LOGO1.png";
 // Lazy-loaded components for performance optimization
 const Carousel = lazy(() => import("./homecomponents/Carousel"));
+const Footer = lazy(() => import("../Components/Footer"));
 const AboutCleanHeat = lazy(() => import("./homecomponents/AboutCleanHeart"));
 const CampaignDetails = lazy(() => import("./homecomponents/CampaignDetails"));
 const Medicalemg = lazy(() => import("./homecomponents/Medicalemg"));
@@ -14,6 +16,7 @@ const Assureyou = lazy(() => import("./homecomponents/Assureyou"));
 const Testimonals = lazy(() => import("./homecomponents/Testimonals"));
 const ThreeTab = lazy(() => import("./homecomponents/ThreeTab"));
 const HelpPeopleNow = lazy(() => import("./homecomponents/HelpPeopleNow"));
+const NewsAndArticles = lazy(() => import("./homecomponents/NewsAndArticles"));
 
 function Homepage() {
   return (
@@ -35,6 +38,7 @@ function Homepage() {
         <ProgramImpact />
         <Testimonals />
         <HelpPeopleNow />
+        <NewsAndArticles />
         <Assureyou />
         <Partners />
         <Footer />

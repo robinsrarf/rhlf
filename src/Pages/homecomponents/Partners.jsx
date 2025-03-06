@@ -13,6 +13,7 @@ export default function Partners() {
     variableHeight: true,
     autoplay: true,
     autoplaySpeed: 2000,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 1024, // Screens below 1024px

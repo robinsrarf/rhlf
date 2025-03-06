@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/Footer.css";
 import LOGO1 from "../assets/images/LOGO1.png";
 import mastercard from "../assets/images/mastercard.svg";
@@ -6,6 +6,7 @@ import paytm from "../assets/images/Paytm New.svg";
 import visa from "../assets/images/visa.svg";
 import secures from "../assets/images/securelogo.svg";
 import americanexpress from "../assets/images/Americanexpresslogo.jpeg";
+import bgTexture from "../assets/images/svg/nnnoise.svg";
 import {
   FaFacebookF,
   FaTwitter,
@@ -16,8 +17,9 @@ import {
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [loaded, setLoaded] = useState(false);
   return (
-    <footer className="w-full border-t-8 border-pink-600 bg-gray-100 py-4 text-gray-800">
+    <footer className="w-full border-t-8 border-pink-600 bg-gray-100 pt-2 text-gray-800">
       <div className="container mx-auto grid grid-cols-1 gap-12 px-6 md:grid-cols-3 lg:px-20">
         {/* Address Section */}
         <div className="text-center md:text-left">
@@ -36,6 +38,7 @@ function Footer() {
             className="mt-4 h-40 w-full rounded-lg border"
             allowFullScreen=""
             loading="lazy"
+            onLoad={() => setLoaded(true)}
           ></iframe>
         </div>
 
@@ -128,45 +131,50 @@ function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-10 border-t pt-6 text-center">
-        <div className="mb-4 flex justify-center space-x-4">
-          <a href="#" className="text-blue-900">
-            <FaFacebookF size={24} />
-          </a>
-          <a
-            href="https://x.com/rhlfofficial"
-            target="_"
-            className="text-blue-500"
-          >
-            <FaTwitter size={24} />
-          </a>
-          <a
-            href="https://www.youtube.com/@rhlfofficialngo"
-            target="_"
-            className="text-red-500"
-          >
-            <FaYoutube size={24} />
-          </a>
-          <a
-            href="https://www.instagram.com/rhlfofficial/"
-            target="_"
-            className="text-pink-600"
-          >
-            <FaInstagram size={24} />
-          </a>
-          <a href="#" className="text-blue-700" target="_">
-            <FaLinkedin size={24} />
-          </a>
-        </div>
+      <div className="flex items-center justify-center space-x-4">
+        <hr className="w-full" />
+        <a href="#" className="text-blue-900">
+          <FaFacebookF size={24} />
+        </a>
+        <a
+          href="https://x.com/rhlfofficial"
+          target="_"
+          className="text-blue-500"
+        >
+          <FaTwitter size={24} />
+        </a>
+        <a
+          href="https://www.youtube.com/@rhlfofficialngo"
+          target="_"
+          className="text-red-500"
+        >
+          <FaYoutube size={24} />
+        </a>
+        <a
+          href="https://www.instagram.com/rhlfofficial/"
+          target="_"
+          className="text-pink-600"
+        >
+          <FaInstagram size={24} />
+        </a>
+        <a href="#" className="text-blue-700" target="_">
+          <FaLinkedin size={24} />
+        </a>
+        <hr className="w-full" />
+      </div>
+      <div
+        className="mt-5 border-t bg-cover py-3 text-center"
+        style={{ backgroundImage: `url(${bgTexture})` }}
+      >
         <p>
           Real Happiness Of Life Foundation (RHLF) is registered in India under
           Section 8 of the Indian Companies Act, 2013.
         </p>
         <p>
           &copy; 2024 All Rights Reserved.{" "}
-          <span className="text-pink-500">
-            Real Happiness Of Life Foundation.
-          </span>
+          <a href="#" className="text-pink-800">
+            Real Happiness Of Life Foundation
+          </a>
         </p>
       </div>
     </footer>
