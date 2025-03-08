@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import "../CSS/Homepage.css";
 
 import icon from "../assets/images/LOGO1.png";
+import BigDonateCard from "./homecomponents/BigDonateCard";
 // Lazy-loaded components for performance optimization
 const Carousel = lazy(() => import("./homecomponents/Carousel"));
 const Footer = lazy(() => import("../Components/Footer"));
@@ -34,6 +35,7 @@ function Homepage() {
       >
         <Carousel />
         <AboutCleanHeat />
+        <BigDonateCard />
         <CampaignDetails />
         <Medicalemg />
         <Category />
