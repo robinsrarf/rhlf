@@ -35,10 +35,11 @@ function Homepage() {
       >
         <Carousel />
         <AboutCleanHeat />
-        <BigDonateCard />
+        
         <CampaignDetails />
         <Medicalemg />
         <Category />
+        <BigDonateCard />
         <WorldwideNonprofitCharity />
         <ProgramImpact />
         <Testimonals />
