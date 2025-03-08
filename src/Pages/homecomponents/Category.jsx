@@ -184,7 +184,7 @@ function CategorySection() {
 
   return (
     <>
-      <div className="flex w-full items-center pb-2">
+      <div className="flex w-full items-center ">
         <SectionHeader title={"Categories"} />
         <Link
           to="/clinic"
@@ -194,7 +194,7 @@ function CategorySection() {
           <ArrowRight size={15} />
         </Link>
       </div>
-      <section className="hidden w-full lg:block">
+      <section className="hidden w-full lg:block my-7">
         <div className="maindiv flex w-full flex-col content-center gap-2 overflow-hidden">
           <div className="scrollbar ml-[15%] flex w-[85%] gap-6 overflow-x-auto pb-4">
             {categories.map((category) => (
@@ -253,7 +253,7 @@ function CategorySection() {
             ))}
           </div>
           <div className="w-full bg-pink-200 py-3">
-            <div className="mx-auto flex h-[65%] flex-wrap justify-center gap-8 py-5">
+            <div className="mx-auto flex h-full flex-wrap justify-center gap-8 py-5">
               {/* Now we filter the campaigns based on the selected category */}
               <DonateCard
                 DonationData={campaigns.filter(

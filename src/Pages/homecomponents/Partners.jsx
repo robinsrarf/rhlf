@@ -62,7 +62,7 @@ export default function Partners() {
       <section className="my-4 w-full">
         <Slider {...settings}>
           {logos.map((logo, index) => (
-            <img className="h-30" alt={index} src={importImage(logo)} />
+            <img key={index} className="h-30" alt={index} src={importImage(logo)} />
           ))}
         </Slider>
       </section>

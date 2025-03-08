@@ -72,7 +72,7 @@ const Testimonals = () => {
         {/* Heading Box */}
         <div className="flex h-52 flex-col items-start justify-center rounded-t-lg border-2 border-white bg-transparent p-5 backdrop-blur-lg lg:p-10">
           <div className="flex flex-col items-center lg:flex-row lg:gap-20">
-            <p className="w-full text-center text-3xl font-bold text-white lg:text-4xl">
+            <p className="font-quicksand w-full text-center text-3xl font-bold text-white lg:text-4xl">
               What They're Saying About Clean Heart
             </p>
             <img

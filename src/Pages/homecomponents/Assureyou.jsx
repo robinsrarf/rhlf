@@ -1,8 +1,4 @@
 import React from "react";
-import assure1 from "../../assets/images/Assureyou/Assurance1.png";
-import assure2 from "../../assets/images/Assureyou/Assurance2.png";
-import assure3 from "../../assets/images/Assureyou/Assurance3.png";
-import assure4 from "../../assets/images/Assureyou/Assurance4.png";
 import {
   ShieldCheck,
   ReceiptIndianRupee,
@@ -32,14 +28,14 @@ export default function Assureyou() {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center gap-y-5 my-10 lg:my-20">
+    <section className="my-10 flex flex-col items-center justify-center gap-y-5 lg:my-20">
       <h1 className="text-4xl font-semibold text-black">
         We <span className="text-pink-500">assure</span> you that
       </h1>
       <div className="mt-10 flex flex-col gap-3 lg:w-full lg:flex-row lg:items-center lg:gap-32">
-        {assurance.map((assure) => {
+        {assurance.map((assure, index) => {
           return (
-            <div className="flex flex-col items-center justify-center gap-3">
+            <div key={index} className="flex flex-col items-center justify-center gap-3">
               {React.createElement(assure.icon, {
                 size: 35,
                 className: "w-30 h-30",

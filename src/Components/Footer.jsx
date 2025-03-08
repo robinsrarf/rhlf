@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 import "../CSS/Footer.css";
 import LOGO1 from "../assets/images/LOGO1.png";
 import mastercard from "../assets/images/mastercard.svg";
@@ -6,7 +6,7 @@ import paytm from "../assets/images/Paytm New.svg";
 import visa from "../assets/images/visa.svg";
 import secures from "../assets/images/securelogo.svg";
 import americanexpress from "../assets/images/Americanexpresslogo.jpeg";
-import bgTexture from "../assets/images/svg/nnnoise.svg";
+import bgTexture from "/src/assets/images/svg/nnnoise.svg";
 import {
   FaFacebookF,
   FaTwitter,

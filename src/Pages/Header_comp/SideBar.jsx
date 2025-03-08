@@ -25,17 +25,15 @@ function navClass({ isActive }) {
 
 function DropDownItem({ Items }) {
   return Object.entries(Items).map(([name, link]) => (
-    <>
-      <li key={link}>
-        <NavLink
-          to={link}
-          className="hover:text-pink-400 hover:no-underline"
-          onClick={() => setIsOpen(false)}
-        >
-          {name}
-        </NavLink>
-      </li>
-    </>
+    <li key={link}>
+      <NavLink
+        to={link}
+        className="hover:text-pink-400 hover:no-underline"
+        onClick={() => setIsOpen(false)}
+      >
+        {name}
+      </NavLink>
+    </li>
   ));
 }
 

@@ -24,7 +24,7 @@ const Carousel = () => {
       <Slider {...settings} className="rounded-lg">
         {images.map((src) => {
           return (
-            <div className="rounded-lg">
+            <div key={src} className="rounded-lg">
               <img src={src} alt={src} className="" />
             </div>
           );

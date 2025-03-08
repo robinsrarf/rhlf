@@ -47,8 +47,8 @@ export default function HelpPeopleNow() {
           <CircleDotDashed size={20} className="text-white" />
           <p className="text-white">Help People Now</p>
         </div>
-        <h1 className="mb-5 text-center text-3xl font-bold text-white md:text-5xl">
-          Join Our Family of Changemakers - Become a Volunteer Today!
+        <h1 className="font-quicksand mb-5 text-center text-3xl font-bold text-white md:text-5xl">
+          Charity For The People You Care About
         </h1>
         <p className="pl-5 text-center text-lg text-zinc-200 md:text-left">
           At Real Happiness of Life Foundation, we believe that together, we can
@@ -79,7 +79,7 @@ export default function HelpPeopleNow() {
                   animate: { x: "-100%" }, // Ensures initial state is applied
                   hover: {
                     x: "0%", // Moves in fully on hover
-                    transition: { duration: 0.4, ease: "easeInOut" },
+                    transition: { duration: 0.4 },
                   },
                 }}
               />

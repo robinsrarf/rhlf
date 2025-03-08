@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from "react";
 import program1 from "../../assets/images/Program/program1.png";
 import program2 from "../../assets/images/Program/program2.png";
 import program3 from "../../assets/images/Program/program3.png";
-import { section } from "framer-motion/client";
 import { ArrowRight } from "lucide-react";
 
 const Cards = [
@@ -123,7 +122,7 @@ const CardContent = ({ card }) => {
       const regex = new RegExp(word, "g");
       styledTitle = styledTitle.replace(
         regex,
-        `<span class="text-pink-500 font-bold">${word}</span>`,
+        `<span className="text-pink-500 font-bold">${word}</span>`,
       );
     });
 

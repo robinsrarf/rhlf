@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import "../CSS/Homepage.css";
 
-
 import icon from "../assets/images/LOGO1.png";
 // Lazy-loaded components for performance optimization
 const Carousel = lazy(() => import("./homecomponents/Carousel"));
@@ -17,14 +16,17 @@ const Testimonals = lazy(() => import("./homecomponents/Testimonals"));
 const ThreeTab = lazy(() => import("./homecomponents/ThreeTab"));
 const HelpPeopleNow = lazy(() => import("./homecomponents/HelpPeopleNow"));
 const NewsAndArticles = lazy(() => import("./homecomponents/NewsAndArticles"));
+const WorldwideNonprofitCharity = lazy(
+  () => import("./homecomponents/WorldwideNonProfitCharity"),
+);
 
 function Homepage() {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-0">
       <Suspense
         fallback={
-          <div class="flex items-center justify-center">
-            <div class="flex h-[60vh] w-screen items-center justify-center text-white">
+          <div className="flex items-center justify-center">
+            <div className="flex h-[60vh] w-screen items-center justify-center text-white">
               <img src={icon} alt="Loading..." className="animate-pulse" />
             </div>
           </div>
@@ -35,6 +37,7 @@ function Homepage() {
         <CampaignDetails />
         <Medicalemg />
         <Category />
+        <WorldwideNonprofitCharity />
         <ProgramImpact />
         <Testimonals />
         <HelpPeopleNow />

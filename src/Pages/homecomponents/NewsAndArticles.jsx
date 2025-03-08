@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import SectionHeader from "../../Components/SectionHeader";
+import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -85,6 +86,8 @@ export default function NewsAndArticles() {
     autoplay: true,
     autoplaySpeed: 4000,
     centerMode: true,
+    arrows: false,
+
     centerPadding: "0px",
     responsive: [
       {
@@ -99,7 +102,7 @@ export default function NewsAndArticles() {
   };
 
   return (
-    <section className="flex w-full flex-col items-center bg-gray-100 px-4 py-16 md:px-8">
+    <section className="flex w-full flex-col items-center px-4 py-16 md:px-8">
       <SectionHeader title="Our Latest News" />
 
       <div className="w-full max-w-7xl">
@@ -125,16 +128,49 @@ export default function NewsAndArticles() {
 
 function NewsCard({ date, month, title, link, image }) {
   return (
-    <a href={link} className="block">
-      <div className="relative mx-3 flex h-auto min-h-[400px] overflow-hidden rounded-xl">
-        <img
-          src={image}
-          alt="News"
-          className="w-4/3 absolute top-0 z-10 h-64 rounded-xl object-cover md:h-64 lg:left-2.5"
-        />
-        <div className="absolute top-5 z-20 ml-6 mt-1 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-gray-400 text-sm font-bold text-black">
-          <p>{date}</p>
-          <p>{month}</p>
+    <a href={link} className="block hover:no-underline">
+      <motion.div
+        className="relative mx-3 flex h-auto min-h-[400px] overflow-hidden rounded-xl"
+        initial="initial"
+        animate="initial"
+        whileHover="onHover"
+      >
+        <div className="absolute left-1 top-0 z-10 h-64 w-[98%] overflow-hidden rounded-xl bg-cover md:h-64 lg:left-1">
+          <motion.div
+            className="absolute inset-0 left-1 z-10 h-64 w-[98%] rounded-xl bg-cover bg-center md:h-64 lg:left-1"
+            style={{ backgroundImage: `url(${image})` }}
+            transition={{ duration: 0.3 }}
+            variants={{ initial: { scale: 1 }, onHover: { scale: 1.1 } }}
+          ></motion.div>
+          <motion.span
+            className="absolute top-0 z-20 h-1/2 w-full rounded-t-xl bg-stone-600 opacity-50"
+            transition={{ duration: 0.3 }}
+            variants={{
+              initial: { scaleX: 0, originX: 1 },
+              onHover: { scaleX: 1 },
+            }}
+          />{" "}
+          <motion.span
+            className="absolute bottom-0 z-20 h-1/2 w-full rounded-b-xl bg-stone-600 opacity-50"
+            transition={{ duration: 0.3 }}
+            variants={{
+              initial: { scaleX: 0, originX: 0 },
+              onHover: { scaleX: 1 },
+            }}
+          />
+        </div>
+
+        <div className="absolute top-5 z-20 ml-6 mt-1 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-white text-sm font-bold text-black">
+          <motion.div
+            className="absolute inset-0 z-30 rounded-full bg-pink-500"
+            variants={{
+              initial: { scale: 0 },
+              onHover: { scale: 1.1 },
+            }}
+          ></motion.div>
+
+          <p className="absolute top-2 z-40 w-full text-center">{date}</p>
+          <p className="absolute bottom-2 z-40 w-full text-center">{month}</p>
         </div>
         <div
           className="mt-auto w-full rounded-xl bg-cover px-5 pt-10"
@@ -146,7 +182,7 @@ function NewsCard({ date, month, title, link, image }) {
             <ChevronRight className="ml-2 h-5 w-5" />
           </div>
         </div>
-      </div>
+      </motion.div>
     </a>
   );
 }

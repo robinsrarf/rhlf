@@ -12,7 +12,7 @@ export default function AboutCleanHeat() {
       <SectionHeader title={"About Clean Heart"} />
       <section className="my-10 hidden w-full flex-col justify-center px-10 lg:flex">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <h2 className="mt-2 text-5xl font-bold leading-tight text-rose-950">
+          <h2 className="font-quicksand mt-2 text-5xl font-bold leading-tight text-rose-950">
             Helping Each Other Can Make the World Better
           </h2>
         </div>
