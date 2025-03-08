@@ -1,92 +1,113 @@
-import React from 'react'
-import bgKid from "../../assets/images/bgKid.jpg"
-import bgKid1 from "../../assets/images/bgKid1.jpg"
-import { useState } from 'react';
-
+import React from "react";
+import bgKid from "../../assets/images/bgKid.jpg";
+import bgKid1 from "../../assets/images/bgKid1.jpg";
+import { useState } from "react";
+import { ChevronsRight, Check } from "lucide-react";
 function BigDonateCard() {
+  const [amount, setAmount] = useState(250);
+  const [selected, setSelected] = useState(250);
+  const handleChange = (e) => {
+    setAmount(e.target.value);
+  };
 
-    const [ amount,setAmount ] = useState(250);
-    const [selected, setSelected] = useState(250);
-    const handleChange = (e) => {
-        setAmount( e.target.value );
-      };
-
-return (
-    <div className="flex flex-col md:flex-row gap-6 justify-center items-center p-8">
+  return (
+    <div className="flex w-full flex-col items-center justify-center gap-10 px-4 md:flex-row lg:p-8">
       {/* Left Card */}
-      <div className="relative w-[36rem] h-[26rem] rounded-xl overflow-hidden shadow-lg">
+      <div className="relative h-[35rem] w-full overflow-hidden rounded-xl shadow-lg lg:h-[26rem] lg:w-[36rem]">
         <img
           src={bgKid}
           alt="Donation Image"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 h-full w-full bg-cover object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 p-8 flex flex-col justify-between">
+        <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-50 bg-gradient-to-r from-black to-transparent p-8">
           <div>
-            <h2 className="text-white text-3xl font-semibold">
+            <h2 className="text-3xl font-semibold text-white">
               Make A Difference Today!
             </h2>
-            <p className="text-gray-200 text-md text-wrap mt-5">
-            Partner with Real Happiness Of Life Foundation to drive meaningful change through Corporate Social Responsibility, impactful donations, and thoughtful grantmaking strategies.  
+            <p className="text-md mt-5 text-wrap text-gray-200">
+              Partner with Real Happiness Of Life Foundation to drive meaningful
+              change through Corporate Social Responsibility, impactful
+              donations, and thoughtful grantmaking strategies.
             </p>
-            <ul className="grid grid-cols-2 gap-4 mt-8 space-y-1 text-white text-md font-semibold">
-              <li>
-                <span className='text-pink-600 mr-3'>✔</span>
-
-                    Donate With Purpose
-                 
+            <ul className="text-md mt-8 grid grid-cols-2 gap-x-4 gap-y-2 font-semibold text-white">
+              {[
+                "Donate With Purpose",
+                "Support With Care",
+                "Make A Difference",
+              ].map((text, index) => (
+                <li key={index} className="flex items-center gap-4">
+                  <span className="text-pink-600">
+                    <Check strokeWidth={4} />
+                  </span>
+                  <p className="text-sm">{text}</p>
                 </li>
-              <li><span className='text-pink-600 mr-3'>✔</span> Support With Care</li>
-              <li><span className='text-pink-600 mr-3'>✔</span> Make A Difference</li>
+              ))}
             </ul>
           </div>
-          <button className="mt-4 w-44 flex items-center gap-1 px-4 py-2 text-white font-semibold rounded-full shadow-md border-2 border-white hover:bg-white hover:text-black transition duration-300">
-            <span className='bg-pink-600 rounded-full w-10 h-10 pt-2 text-white'>
-                 ➤
+          <button className="flex w-44 items-center gap-3 rounded-full border-2 border-white p-2 font-semibold text-white shadow-md backdrop-blur-lg transition duration-300 hover:bg-white hover:text-black">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-600 text-white">
+              <ChevronsRight strokeWidth={3} size={24} />
             </span>
-             Read More
+            Read More
           </button>
         </div>
       </div>
 
       {/* Right Card */}
-      <div className="relative w-[36rem] h-[26rem] rounded-xl overflow-hidden shadow-lg">
+      <div className="relative h-[35rem] w-full overflow-hidden rounded-xl shadow-lg lg:h-[26rem] lg:w-[36rem]">
         <img
           src={bgKid1}
           alt="Donation Image"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 p-8 flex flex-col justify-between">
+        <div className="absolute inset-0 flex flex-col justify-between bg-gradient-to-r from-black to-transparent p-8">
           <div>
-            <h2 className="text-white text-3xl font-semibold">
-              Transform Lives Every Month – Join The Mission Today!
+            <h2 className="text-3xl font-semibold text-white">
+              Transform Lives Every Month - Join The Mission Today!
             </h2>
-            <p className="text-gray-200 text-md text-wrap mt-5">
-            Make a lasting impact by contributing monthly to help those in need. Together, we can create a brighter, healthier, and happier world for all.
+            <p className="text-md mt-5 text-gray-200">
+              Make a lasting impact by contributing monthly to help those in
+              need. Together, we can create a brighter, healthier, and happier
+              world for all.
             </p>
-            <div className="mt-4 flex gap-2">
-              <div className="flex justify-between w-44 h-16 border border-white text-white  rounded-full text-sm">
-                <p className='p-5'>Custom</p>
-                <input value={`${amount}` }className="border pl-6 w-20 h-full bg-transparent text-white rounded-full text-sm" onChange={handleChange}/>
+            <div className="mt-4 flex flex-wrap items-center gap-2 lg:gap-4">
+              {/* Custom Amount Input */}
+              <div className="mt-12 flex h-14 w-44 items-center justify-between rounded-full border-2 border-white text-sm text-white backdrop-blur-lg lg:mt-0">
+                <p className="px-4">Custom</p>
+                <label>₹</label>
+                <input
+                  type="text"
+                  value={amount}
+                  className="no-spinner h-full w-20 rounded-full border-none bg-transparent text-center text-sm text-white outline-none"
+                  onChange={handleChange}
+                />
               </div>
-              
-              <button className={`${amount == 250 ?  "bg-pink-600" : "bg-transparent"} border border-white  text-white px-4 py-1 rounded-full text-sm hover:bg-pink-600 transition duration-300`} onClick={()=> {setAmount(250)}}>
-                ₹250
-              </button>
-              <button className={`${amount == 500 ?  "bg-pink-600" : "bg-transparent"} border border-white text-white px-4 py-1 rounded-full text-sm hover:bg-pink-600 transition duration-300`} onClick={()=> setAmount(500)}>
-                ₹500
-              </button>
-              <button className={`${amount == 1000 ?  "bg-pink-600" : "bg-transparent"} border border-white text-white px-4 py-1 rounded-full text-sm hover:bg-pink-600 transition duration-300`} onClick={()=> setAmount(1000)}>
-                ₹1000
-              </button>
+
+              {/* Preset Donation Buttons */}
+              <div className="flex flex-wrap gap-2 lg:gap-4">
+                {[250, 500, 1000].map((value) => (
+                  <button
+                    key={value}
+                    className={`${
+                      amount == value
+                        ? "border-pink-600 bg-pink-600"
+                        : "bg-transparent backdrop-blur-lg"
+                    } rounded-full border-2 px-5 py-2 text-sm text-white transition duration-300 hover:border-pink-600 hover:bg-pink-600`}
+                    onClick={() => setAmount(value)}
+                  >
+                    ₹{value}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-          <button className="mt-4 w-44 flex items-center gap-1 px-4 py-2 text-white font-semibold rounded-full shadow-md border-2 border-white hover:bg-white hover:text-black transition duration-300">
-            <span className='bg-pink-600 rounded-full w-10 h-10 pt-2 text-white'>
-                 ➤
+
+          {/* Donate Button */}
+          <button className="mt-4 flex w-44 items-center gap-3 rounded-full border-2 border-white p-2 font-semibold text-white shadow-md backdrop-blur-lg transition duration-300 hover:bg-white hover:text-black">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-600 text-white">
+              <ChevronsRight strokeWidth={3} size={24} />
             </span>
-             <p>
-                Donate Now
-                </p>
+            <p>Donate Now</p>
           </button>
         </div>
       </div>
@@ -94,4 +115,4 @@ return (
   );
 }
 
-export default BigDonateCard
+export default BigDonateCard;
