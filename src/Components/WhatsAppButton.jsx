@@ -1,10 +1,8 @@
-import React from "react";
 import whatsappIcon from "../assets/images/whatsapp.png"; // Adjust the path if necessary
 
 function WhatsAppButton() {
   const handleClick = () => {
-    // This will open a new WhatsApp chat window
-    window.open("https://wa.me/your-phone-number", "_blank"); // Replace 'your-phone-number' with your actual WhatsApp number
+    window.open("https://wa.me/your-phone-number", "_blank");
   };
 
   return (

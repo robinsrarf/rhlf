@@ -1,31 +1,33 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../CSS/MedicalEmg.css";
 import SectionHeader from "../../Components/SectionHeader";
 import DonateCard from "./DonateCard";
+import { ArrowRight } from "lucide-react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import {
-  OctagonAlert,
-  Bone,
-  Baby,
-  RockingChair,
-  Church,
-  Earth,
-  Utensils,
-  BookOpen,
-  Venus,
-  ArrowRight,
-} from "lucide-react";
+import Urgent from "../../assets/images/category/siren-on.svg";
+import Animals from "../../assets/images/category/paw.svg";
+import Children from "../../assets/images/category/baby.svg";
+import Elderly from "../../assets/images/category/old-people.svg";
+import Faith from "../../assets/images/category/praying-hands.svg";
+import Disaster from "../../assets/images/category/house-crack.svg";
+import Hunger from "../../assets/images/category/utensils.svg";
+import Education from "../../assets/images/category/book-open-cover.svg";
+import Woman from "../../assets/images/category/woman-head.svg";
+
 const categories = [
-  { id: 4, name: "Urgent", icon: OctagonAlert },
-  { id: 5, name: "Animals", icon: Bone },
-  { id: 6, name: "Children", icon: Baby },
-  { id: 7, name: "Elderly", icon: RockingChair },
-  { id: 8, name: "Faith", icon: Church },
-  { id: 9, name: "Disaster-Relief", icon: Earth },
-  { id: 10, name: "Hunger", icon: Utensils },
-  { id: 11, name: "Education", icon: BookOpen },
-  { id: 12, name: "Women", icon: Venus },
+  { id: 1, name: "Urgent", icon: Urgent },
+  { id: 2, name: "Animals", icon: Animals },
+  { id: 3, name: "Children", icon: Children },
+  { id: 4, name: "Elderly", icon: Elderly },
+  { id: 5, name: "Faith", icon: Faith },
+  { id: 6, name: "Disaster-Relief", icon: Disaster },
+  { id: 7, name: "Hunger", icon: Hunger },
+  { id: 8, name: "Education", icon: Education },
+  { id: 9, name: "Women", icon: Woman },
 ];
 
 const campaigns = [
@@ -176,16 +178,52 @@ const campaigns = [
 ];
 
 function CategorySection() {
-  const [selectedCategory, setSelectedCategory] = useState("Urgent"); // Initialize with a category name, not an array of items
+  const [selectedCategory, setSelectedCategory] = useState("Urgent");
+  const filteredCampaigns = campaigns.filter(
+    (campaign) => campaign.category === selectedCategory,
+  );
+  const sliderSettings = {
+    dots: true,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
 
+    responsive: [
+      {
+        breakpoint: 1024, // For tablets
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          speed: 500,
+        },
+      },
+      {
+        breakpoint: 600, // For mobile
+        settings: {
+          slidesToShow: 1,
+          infinite: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          speed: 500,
+          centerMode: false,
+          dots: false,
+          arrows: false,
+        },
+      },
+    ],
+  };
   const filterType = (category) => {
-    setSelectedCategory(category); // Now you're storing just the category name
+    setSelectedCategory(category);
   };
 
   return (
-    <>
+    <div className="my-5 w-full">
+      {/* Header Section */}
       <div className="flex w-full items-center pb-2">
-        <SectionHeader title={"Categories"} />
+        <SectionHeader title="Categories" />
         <Link
           to="/clinic"
           className="ml-auto flex items-center pb-2 pr-5 pt-6 text-pink-500 hover:text-pink-700 hover:no-underline"
@@ -194,77 +232,55 @@ function CategorySection() {
           <ArrowRight size={15} />
         </Link>
       </div>
-      <section className="hidden w-full lg:block">
-        <div className="maindiv flex w-full flex-col content-center gap-2 overflow-hidden">
-          <div className="scrollbar ml-[15%] flex w-[85%] gap-6 overflow-x-auto pb-4">
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                onClick={() => filterType(category.name)}
-                className={`flex cursor-pointer items-center justify-center gap-x-2 rounded-lg px-4 py-2 text-sm font-medium ${
-                  selectedCategory === category.name
-                    ? "bg-pink-500 text-white"
-                    : "bg-gray-200 text-gray-700"
-                }`}
-                style={{ minWidth: "auto", flexShrink: 0 }}
-              >
-                {React.createElement(category.icon, {
-                  size: 24,
-                  className: "w-6 h-6",
-                })}
-                {/* <img src={category.icon} alt="category" className="w-6 h-6" /> */}
-                <p>{category.name}</p>
-              </div>
-            ))}
-          </div>
 
-          <div className="mx-auto flex w-[65%] flex-wrap justify-center gap-8 py-2">
-            {/* Now we filter the campaigns based on the selected category */}
-            <DonateCard
-              DonationData={campaigns.filter(
-                (campaign) => campaign.category === selectedCategory,
-              )}
-            />
-          </div>
-        </div>
-      </section>
-      {/* Mobile View */}
-
-      <section className="w-full lg:hidden">
-        <div className="flex w-full flex-col content-center gap-2 overflow-hidden">
-          <div className="scrollbar flex w-full gap-1 overflow-x-auto px-3 pb-0">
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                onClick={() => filterType(category.name)}
-                className={`flex cursor-pointer items-center justify-center gap-x-1 rounded-lg px-2 py-1 text-sm font-medium ${
-                  selectedCategory === category.name
-                    ? "bg-pink-500 text-white"
-                    : "bg-gray-200 text-gray-700"
-                }`}
-                style={{ minWidth: "auto", flexShrink: 0 }}
-              >
-                {React.createElement(category.icon, {
-                  size: 24,
-                  className: "w-6 h-6",
-                })}
-                <p>{category.name}</p>
-              </div>
-            ))}
-          </div>
-          <div className="w-full bg-pink-200 py-3">
-            <div className="mx-auto flex h-[65%] flex-wrap justify-center gap-8 py-5">
-              {/* Now we filter the campaigns based on the selected category */}
-              <DonateCard
-                DonationData={campaigns.filter(
-                  (campaign) => campaign.category === selectedCategory,
-                )}
-              />
+      {/* Category Scroller (Combined for Desktop & Mobile) */}
+      <div className="flex w-full flex-col items-center justify-center overflow-hidden">
+        <div className="scrollbar flex w-full gap-3 overflow-x-auto px-3 lg:w-fit">
+          {categories.map((category) => (
+            <div
+              key={category.id}
+              onClick={() => filterType(category.name)}
+              className={`flex w-28 cursor-pointer flex-col items-center justify-center rounded-t-lg px-0 py-2 text-sm font-medium ${
+                selectedCategory === category.name
+                  ? "bg-pink-300 text-white"
+                  : "bg-white text-gray-700"
+              }`}
+              style={{ minWidth: "auto", flexShrink: 0 }}
+            >
+              <img src={category.icon} className="w-5" />
+              <p>{category.name}</p>
             </div>
+          ))}
+        </div>
+
+        {/* Campaign Cards */}
+        <div className="w-full bg-pink-300 py-1">
+          <div className="mx-auto w-full lg:w-[64%]">
+            {filteredCampaigns.length > 0 ? (
+              <Slider {...sliderSettings}>
+                {filteredCampaigns.map((campaign) => (
+                  <div key={campaign.id} className="px-3 py-2">
+                    <DonateCard
+                      id={campaign.id}
+                      image={campaign.image}
+                      title={campaign.title}
+                      author={campaign.author}
+                      totalRaised={campaign.totalRaised}
+                      progress={campaign.progress}
+                      backers={campaign.backers}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <div className="flex h-[440px] items-center justify-center text-center text-lg font-medium text-gray-600">
+                <p>This category is empty.</p>
+              </div>
+            )}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
 

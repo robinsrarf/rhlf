@@ -1,12 +1,11 @@
-import React from "react";
-import { CircleAlert, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import "../../CSS/MedicalEmg.css";
 import social1 from "../../assets/images/Causes/social/social1.png";
 import social2 from "../../assets/images/Causes/social/social2.png";
-import Clinic from "../Clinic";
 import SectionHeader from "../../Components/SectionHeader";
 import DonateCard from "./DonateCard";
+
 const emergencyData = [
   {
     id: 1,
@@ -55,21 +54,30 @@ export default function MedicalEmergency() {
         </Link>
       </div>
 
-      <section className="hidden w-full lg:block">
-        {/* Emergency Cards */}
-        <div className="mx-auto flex w-[65%] flex-wrap justify-center gap-8 py-2">
-          {/* Now we filter the campaigns based on the selected category */}
-          <DonateCard DonationData={emergencyData} />
+      {/* Single Section for Both Mobile & Desktop */}
+      <div className="w-full py-1">
+        <div
+          className="mx-auto flex w-[95%] gap-5 overflow-x-auto lg:px-4 lg:w-[65%] lg:flex-wrap lg:justify-center"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }} // Hides scrollbar
+        >
+          {emergencyData.map((data) => (
+            <div key={data.id} className="w-full my-5 lg:mx-0 mx-auto lg:px-auto  flex-shrink-0 lg:w-auto">
+              <DonateCard
+                id={data.id}
+                author={data.author}
+                title={data.title}
+                image={data.image}
+                progress={data.progress}
+                totalRaised={data.totalRaised}
+                backers={data.backers}
+              />
+            </div>
+          ))}
         </div>
-      </section>
-      <section className="w-full lg:hidden">
-        <div className="w-full bg-pink-200 py-3">
-          <div className="mx-auto flex h-[65%] flex-wrap justify-center gap-8 py-5">
-            {/* Now we filter the campaigns based on the selected category */}
-            <DonateCard DonationData={emergencyData} />
-          </div>
-        </div>
-      </section>
+      </div>
     </>
   );
 }

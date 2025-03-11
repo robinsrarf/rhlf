@@ -1,7 +1,8 @@
 import "./CSS/App.css";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import { motion } from "framer-motion";
-import Layout from "./Components/Outlet";
+import Layout from "./Components/Layout";
 import Homepage from "./Pages/Homepage";
 import Aboutus from "./Pages/Aboutus";
 import Clinic from "./Pages/Clinic";
@@ -9,7 +10,7 @@ import Getinvolved from "./Pages/Getinvolved";
 import Contact from "./Pages/Contact";
 import Media from "./Pages/Media";
 import Programmes from "./Pages/Programmes";
-import CardDetails from "./Pages/CardDetails"; // Import the new CardDetails page
+import CardDetails from "./Pages/CardDetails"; 
 import TermsAndConditions from "./Pages/QuickLinksComponents/TermsConditions";
 import RefundPolicy from "./Pages/QuickLinksComponents/RefundPolicy";
 import PrivacyPolicy from "./Pages/QuickLinksComponents/PrivacyPolicy";
@@ -17,87 +18,31 @@ import DonorList from "./Pages/Donorlist";
 import { HelmetProvider } from "react-helmet-async";
 import NotFound from "./Pages/NotFound";
 
-// Motion Wrapper for animations
-const MotionWrapper = ({ children }) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.5 }}
-  >
-    {children}
-  </motion.div>
-);
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   return (
     <HelmetProvider>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route
-            index
-            element={
-              <MotionWrapper>
-                <Homepage />
-              </MotionWrapper>
-            }
-          />
-          <Route
-            path="about"
-            element={
-              <MotionWrapper>
-                <Aboutus />
-              </MotionWrapper>
-            }
-          />
-          <Route
-            path="clinic"
-            element={
-              <MotionWrapper>
-                <Clinic />
-              </MotionWrapper>
-            }
-          />
-          <Route
-            path="get-involved"
-            element={
-              <MotionWrapper>
-                <Getinvolved />
-              </MotionWrapper>
-            }
-          />
-          <Route
-            path="contact"
-            element={
-              <MotionWrapper>
-                <Contact />
-              </MotionWrapper>
-            }
-          />
-          <Route
-            path="media"
-            element={
-              <MotionWrapper>
-                <Media />
-              </MotionWrapper>
-            }
-          />
-          <Route
-            path="programmes"
-            element={
-              <MotionWrapper>
-                <Programmes />
-              </MotionWrapper>
-            }
-          />
-          <Route
-            path="donate/:id"
-            element={
-              <MotionWrapper>
-                <CardDetails />
-              </MotionWrapper>
-            }
-          />
+          <Route index element={<Homepage />} />
+          <Route path="about" element={<Aboutus />} />
+          <Route path="clinic" element={<Clinic />} />
+          <Route path="get-involved" element={<Getinvolved />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="media" element={<Media />} />
+          <Route path="programmes" element={<Programmes />} />
+          <Route path="donate/:id" element={<CardDetails />} />
 
           {/* Quick Links */}
           <Route path="terms-and-conditions" element={<TermsAndConditions />} />

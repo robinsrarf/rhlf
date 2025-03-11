@@ -1,4 +1,3 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -60,72 +59,20 @@ export default function Partners() {
   return (
     <>
       <section className="my-4 w-full">
+        <h1 className="mx-auto mb-4 w-fit border-b-4 border-pink-500 pb-2 text-center text-lg font-semibold lg:text-3xl">
+          Our Partners
+        </h1>
         <Slider {...settings}>
           {logos.map((logo, index) => (
-            <img key={index} className="h-30" alt={index} src={importImage(logo)} />
+            <img
+              key={index}
+              className="lg:h-30"
+              alt={index}
+              src={importImage(logo)}
+            />
           ))}
         </Slider>
       </section>
     </>
   );
 }
-
-{
-  /* <div className="flex flex-col items-center justify-center">
-<h2 className="font-[550] text-[22px] ">Our Partners</h2>
-<div className="marquee-container">
-  <div className="marquee mt-10">
-    // {/* First set of logos */
-}
-// {logos.map((logo, index) => (
-//   <img
-//     key={index}
-//     src={importImage(logo)}
-//     alt={logo}
-//     className="logo"
-//   />
-// ))}
-// {/* Duplicate  */}
-// {logos.map((logo, index) => (
-//   <img
-//     key={`duplicate-${index}`}
-//     src={importImage(logo)}
-//     alt={logo}
-//     className="logo"
-//   />
-// ))}
-// {logos.map((logo, index) => (
-//   <img
-//     key={`duplicate-${index}`}
-//     src={importImage(logo)}
-//     alt={logo}
-//         className="logo"
-//       />
-//     ))}
-//     {logos.map((logo, index) => (
-//       <img
-//         key={`duplicate-${index}`}
-//         src={importImage(logo)}
-//         alt={logo}
-//         className="logo"
-//       />
-//     ))}
-//     {logos.map((logo, index) => (
-//       <img
-//         key={`duplicate-${index}`}
-//         src={importImage(logo)}
-//         alt={logo}
-//         className="logo"
-//       />
-//     ))}
-//     {logos.map((logo, index) => (
-//       <img
-//         key={`duplicate-${index}`}
-//         src={importImage(logo)}
-//         alt={logo}
-//         className="logo"
-//       />
-//     ))}
-//   </div>
-// </div>
-// </div> */}

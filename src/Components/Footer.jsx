@@ -1,12 +1,11 @@
-import React, { lazy, useState } from "react";
+import { useState } from "react";
 import "../CSS/Footer.css";
-import LOGO1 from "../assets/images/LOGO1.png";
+import footerBg from "../assets/images/footer-bg.png";
 import mastercard from "../assets/images/mastercard.svg";
 import paytm from "../assets/images/Paytm New.svg";
 import visa from "../assets/images/visa.svg";
 import secures from "../assets/images/securelogo.svg";
 import americanexpress from "../assets/images/Americanexpresslogo.jpeg";
-import bgTexture from "/src/assets/images/svg/nnnoise.svg";
 import {
   FaFacebookF,
   FaTwitter,
@@ -35,7 +34,7 @@ function Footer() {
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.360039332275!2d73.0417286!3d19.2713426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bdaa5aaaaaab%3A0x6cfa52641767c98!2sReal%20Happiness%20Of%20Life%20Foundation!5e0!3m2!1sen!2sin!4v1700000000000"
-            className="mt-4 h-40 w-full rounded-lg border"
+            className={`${loaded ? "" : "scale-0"} mt-4 h-40 w-full rounded-lg border`}
             allowFullScreen=""
             loading="lazy"
             onLoad={() => setLoaded(true)}
@@ -61,13 +60,16 @@ function Footer() {
           <div>
             <h3 className="mb-3 text-xl font-bold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link to="/privacyPolicy" className="hover:text-pink-500">
+              <Link to="donor-list" className="hover:text-pink-500">
+                Donar List
+              </Link>
+              <Link to="privacy-policy" className="hover:text-pink-500">
                 Privacy Policy
               </Link>
-              <Link to="/termsAndCondition" className="hover:text-pink-500">
+              <Link to="terms-and-conditions" className="hover:text-pink-500">
                 Terms & Conditions
               </Link>
-              <Link to="/RefundPolicy" className="hover:text-pink-500">
+              <Link to="refund-policy" className="hover:text-pink-500">
                 Refund Policy
               </Link>
               <a
@@ -164,7 +166,7 @@ function Footer() {
       </div>
       <div
         className="mt-5 border-t bg-cover py-3 text-center"
-        style={{ backgroundImage: `url(${bgTexture})` }}
+        style={{ backgroundImage: `url(${footerBg})` }}
       >
         <p>
           Real Happiness Of Life Foundation (RHLF) is registered in India under

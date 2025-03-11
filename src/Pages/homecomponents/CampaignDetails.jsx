@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../CSS/CampaignCard.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import campaignimg1 from "../../assets/images/campaignimg1.png";
 import campaignimg2 from "../../assets/images/campaignimg2.png";
 import campaignimg3 from "../../assets/images/campaignimg3.png";
-import lady from "../../assets/images/svg/lady/lady.png";
-import connect from "../../assets/images/svg/lady/connect.png";
 import SectionHeader from "../../Components/SectionHeader";
 
 const campaignData = [
@@ -33,9 +33,19 @@ const campaignData = [
 ];
 
 export default function CampaignDetails() {
+  const settings = {
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4200,
+    arrows: false,
+    dots: true,
+  };
   return (
     <>
-      <SectionHeader title={"Campaign Details"} />
+      <SectionHeader title="Campaign Details" />
       <section className="w-full px-4 sm:px-8 md:px-12">
         <div className="flex flex-col items-center justify-center gap-3 text-center">
           <h1 className="text-2xl font-light sm:text-3xl md:text-4xl">
@@ -48,86 +58,48 @@ export default function CampaignDetails() {
             By donating, you take a step towards creating a better world. Every
             rupee counts!
           </p>
-          <CampaignCard />
+
+          {campaignData.length > 0 ? (
+            <div>
+              <Slider
+                {...settings}
+                className="w-screen px-3 lg:w-[800px] lg:px-0"
+              >
+                {campaignData.map((campaign) => (
+                  <CampaignCard key={campaign.id} {...campaign} />
+                ))}
+              </Slider>
+            </div>
+          ) : (
+            <p className="mt-4 text-gray-500">No campaigns available.</p>
+          )}
         </div>
       </section>
     </>
   );
 }
 
-function CampaignCard() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % campaignData.length);
-    }, 7000);
-    return () => clearInterval(interval);
-  }, []);
-
+function CampaignCard({ image, title, description, id }) {
   return (
-    <div className="relative mx-auto w-full max-w-4xl">
-      <div className="overflow-hidden rounded-xl bg-white p-1 shadow-lg">
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+    <div className="flex flex-col items-center gap-5 rounded-lg border bg-white p-4 text-center lg:flex-row">
+      <img
+        src={image}
+        alt={title}
+        className="h-60 w-80 rounded-lg object-cover lg:h-60 lg:w-full"
+      />
+      <div className="mx-2 flex flex-col items-center gap-2 lg:items-start">
+        <p className="rounded-xl bg-blue-500 px-2 py-1 text-sm text-white">
+          Featured
+        </p>
+        <h2 className="text-lg font-bold">{title}</h2>
+        <p className="text-start text-sm text-gray-600">{description}</p>
+        <Link
+          to={`/donate/${id}`}
+          className="mt-3 inline-block rounded-xl bg-pink-500 px-4 py-2 text-white transition hover:bg-pink-600 hover:no-underline lg:self-start"
+          aria-label={`Donate to ${title}`}
         >
-          {campaignData.map((campaign) => (
-            <div key={campaign.id} className="min-w-full p-4 sm:p-6">
-              <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-3">
-                {/* Image Section */}
-                <img
-                  src={campaign.image}
-                  alt={campaign.title}
-                  className="h-48 w-full rounded-lg object-cover sm:h-40 md:h-60"
-                />
-
-                {/* Content Section */}
-                <div className="flex flex-col space-y-3 text-center md:col-span-2 md:text-left">
-                  <span className="self-center rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-white md:self-start">
-                    Featured
-                  </span>
-                  <div className="flex items-center justify-center space-x-2 md:justify-start">
-                    <img src={lady} alt="lady icon" className="h-5 w-5" />
-                    <h3 className="text-base font-semibold text-gray-800 sm:text-lg md:text-xl">
-                      {campaign.title}
-                    </h3>
-                  </div>
-                  <div className="flex items-start justify-center space-x-2 md:justify-start">
-                    <img
-                      src={connect}
-                      alt="connect icon"
-                      className="mt-1 hidden h-4 w-4 md:block"
-                    />
-                    <p className="rounded-2xl p-2 text-xs sm:text-sm md:text-base">
-                      {campaign.description}
-                    </p>
-                  </div>
-                  <Link
-                    to={`/donate/${campaign.id}`}
-                    className="self-center md:self-start"
-                  >
-                    <button className="rounded-lg bg-pink-500 px-4 py-2 text-white transition-all hover:bg-pink-600">
-                      Donate Now
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* Dots Navigation */}
-      <div className="mt-4 flex justify-center space-x-2">
-        {campaignData.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-2 w-2 rounded-full transition-all ${
-              currentIndex === index ? "bg-pink-500" : "bg-gray-300"
-            }`}
-          />
-        ))}
+          Donate Now
+        </Link>
       </div>
     </div>
   );

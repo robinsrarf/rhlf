@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  ShieldCheck,
-  ReceiptIndianRupee,
-  Lock,
-  Eye,
-  ArrowRight,
-} from "lucide-react";
+import { ShieldCheck, ReceiptIndianRupee, Lock, Eye } from "lucide-react";
 export default function Assureyou() {
   const assurance = [
     {
@@ -28,14 +22,17 @@ export default function Assureyou() {
   ];
 
   return (
-    <section className="my-10 flex flex-col items-center justify-center gap-y-5 lg:my-20">
+    <section className="my-1 flex h-full w-full flex-col items-center justify-center gap-y-5 bg-stone-200 py-6 lg:my-2 lg:py-20">
       <h1 className="text-4xl font-semibold text-black">
         We <span className="text-pink-500">assure</span> you that
       </h1>
-      <div className="mt-10 flex flex-col gap-3 lg:w-full lg:flex-row lg:items-center lg:gap-32">
+      <div className="mt-5 flex flex-col gap-3 lg:mt-10 lg:w-fit lg:flex-row lg:items-center lg:gap-32">
         {assurance.map((assure, index) => {
           return (
-            <div key={index} className="flex flex-col items-center justify-center gap-3">
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center gap-3"
+            >
               {React.createElement(assure.icon, {
                 size: 35,
                 className: "w-30 h-30",
@@ -46,10 +43,6 @@ export default function Assureyou() {
             </div>
           );
         })}
-      </div>
-      <div className="mt-5 flex cursor-pointer items-center gap-1 text-pink-400 lg:pl-[1000px]">
-        <p className="text-base">View Details</p>
-        <ArrowRight size={15} />
       </div>
     </section>
   );

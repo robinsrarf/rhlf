@@ -1,5 +1,4 @@
 // src/Pages/PrivacyPolicy.jsx
-import React from "react";
 //import '../CSS/PrivacyPolicy.css';  Import the CSS file
 import "../../CSS/Css/PrivacyPolicy.css";
 

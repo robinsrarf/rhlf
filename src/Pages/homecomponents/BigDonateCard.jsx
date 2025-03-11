@@ -1,19 +1,37 @@
-import React from "react";
 import bgKid from "../../assets/images/bgKid.jpg";
 import bgKid1 from "../../assets/images/bgKid1.jpg";
 import { useState } from "react";
 import { ChevronsRight, Check } from "lucide-react";
+import { motion } from "framer-motion";
 function BigDonateCard() {
   const [amount, setAmount] = useState(250);
-  const [selected, setSelected] = useState(250);
+
   const handleChange = (e) => {
     setAmount(e.target.value);
   };
 
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-10 px-4 md:flex-row lg:p-8">
+    <motion.div
+      className="flex w-full flex-col items-center justify-center gap-10 px-4 md:flex-row lg:p-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }} // Triggers when 50% is in view
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: { staggerChildren: 0.3 }, // Stagger animation
+        },
+      }}
+    >
       {/* Left Card */}
-      <div className="relative h-[35rem] w-full overflow-hidden rounded-xl shadow-lg lg:h-[26rem] lg:w-[36rem]">
+      <motion.div
+        className="relative h-[35rem] w-full overflow-hidden rounded-xl shadow-lg lg:h-[26rem] lg:w-[36rem]"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        }}
+      >
         <img
           src={bgKid}
           alt="Donation Image"
@@ -51,10 +69,16 @@ function BigDonateCard() {
             Read More
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Right Card */}
-      <div className="relative h-[35rem] w-full overflow-hidden rounded-xl shadow-lg lg:h-[26rem] lg:w-[36rem]">
+      <motion.div
+        className="relative h-[35rem] w-full overflow-hidden rounded-xl shadow-lg lg:h-[26rem] lg:w-[36rem]"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+        }}
+      >
         <img
           src={bgKid1}
           alt="Donation Image"
@@ -110,8 +134,8 @@ function BigDonateCard() {
             <p>Donate Now</p>
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
