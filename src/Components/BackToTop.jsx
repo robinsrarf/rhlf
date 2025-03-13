@@ -26,8 +26,8 @@ function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`right-5 z-50 flex rounded-full bg-pink-500 p-4 text-white shadow-md transition duration-300 ${
-        isVisible ? "" : "hidden"
+      className={`right-5 z-50 border border-pink-600 flex rounded-full bg-pink-500 p-4 text-white shadow-2xl transition duration-300 ${
+        isVisible ? "" : "hidden" 
       }`}
     >
       <ArrowUp size={24} />

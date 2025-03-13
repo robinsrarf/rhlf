@@ -15,7 +15,7 @@ function BigDonateCard() {
       className="flex w-full flex-col items-center justify-center gap-10 px-4 md:flex-row lg:p-8"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }} // Triggers when 50% is in view
+      viewport={{ once: true, amount: 0.2 }} // Triggers when 20% is in view
       variants={{
         hidden: { opacity: 0 },
         visible: {
@@ -94,7 +94,7 @@ function BigDonateCard() {
               need. Together, we can create a brighter, healthier, and happier
               world for all.
             </p>
-            <div className="mt-4 flex flex-wrap items-center gap-2 lg:gap-4">
+            <div className="mt-6 flex-wrap items-center gap-2 lg:mt-4 lg:gap-4">
               {/* Custom Amount Input */}
               <div className="mt-12 flex h-14 w-44 items-center justify-between rounded-full border-2 border-white text-sm text-white backdrop-blur-lg lg:mt-0">
                 <p className="px-4">Custom</p>
@@ -102,13 +102,13 @@ function BigDonateCard() {
                 <input
                   type="text"
                   value={amount}
-                  className="no-spinner h-full w-20 rounded-full border-none bg-transparent text-center text-sm text-white outline-none"
+                  className="h-full w-20 rounded-full border-none bg-transparent text-center text-sm text-white outline-none"
                   onChange={handleChange}
                 />
               </div>
 
               {/* Preset Donation Buttons */}
-              <div className="flex flex-wrap gap-2 lg:gap-4">
+              <div className="flex flex-wrap gap-2 rounded-full border-2 p-1 lg:gap-4 lg:border-0 lg:p-0">
                 {[250, 500, 1000].map((value) => (
                   <button
                     key={value}

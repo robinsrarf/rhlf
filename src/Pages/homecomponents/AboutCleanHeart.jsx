@@ -2,7 +2,6 @@ import {
   HeartHandshake,
   HandCoins,
   PiggyBank,
-  CircleDotDashed,
 } from "lucide-react";
 import image3 from "/src/assets/images/AboutCleanHeart/img3.jpg";
 import SectionHeader from "../../Components/SectionHeader";

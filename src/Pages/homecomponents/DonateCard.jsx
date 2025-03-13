@@ -14,7 +14,7 @@ export default function DonateCard({
   return (
     <motion.div
       key={id}
-      className="w-full rounded-xl bg-white shadow-lg  lg:w-96 lg:overflow-hidden"
+      className="w-full rounded-xl bg-white shadow-lg lg:w-96 lg:overflow-hidden"
       whileHover={{ scale: 1.01, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
       transition={{ duration: 0.3 }}
     >
@@ -23,7 +23,7 @@ export default function DonateCard({
         <img
           src={image}
           alt={image}
-          className="h-48 w-full object-cover"
+          className="h-48 w-full rounded-t-lg object-cover"
           loading="lazy"
         />
         <span className="absolute right-2 top-2 flex items-center gap-1 rounded-lg bg-yellow-500 p-1 px-3 text-sm text-white opacity-75 transition duration-300 hover:opacity-100 hover:shadow-md">

@@ -235,12 +235,12 @@ function CategorySection() {
 
       {/* Category Scroller (Combined for Desktop & Mobile) */}
       <div className="flex w-full flex-col items-center justify-center overflow-hidden">
-        <div className="scrollbar flex w-full gap-3 overflow-x-auto px-3 lg:w-fit">
+        <div className="scrollbar-hide flex w-full gap-3 overflow-x-auto px-3 py-0 sm:w-fit lg:w-fit">
           {categories.map((category) => (
             <div
               key={category.id}
               onClick={() => filterType(category.name)}
-              className={`flex w-28 cursor-pointer flex-col items-center justify-center rounded-t-lg px-0 py-2 text-sm font-medium ${
+              className={`my-0 flex w-28 cursor-pointer flex-col items-center justify-center rounded-t-lg px-0 py-2 text-sm font-medium ${
                 selectedCategory === category.name
                   ? "bg-pink-300 text-white"
                   : "bg-white text-gray-700"
