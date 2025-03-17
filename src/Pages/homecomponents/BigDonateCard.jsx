@@ -37,7 +37,7 @@ function BigDonateCard() {
           alt="Donation Image"
           className="absolute inset-0 h-full w-full bg-cover object-cover"
         />
-        <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-50 bg-gradient-to-r from-black to-transparent p-8">
+        <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-50 bg-gradient-to-r from-black via-black/10 to-transparent p-8">
           <div>
             <h2 className="text-3xl font-semibold text-white">
               Make A Difference Today!
@@ -47,17 +47,22 @@ function BigDonateCard() {
               change through Corporate Social Responsibility, impactful
               donations, and thoughtful grantmaking strategies.
             </p>
-            <ul className="text-md mt-8 grid grid-cols-2 gap-x-4 gap-y-2 font-semibold text-white">
+            <ul className="text-md mt-8 flex flex-col font-semibold text-white lg:grid lg:grid-cols-2 lg:gap-4">
               {[
                 "Donate With Purpose",
                 "Support With Care",
                 "Make A Difference",
               ].map((text, index) => (
-                <li key={index} className="flex items-center gap-4">
+                <li
+                  key={index}
+                  className="flex w-full items-center gap-4 px-3 py-2 lg:py-0"
+                >
                   <span className="text-pink-600">
                     <Check strokeWidth={4} />
                   </span>
-                  <p className="text-sm">{text}</p>
+                  <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
+                    {text}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -94,21 +99,23 @@ function BigDonateCard() {
               need. Together, we can create a brighter, healthier, and happier
               world for all.
             </p>
-            <div className="mt-6 flex-wrap items-center gap-2 lg:mt-4 lg:gap-4">
+            <div className="mt-14 flex flex-wrap items-center lg:mt-4 lg:gap-4">
               {/* Custom Amount Input */}
-              <div className="mt-12 flex h-14 w-44 items-center justify-between rounded-full border-2 border-white text-sm text-white backdrop-blur-lg lg:mt-0">
+              <div className="order-2  -ml-24 mt-4 flex h-14 w-44 items-center justify-between rounded-full border-2 border-white text-sm text-white backdrop-blur-lg lg:order-1 lg:-ml-0 lg:mt-0">
                 <p className="px-4">Custom</p>
-                <label>₹</label>
-                <input
-                  type="text"
-                  value={amount}
-                  className="h-full w-20 rounded-full border-none bg-transparent text-center text-sm text-white outline-none"
-                  onChange={handleChange}
-                />
+                <div className="flex h-full w-full items-center justify-center rounded-full border">
+                  <label className="">₹</label>
+                  <input
+                    type="text"
+                    value={amount}
+                    className="h-full max-w-10 rounded-full border-none bg-transparent text-center text-sm text-white outline-none"
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
 
               {/* Preset Donation Buttons */}
-              <div className="flex flex-wrap gap-2 rounded-full border-2 p-1 lg:gap-4 lg:border-0 lg:p-0">
+              <div className="order-1 flex flex-wrap gap-2 rounded-full p-1 lg:order-2 lg:gap-4 lg:border-0 lg:p-0">
                 {[250, 500, 1000].map((value) => (
                   <button
                     key={value}

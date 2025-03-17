@@ -6,12 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 import campaignimg1 from "../../assets/images/campaignimg1.png";
 import campaignimg2 from "../../assets/images/campaignimg2.png";
 import campaignimg3 from "../../assets/images/campaignimg3.png";
+import campImg from "../../assets/images/campImg.jpg";
 import SectionHeader from "../../Components/SectionHeader";
 
 const campaignData = [
   {
     id: 1,
-    image: campaignimg1,
+    image: campImg,
     title: "Help a young child fight blood cancer",
     description:
       "Eight-year-old Aaditya needs urgent treatment that his daily wage laborer parents can't afford. Your donation can help save his life.",
@@ -82,11 +83,7 @@ export default function CampaignDetails() {
 function CampaignCard({ image, title, description, id }) {
   return (
     <div className="flex flex-col items-center gap-5 rounded-lg border bg-white p-4 text-center lg:flex-row">
-      <img
-        src={image}
-        alt={title}
-        className="h-60 w-80 rounded-lg object-cover lg:h-60 lg:w-full"
-      />
+      <img src={image} alt={title} className="h-[300px] w-[300px] rounded-lg" />
       <div className="mx-2 flex flex-col items-center gap-2 lg:items-start">
         <p className="rounded-xl bg-blue-500 px-2 py-1 text-sm text-white">
           Featured

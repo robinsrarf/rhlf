@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 
 function BackToTop() {
@@ -26,8 +26,8 @@ function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`right-5 z-50 border border-pink-600 flex rounded-full bg-pink-500 p-4 text-white shadow-2xl transition duration-300 ${
-        isVisible ? "" : "hidden" 
+      className={`right-5 z-50 flex rounded-full bg-pink-500 p-4 text-white shadow-2xl transition duration-300 ${
+        isVisible ? "" : "hidden"
       }`}
     >
       <ArrowUp size={24} />

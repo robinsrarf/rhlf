@@ -12,7 +12,7 @@ import Urgent from "../../assets/images/category/siren-on.svg";
 import Animals from "../../assets/images/category/paw.svg";
 import Children from "../../assets/images/category/baby.svg";
 import Elderly from "../../assets/images/category/old-people.svg";
-import Faith from "../../assets/images/category/praying-hands.svg";
+import Disable from "../../assets/images/category/wheelchair.svg";
 import Disaster from "../../assets/images/category/house-crack.svg";
 import Hunger from "../../assets/images/category/utensils.svg";
 import Education from "../../assets/images/category/book-open-cover.svg";
@@ -20,14 +20,14 @@ import Woman from "../../assets/images/category/woman-head.svg";
 
 const categories = [
   { id: 1, name: "Urgent", icon: Urgent },
-  { id: 2, name: "Animals", icon: Animals },
-  { id: 3, name: "Children", icon: Children },
+  { id: 2, name: "Children", icon: Children },
+  { id: 3, name: "Women", icon: Woman },
   { id: 4, name: "Elderly", icon: Elderly },
-  { id: 5, name: "Faith", icon: Faith },
-  { id: 6, name: "Disaster-Relief", icon: Disaster },
-  { id: 7, name: "Hunger", icon: Hunger },
-  { id: 8, name: "Education", icon: Education },
-  { id: 9, name: "Women", icon: Woman },
+  { id: 5, name: "Disaster-Relief", icon: Disaster },
+  { id: 6, name: "Hunger", icon: Hunger },
+  { id: 7, name: "Education", icon: Education },
+  { id: 8, name: "Disable", icon: Disable },
+  { id: 9, name: "Animals", icon: Animals },
 ];
 
 const campaigns = [
