@@ -29,6 +29,8 @@ export default function Partners() {
         breakpoint: 480, // Screens below 480px (Mobile)
         settings: {
           slidesToShow: 3,
+          centerMode: false,
+
         },
       },
     ],
