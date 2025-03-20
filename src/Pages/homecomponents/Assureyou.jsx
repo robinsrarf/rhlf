@@ -23,8 +23,8 @@ export default function Assureyou() {
 
   return (
     <section className="my-1 flex h-full w-full flex-col items-center justify-center gap-y-5 bg-stone-200 py-6 lg:my-2 lg:py-20">
-      <h1 className="text-4xl font-semibold text-black">
-        We <span className="text-pink-500">assure</span> you that
+      <h1 className="my-1 w-full text-center font-quicksand text-4xl font-bold text-gray-800">
+        We <span className="font-quicksand text-pink-500">assure</span> you that
       </h1>
       <div className="mt-5 flex flex-col gap-3 lg:mt-10 lg:w-fit lg:flex-row lg:items-center lg:gap-32">
         {assurance.map((assure, index) => {

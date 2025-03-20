@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import img1 from "../../assets/images/HelpPeopleNow/img1.png";
 import img2 from "../../assets/images/HelpPeopleNow/img2.png";
 import img3 from "../../assets/images/HelpPeopleNow/img3.png";
-// import vol1 from "../../assets/images/HelpPeopleNow/volunteer-image-1.png";
-// import vol2 from "../../assets/images/HelpPeopleNow/volunteer-image-2.png";
-// import vol3 from "../../assets/images/HelpPeopleNow/volunteer-image-3.png";
 
 const imgs = [img1, img2, img3];
 // const volen = [vol1, vol2, vol3];
@@ -50,7 +47,7 @@ export default function HelpPeopleNow() {
         <h1 className="mb-5 text-center font-quicksand text-3xl font-bold text-white md:text-5xl">
           Charity For The People You Care About
         </h1>
-        <p className="pl-5 text-center text-lg text-zinc-200 md:text-left">
+        <p className="pl-5 text-center text-lg text-zinc-200">
           At Real Happiness of Life Foundation, we believe that together, we can
           rewrite stories of despair into tales of hope and joy. Volunteering is
           a powerful way to create change—not just in the lives of others, but
@@ -90,7 +87,7 @@ export default function HelpPeopleNow() {
                   className="rounded-s-full bg-gray-800 p-2 lg:rounded-full"
                   size={40}
                 />
-                <p className="rounded-e-full lg:bg-transparent bg-gray-800 px-1 py-2 pr-3 font-semibold lg:rounded-e-none lg:px-3 lg:py-0">
+                <p className="rounded-e-full bg-gray-800 px-1 py-2 pr-3 font-semibold lg:rounded-e-none lg:bg-transparent lg:px-3 lg:py-0">
                   Become A Volunteer
                 </p>
               </div>

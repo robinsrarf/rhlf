@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ChevronsRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
 function BigDonateCard() {
-  const [amount, setAmount] = useState(250);
+  const [amount, setAmount] = useState();
 
   const handleChange = (e) => {
     setAmount(e.target.value);
@@ -99,9 +99,9 @@ function BigDonateCard() {
               need. Together, we can create a brighter, healthier, and happier
               world for all.
             </p>
-            <div className="mt-14 flex flex-wrap items-center lg:mt-4 lg:gap-4">
+            <div className="mt-14 flex flex-wrap items-center lg:mt-4 lg:flex-col lg:gap-4">
               {/* Custom Amount Input */}
-              <div className="order-2  -ml-24 mt-4 flex h-14 w-44 items-center justify-between rounded-full border-2 border-white text-sm text-white backdrop-blur-lg lg:order-1 lg:-ml-0 lg:mt-0">
+              <div className="order-2 -ml-24 mt-4 flex h-14 w-44 items-center justify-between rounded-full border-2 border-white text-sm text-white backdrop-blur-lg lg:-ml-0 lg:mt-0 lg:self-start">
                 <p className="px-4">Custom</p>
                 <div className="flex h-full w-full items-center justify-center rounded-full border">
                   <label className="">₹</label>
@@ -115,7 +115,7 @@ function BigDonateCard() {
               </div>
 
               {/* Preset Donation Buttons */}
-              <div className="order-1 flex flex-wrap gap-2 rounded-full p-1 lg:order-2 lg:gap-4 lg:border-0 lg:p-0">
+              <div className="order-1 flex flex-wrap gap-2 rounded-full p-1 lg:gap-4 lg:self-start lg:border-0 lg:p-0">
                 {[250, 500, 1000].map((value) => (
                   <button
                     key={value}

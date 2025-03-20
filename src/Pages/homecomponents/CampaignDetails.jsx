@@ -3,7 +3,6 @@ import "../../CSS/CampaignCard.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import campaignimg1 from "../../assets/images/campaignimg1.png";
 import campaignimg2 from "../../assets/images/campaignimg2.png";
 import campaignimg3 from "../../assets/images/campaignimg3.png";
 import campImg from "../../assets/images/campImg.jpg";
@@ -49,13 +48,11 @@ export default function CampaignDetails() {
       <SectionHeader title="Campaign Details" />
       <section className="w-full px-4 sm:px-8 md:px-12">
         <div className="flex flex-col items-center justify-center gap-3 text-center">
-          <h1 className="text-2xl font-light sm:text-3xl md:text-4xl">
-            <span className="font-medium text-gray-700">
-              Donate to one of our{" "}
-            </span>
-            <span className="font-bold text-pink-400">campaigns</span>
+          <h1 className="my-1 w-full text-center font-quicksand text-2xl lg:text-4xl font-bold text-gray-800">
+            Donate to one of our {""}
+            <span className="font-quicksand text-pink-500">campaigns</span>
           </h1>
-          <p className="mt-3 text-sm text-[#5a5a5a] sm:text-base md:text-lg">
+          <p className="mt-3 text-lg text-[#5a5a5a]">
             By donating, you take a step towards creating a better world. Every
             rupee counts!
           </p>

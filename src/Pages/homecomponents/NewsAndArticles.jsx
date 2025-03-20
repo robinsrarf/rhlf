@@ -5,75 +5,76 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bgtexture from "../../assets/images/testimonals/PaperTexture.jpg";
+import { Link } from "react-router-dom";
 const dummydata = [
   {
     date: 5,
     month: "Mar",
     title: "NGO Launches Education Initiative",
-    link: "#",
+    id: 1,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 12,
     month: "Apr",
     title: "Health Camp for Underprivileged Communities",
-    link: "#",
+    id: 2,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 22,
     month: "May",
     title: "Environmental Awareness Drive",
-    link: "#",
+    id: 3,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 8,
     month: "Jun",
     title: "Women Empowerment Workshop",
-    link: "#",
+    id: 4,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 15,
     month: "Jul",
     title: "Fundraising Campaign for Rural Development",
-    link: "#",
+    id: 5,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 30,
     month: "Aug",
     title: "Disaster Relief Program Launched",
-    link: "#",
+    id: 6,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 10,
     month: "Sep",
     title: "Skill Development Training for Youth",
-    link: "#",
+    id: 7,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 25,
     month: "Oct",
     title: "Annual Report on NGO Achievements",
-    link: "#",
+    id: 8,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 5,
     month: "Nov",
     title: "Food Distribution Drive Before Winter",
-    link: "#",
+    id: 9,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
   {
     date: 20,
     month: "Dec",
     title: "Volunteer Appreciation Event",
-    link: "#",
+    id: 10,
     image: "https://placehold.co/600x400/EEE/31343C",
   },
 ];
@@ -87,7 +88,6 @@ export default function NewsAndArticles() {
     autoplaySpeed: 4000,
     centerMode: true,
     arrows: false,
-
     centerPadding: "0px",
     responsive: [
       {
@@ -106,15 +106,16 @@ export default function NewsAndArticles() {
       <SectionHeader title="Our Latest News" />
 
       <div className="w-full max-w-7xl">
-        <h2 className="mb-6 ml-4 text-2xl font-bold text-gray-800 md:text-4xl">
-          Latest News & Articles
+        <h2 className="mb-6 w-full text-center font-quicksand text-4xl font-bold text-gray-800">
+          Latest <span className="font-quicksand text-pink-400">News</span> &{" "}
+          <span className="font-quicksand text-pink-400">Articles</span>
         </h2>
         <Slider {...settings}>
           {dummydata.map((data, index) => (
             <NewsCard
               key={index}
               image={data.image}
-              link={data.link}
+              id={data.id}
               title={data.title}
               date={data.date}
               month={data.month}
@@ -126,9 +127,9 @@ export default function NewsAndArticles() {
   );
 }
 
-function NewsCard({ date, month, title, link, image }) {
+function NewsCard({ date, month, title, id, image }) {
   return (
-    <a href={link} className="block hover:no-underline">
+    <Link to={`/blogs/${id}`} className="block hover:no-underline">
       <motion.div
         className="relative mx-3 flex h-auto min-h-[400px] overflow-hidden rounded-xl"
         initial="initial"
@@ -183,6 +184,6 @@ function NewsCard({ date, month, title, link, image }) {
           </div>
         </div>
       </motion.div>
-    </a>
+    </Link>
   );
 }

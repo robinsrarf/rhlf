@@ -60,6 +60,9 @@ function Footer() {
           <div>
             <h3 className="mb-3 text-xl font-bold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
+              <Link to="blogs" className="hover:text-pink-500">
+                Blogs
+              </Link>
               <Link to="donor-list" className="hover:text-pink-500">
                 Donar List
               </Link>

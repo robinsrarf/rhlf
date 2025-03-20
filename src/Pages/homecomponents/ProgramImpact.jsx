@@ -1,348 +1,165 @@
-import React from "react";
 import { useRef, useState, useEffect } from "react";
 import program1 from "../../assets/images/Program/program1.png";
 import program2 from "../../assets/images/Program/program2.png";
 import program3 from "../../assets/images/Program/program3.png";
 import { ArrowRight } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Cards = [
   {
     title:
       "Grace Food Bank is serving around 100-150 people everyday at a price of Rs.10, whereas the actual cost comes around Rs.30 per meal which includes rent and salaries.",
-    "Meals distributed": "100k",
-    "Meals per day": "150",
-    "Children benefitted": "2000",
-    "Rupees per meal": "10",
+
+    keyValue: {
+      "Meals distributed": "100k",
+      "Meals per day": "150",
+      "Children benefitted": "2000",
+      "Rupees per meal": "10",
+    },
     bgImg: program1,
   },
   {
     title:
       "The Mission Smile Program provides 100% free cleft repair surgeries and comprehensive care for children worldwide. We empower local medical professionals with the skills and resources to deliver ongoing cleft care.",
-    "Cleft births annually": "35k",
-    "For cleft surgery": "25k",
-    "Free cleft care": "100%",
-    "Minutes of life-changing surgery": "45",
+
+    keyValue: {
+      "Cleft births annually": "35k",
+      "For cleft surgery": "25k",
+      "Free cleft care": "100%",
+      "Minutes of life-changing surgery": "45",
+    },
     bgImg: program2,
   },
   {
     title:
       "Disability Elimination Program, led by the Real Happiness Of Life Foundation (RHLF), is focused on early detection, treatment, and rehabilitation of children with birth defects and developmental delays.",
-    "Children impacted daily": "40L",
-    "Disability,Disease,Development": "4D's",
-    "Deic centers for rehabilitation": "250",
+
+    keyValue: {
+      "Children impacted daily": "40L",
+      "Disability, Disease, Development": "4D's",
+      "Deic centers for rehabilitation": "250",
+    },
     bgImg: program3,
   },
 ];
 
-const ProgramImpact = () => {
+function ProgramImpact() {
   return (
     <>
-      <section className="hidden lg:block">
-        <div className="container flex flex-col items-center justify-center gap-y-6">
-          <div className="flex flex-col items-center justify-center gap-y-3">
-            <h1 className="text-4xl font-bold text-black">
-              Program <span className="text-custompink">Impacts</span>
-            </h1>
-            <p className="text-xl font-normal text-gray-700">
-              Our various programmes help us reach out to those in need and
-              provide for their safety and well-being
-            </p>
-            <div className="mt-10 flex flex-row items-center justify-center gap-x-4">
-              {Cards.map((card, index) => (
-                <CardContent key={index} card={card} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="lg:hidden">
-        <div className="container flex flex-col items-center justify-center gap-y-6">
-          <div className="flex flex-col items-center justify-center gap-y-3">
-            <h1 className="text-4xl font-bold text-black">
-              Program <span className="text-custompink">Impacts</span>
-            </h1>
-            <p className="text-xl font-normal text-gray-700">
-              Our various programmes help us reach out to those in need and
-              provide for their safety and well-being
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-y-6">
-              {Cards.map((card, index) => (
-                <CardContent key={index} card={card} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
-
-const CardContent = ({ card }) => {
-  const cardRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 },
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
-
-  const details = Object.entries(card).filter(
-    ([key]) => key !== "bgImg" && key !== "title",
-  );
-
-  // Function to split title and style the main part (e.g., 'Grace Food Bank')
-  const styleTitle = (title) => {
-    // Define the words you want to make bold and pink
-    const pinkBoldWords = [
-      "Grace Food Bank",
-      "Mission Smile Program",
-      "Disability Elimination Program",
-    ];
-
-    let styledTitle = title;
-
-    // Apply bold and pink color to the matching words
-    pinkBoldWords.forEach((word) => {
-      const regex = new RegExp(word, "g");
-      styledTitle = styledTitle.replace(
-        regex,
-        `<span className="text-pink-500 font-bold">${word}</span>`,
-      );
-    });
-
-    return styledTitle;
-  };
-
-  return (
-    <>
-      <div
-        className="card relative hidden h-[450px] w-[350px] flex-col items-center justify-center overflow-hidden rounded-2xl border bg-cover bg-center p-12 pt-36 shadow-lg transition-all duration-300 ease-in-out hover:h-[450px] hover:w-[650px] hover:items-start hover:justify-start hover:pt-7 lg:flex"
-        style={{
-          backgroundImage: `url(${card.bgImg})`,
-        }}
-      >
-        {/* Title with styled parts */}
-        <div
-          className="card-title h-1/4 text-lg text-white transition-all duration-300 ease-in-out"
-          dangerouslySetInnerHTML={{ __html: styleTitle(card.title) }}
-        />
-
-        {/* Details */}
-        <div className="details mt-10 flex h-3/4 w-full flex-col gap-y-3 text-white opacity-0 transition-all duration-300 ease-in-out hover:opacity-100">
-          <div className="grid grid-cols-2">
-            {/* Dynamically render the details */}
-            {details.map(([key, value], index) => {
-              const isFirst = index === 0; // Check if it's the first detail
-
-              return (
-                <div
-                  key={key}
-                  className="flex items-center justify-start gap-x-2"
-                >
-                  <p
-                    className={`text-6xl font-semibold ${
-                      isFirst ? "text-pink-500" : "text-white"
-                    }`}
-                  >
-                    {value}
-                  </p>
-                  <p className="text-sm text-gray-200">
-                    {key.replace(/([A-Z])/g, " $1").toUpperCase()}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex items-start justify-between">
-            <button className="rounded-3xl bg-pink-500 p-4 text-base text-white">
-              Donate Now
-            </button>
-            <div className="flex items-center gap-1 text-pink-400">
-              <p className="cursor-pointer text-base">Read more</p>
-              <ArrowRight size={15} />
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Mobile View */}
-      <div
-        ref={cardRef}
-        className="card relative h-auto w-full overflow-hidden rounded-2xl border bg-cover bg-center p-12 pt-36 shadow-lg transition-all duration-500 ease-in-out lg:hidden"
-        style={{ backgroundImage: `url(${card.bgImg})` }}
-      >
-        <div className="card-title text-lg text-white">{card.title}</div>
-        <div
-          className={`details mt-5 flex flex-col gap-y-3 text-white opacity-0 transition-opacity duration-700 ease-in-out ${
-            isVisible ? "opacity-100" : ""
-          }`}
-        >
-          <div className="grid grid-cols-2 gap-y-4">
-            {details.map(([key, value], index) => (
-              <div key={key} className="flex flex-col items-start">
-                <p className={`text-4xl font-semibold text-pink-500`}>
-                  {value}
-                </p>
-                <p className="text-sm text-gray-200">
-                  {key.replace(/([A-Z])/g, " $1").toUpperCase()}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-5 flex items-center justify-between">
-            <button className="rounded-3xl bg-pink-500 p-3 text-base text-white">
-              Donate Now
-            </button>
-            <div className="flex items-center gap-1 text-pink-400">
-              <p className="cursor-pointer text-base">Read more</p>
-              <ArrowRight size={15} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default ProgramImpact;
-
-/*
-import React, { useEffect, useRef, useState } from "react";
-import program1 from "../../assets/images/Program/program1.png";
-import program2 from "../../assets/images/Program/program2.png";
-import program3 from "../../assets/images/Program/program3.png";
-
-const Cards = [
-  {
-    title:
-      "Grace Food Bank is serving around 100-150 people everyday at a price of Rs.10, whereas the actual cost comes around Rs.30 per meal which includes rent and salaries.",
-    "Meals distributed": "100k",
-    "Meals per day": "150",
-    "Children benefitted": "2000",
-    "Rupees per meal": "10",
-    bgImg: program1,
-  },
-  {
-    title:
-      "The Mission Smile Program provides 100% free cleft repair surgeries and comprehensive care for children worldwide. We empower local medical professionals with the skills and resources to deliver ongoing cleft care.",
-    "Cleft births annually": "35k",
-    "For cleft surgery": "25k",
-    "Free cleft care": "100%",
-    "Minutes of life-changing surgery": "45",
-    bgImg: program2,
-  },
-  {
-    title:
-      "Disability Elimination Program, led by the Real Happiness Of Life Foundation (RHLF), is focused on early detection, treatment, and rehabilitation of children with birth defects and developmental delays.",
-    "Children impacted daily": "40L",
-    "Disability,Disease,Development": "4D’s",
-    "Deic centers for rehabilitation": "250",
-    bgImg: program3,
-  },
-];
-
-const ProgramImpact = () => {
-  return (
-    <div className="container flex flex-col gap-y-6 justify-center items-center">
-      <div className="flex-col gap-y-3 flex items-center justify-center ">
-        <h1 className="text-black text-4xl font-bold">
-          Program <span className="text-custompink">Impacts</span>
+      <section className="flex w-full flex-col justify-center py-10">
+        <h1 className="my-1 w-full text-center font-quicksand text-4xl font-bold text-gray-800">
+          Program <span className="font-quicksand text-pink-400">Impacts</span>
         </h1>
-        <p className="text-xl text-gray-700 font-normal">
+        <p className="w-full px-2 py-3 text-center font-normal text-gray-700 lg:text-2xl">
           Our various programmes help us reach out to those in need and provide
           for their safety and well-being
         </p>
-        <div className="flex flex-col items-center justify-center gap-y-6 mt-10">
+        <div className="flex w-full flex-col items-center justify-center gap-5 lg:flex-row">
           {Cards.map((card, index) => (
-            <CardContent key={index} card={card} />
+            <ProgramCard
+              key={index}
+              text={card.title}
+              keyValue={card.keyValue}
+              link={"/"}
+              bgImg={card.bgImg}
+            />
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
-};
-
-const CardContent = ({ card }) => {
-  const cardRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
+}
+function ProgramCard({ text, keyValue, link, bgImg }) {
+  const mobRef = useRef(null);
+  const mobInView = useInView(mobRef);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
+    // Check if the screen width is less than 768px (Tailwind's "md" breakpoint)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
     };
+
+    handleResize(); // Run once on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const details = Object.entries(card).filter(
-    ([key]) => key !== "bgImg" && key !== "title"
-  );
-
   return (
-    <div
-      ref={cardRef}
-      className="card relative border p-12 pt-36 rounded-2xl shadow-lg w-[350px] h-auto bg-cover bg-center overflow-hidden transition-all duration-500 ease-in-out"
-      style={{ backgroundImage: `url(${card.bgImg})` }}
-    >
-      <div className="card-title text-white text-lg">
-        {card.title}
-      </div>
-      <div
-        className={`details flex flex-col gap-y-3 text-white transition-opacity duration-700 ease-in-out mt-5 opacity-0 ${
-          isVisible ? "opacity-100" : ""
-        }`}
+    <>
+      <motion.div
+        className="flex h-[600px] w-[400px] flex-col rounded-xl bg-cover bg-center py-10 lg:h-[450px] lg:w-[350px] lg:px-5"
+        style={{ backgroundImage: `url(${bgImg})` }}
+        initial="rest"
+        animate="rest"
+        whileHover="hover"
+        variants={{
+          rest: { width: "350px", paddingLeft: "40px", paddingRight: "40px" },
+          hover: { width: "650px" },
+          paddingLeft: "10px",
+          paddingRight: "10px",
+        }}
+        transition={{ duration: 0.3 }}
       >
-        <div className="grid grid-cols-2 gap-y-4">
-          {details.map(([key, value], index) => (
-            <div key={key} className="flex flex-col items-start">
-              <p className={`text-4xl font-semibold text-pink-500`}>{value}</p>
-              <p className="text-sm text-gray-200">
-                {key.replace(/([A-Z])/g, " $1").toUpperCase()}
-              </p>
+        <motion.div
+          className="w-full text-white"
+          variants={{ rest: { y: "70px" }, hover: { y: "0%" } }}
+          transition={{ duration: 0.3 }}
+          {...(mobInView && isMobile ? { whileInView: "hover" } : {})}
+        >
+          <p className="w-full text-lg" ref={mobRef}>
+            {text}
+          </p>
+        </motion.div>
+        <motion.div
+          className="mt-auto grid grid-cols-2 gap-3 lg:gap-0"
+          variants={{
+            rest: { scale: 0, opacity: 0 },
+            hover: { scale: 1, opacity: 1 },
+          }}
+          {...(mobInView && isMobile ? { whileInView: "hover" } : {})}
+          transition={{ duration: 0.3 }}
+        >
+          {Object.keys(keyValue).map((key, index) => (
+            <div
+              key={key}
+              className="flex flex-col items-center justify-center lg:flex-row lg:gap-2 lg:py-4"
+            >
+              <span
+                className={`${index ? "text-white" : "text-pink-500"} w-full text-3xl font-semibold lg:w-fit lg:text-6xl`}
+              >
+                {keyValue[key]}
+              </span>
+              <span className="w-full text-wrap font-semibold text-gray-300 lg:w-fit">
+                {key}
+              </span>
             </div>
           ))}
-        </div>
-        <div className="flex justify-between items-start mt-5">
-          <button className="p-4 bg-pink-500 text-white text-base rounded-3xl">
+        </motion.div>
+        <motion.div
+          className="flex w-full py-6 lg:py-6"
+          variants={{
+            rest: { scale: 0, opacity: 0 },
+            hover: { scale: 1, opacity: 1 },
+          }}
+          {...(mobInView && isMobile ? { whileInView: "hover" } : {})}
+          transition={{ duration: 0.3 }}
+        >
+          <Link
+            className="mr-auto rounded-full bg-pink-500 p-2 text-sm text-white transition duration-300 hover:bg-white hover:text-pink-500 hover:no-underline lg:p-3 lg:text-base"
+            to={link}
+          >
             Donate Now
-          </button>
-          <p className="text-pink-400 text-base mt-5 cursor-pointer">
-            Read more →
-          </p>
-        </div>
-      </div>
-    </div>
+          </Link>
+          <Link
+            className="flex items-center justify-center text-sm text-pink-500 hover:no-underline lg:text-base"
+            to={link}
+          >
+            Read More <ArrowRight size={20} />
+          </Link>
+        </motion.div>
+      </motion.div>
+    </>
   );
-};
-
+}
 export default ProgramImpact;
-
-*/
