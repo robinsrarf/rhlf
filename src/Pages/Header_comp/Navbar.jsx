@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X, Mail, Phone, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import logo from "/src/assets/images/LOGO1.jpg";
 import SideBar from "./SideBar";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Function for active NavLink styling
 function navClass({ isActive }) {
@@ -22,14 +22,19 @@ function donateButtonClass({ isActive }) {
 // Component for dropdown menu items
 function DropDownItem({ programName, directTo }) {
   return (
-    <li>
+    <motion.li
+      initial={{ opacity: 0, y: -5 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -5 }}
+      transition={{ duration: 0.2 }}
+    >
       <NavLink
         to={directTo}
-        className="block px-4 py-2 text-black hover:bg-gray-200 hover:no-underline"
+        className="duration:200 block px-4 py-2 text-black transition-colors hover:bg-pink-50 hover:text-pink-500 hover:no-underline"
       >
         {programName}
       </NavLink>
-    </li>
+    </motion.li>
   );
 }
 
@@ -37,6 +42,28 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const dropdownVariants = {
+    hidden: {
+      opacity: 0,
+      y: -5,
+      transition: { duration: 0.2 },
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        staggerChildren: 0.05,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -5,
+      transition: { duration: 0.2 },
+    },
+  };
 
   // Show button when user scrolls down
   useEffect(() => {
@@ -75,70 +102,98 @@ function Navbar() {
             </NavLink>
 
             {/* Programmes Dropdown */}
-            <div className="group relative z-50">
+            <div
+              className="relative z-50"
+              onMouseEnter={() => setActiveDropdown("programmes")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
               <NavLink to="/programmes" className={navClass}>
                 Programmes
               </NavLink>
-              <div className="absolute left-0 hidden w-48 rounded bg-white shadow-lg group-hover:block">
-                {/* Main Programmes */}
-                <div>
-                  <h4 className="px-4 py-2 font-bold">Main Programmes</h4>
-                  <ul className="py-2">
-                    <DropDownItem
-                      programName="Emergency Medical Support"
-                      directTo="/programmes/medical-support"
-                    />
-                    <DropDownItem
-                      programName="Mission Zero Hunger"
-                      directTo="/programmes/zero-hunger"
-                    />
-                    <DropDownItem
-                      programName="Mission Education Program"
-                      directTo="/programmes/education-program"
-                    />
-                  </ul>
-                </div>
+              <AnimatePresence>
+                {activeDropdown === "programmes" && (
+                  <motion.div
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="absolute left-0 w-48 rounded-lg bg-white shadow-lg"
+                  >
+                    {/* Main Programmes */}
+                    <div>
+                      <h4 className="px-4 py-2 font-bold">Main Programmes</h4>
+                      <ul className="py-2">
+                        <DropDownItem
+                          programName="Emergency Medical Support"
+                          directTo="/programmes/medical-support"
+                        />
+                        <DropDownItem
+                          programName="Mission Zero Hunger"
+                          directTo="/programmes/zero-hunger"
+                        />
+                        <DropDownItem
+                          programName="Mission Education Program"
+                          directTo="/programmes/education-program"
+                        />
+                      </ul>
+                    </div>
 
-                {/* Health & Wellness */}
-                <div>
-                  <h4 className="px-4 py-2 font-bold">Health & Wellness</h4>
-                  <ul className="py-2">
-                    <DropDownItem
-                      programName="Public Health And Nutrition"
-                      directTo="/programmes/health-and-nutrition"
-                    />
-                    <DropDownItem
-                      programName="Mission Smile Program"
-                      directTo="/programmes/smile-program"
-                    />
-                    <DropDownItem
-                      programName="Disability Elimination Program"
-                      directTo="/programmes/elimination-program"
-                    />
-                  </ul>
-                </div>
-              </div>
+                    {/* Health & Wellness */}
+                    <div>
+                      <h4 className="px-4 py-2 font-bold">Health & Wellness</h4>
+                      <ul className="py-2">
+                        <DropDownItem
+                          programName="Public Health And Nutrition"
+                          directTo="/programmes/health-and-nutrition"
+                        />
+                        <DropDownItem
+                          programName="Mission Smile Program"
+                          directTo="/programmes/smile-program"
+                        />
+                        <DropDownItem
+                          programName="Disability Elimination Program"
+                          directTo="/programmes/elimination-program"
+                        />
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/*About Us Drop Down*/}
-            <div className="group relative">
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("about")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
               <NavLink to="/about" className={navClass}>
                 About Us
               </NavLink>
-              <div className="absolute left-0 hidden w-48 rounded bg-white shadow-lg group-hover:block">
-                <ul className="py-2">
-                  <DropDownItem
-                    programName="Our Clinics"
-                    directTo="/about/clinics"
-                  />
-                </ul>
-                <ul className="py-2">
-                  <DropDownItem
-                    programName="Contact Us"
-                    directTo="/about/contact"
-                  />
-                </ul>
-              </div>
+              <AnimatePresence>
+                {activeDropdown === "about" && (
+                  <motion.div
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="absolute left-0 w-48 rounded-lg bg-white shadow-lg"
+                  >
+                    <ul className="py-2">
+                      <DropDownItem
+                        programName="Our Clinics"
+                        directTo="/about/clinics"
+                      />
+                    </ul>
+                    <ul className="py-2">
+                      <DropDownItem
+                        programName="Contact Us"
+                        directTo="/about/contact"
+                      />
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <NavLink to="/media" className={navClass}>

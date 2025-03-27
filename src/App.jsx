@@ -10,7 +10,8 @@ import Getinvolved from "./Pages/Getinvolved";
 import Contact from "./Pages/Contact";
 import Media from "./Pages/Media";
 import Programmes from "./Pages/Programmes";
-import CardDetails from "./Pages/CardDetails";
+// import CardDetails from "./Pages/CardDetails";
+import DonatePage from "./Pages/Donate/DonatePage";
 import TermsAndConditions from "./Pages/QuickLinksComponents/TermsConditions";
 import RefundPolicy from "./Pages/QuickLinksComponents/RefundPolicy";
 import PrivacyPolicy from "./Pages/QuickLinksComponents/PrivacyPolicy";
@@ -43,7 +44,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="media" element={<Media />} />
           <Route path="programmes" element={<Programmes />} />
-          <Route path="donate/:id" element={<CardDetails />} />
+          <Route path="donate/:donateId" element={<DonatePage />} />
           <Route path="blogs" element={<Blog />} />
           <Route path="blogs/:blogId" element={<BlogPost />} />
 

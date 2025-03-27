@@ -48,7 +48,7 @@ export default function CampaignDetails() {
       <SectionHeader title="Campaign Details" />
       <section className="w-full px-4 sm:px-8 md:px-12">
         <div className="flex flex-col items-center justify-center gap-3 text-center">
-          <h1 className="my-1 w-full text-center font-quicksand text-2xl lg:text-4xl font-bold text-gray-800">
+          <h1 className="my-1 w-full text-center font-quicksand text-2xl font-bold text-gray-800 lg:text-4xl">
             Donate to one of our {""}
             <span className="font-quicksand text-pink-500">campaigns</span>
           </h1>
@@ -61,7 +61,7 @@ export default function CampaignDetails() {
             <div>
               <Slider
                 {...settings}
-                className="w-screen px-3 lg:w-[800px] lg:px-0"
+                className="w-screen px-3 md:w-[500px] md:px-0 lg:w-[800px] lg:px-0"
               >
                 {campaignData.map((campaign) => (
                   <CampaignCard key={campaign.id} {...campaign} />

@@ -17,7 +17,7 @@ const BlogData = [
     date: "10/12/2024",
     title: "Education in India: A Lifeline for Underprivileged Children",
     content: `# Education in India: A Lifeline for Underprivileged Children
-![Alttext](https://placehold.co/600x400/EEE/31343C)
+![Alttext](/src/assets/images/Blogs/img1.jpg)
 Education is not just a fundamental right but a pathway to empowerment, growth, and social change. Yet, in India, millions of underprivileged children remain deprived of this basic necessity. The lack of access to quality education perpetuates a vicious cycle of poverty, leaving many children without the skills or opportunities needed to improve their lives.  
 
 At **Real Happiness Of Life Foundation**, we believe that every child deserves the chance to learn and thrive, regardless of their socioeconomic background. Through our dedicated efforts, we are working to bridge the educational gap and bring hope to children who need it the most.  
@@ -69,7 +69,7 @@ Together, we can create a world where every child has the chance to dream, learn
 
 function BlogPost() {
   const { blogId } = useParams();
-  const blog = BlogData.find((b) => b.id === blogId); // Find the blog by ID
+  const blog = BlogData.find((b) => b.id === blogId);
 
   if (!blog) {
     return <BlogNotfound />;

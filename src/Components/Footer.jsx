@@ -60,32 +60,29 @@ function Footer() {
           <div>
             <h3 className="mb-3 text-xl font-bold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link to="blogs" className="hover:text-pink-500">
-                Blogs
-              </Link>
-              <Link to="donor-list" className="hover:text-pink-500">
-                Donar List
-              </Link>
-              <Link to="privacy-policy" className="hover:text-pink-500">
+              <Link to="privacy-policy" className="w-fit hover:text-pink-500">
                 Privacy Policy
               </Link>
-              <Link to="terms-and-conditions" className="hover:text-pink-500">
+              <Link
+                to="terms-and-conditions"
+                className="w-fit hover:text-pink-500"
+              >
                 Terms & Conditions
               </Link>
-              <Link to="refund-policy" className="hover:text-pink-500">
+              <Link to="refund-policy" className="w-fit hover:text-pink-500">
                 Refund Policy
               </Link>
               <a
                 href="/Child_Protection_Policy.pdf"
                 target="_blank"
-                className="hover:text-pink-500"
+                className="w-fit hover:text-pink-500"
               >
                 Child Protection Policy
               </a>
               <a
                 href="/POSH_at_workplace.pdf"
                 target="_blank"
-                className="hover:text-pink-500"
+                className="w-fit hover:text-pink-500"
               >
                 POSH Policy
               </a>
@@ -168,13 +165,9 @@ function Footer() {
         <hr className="w-full" />
       </div>
       <div
-        className="mt-5 border-t bg-cover py-3 text-center"
+        className="mt-5 flex h-20 items-center justify-center border-t bg-cover text-center"
         style={{ backgroundImage: `url(${footerBg})` }}
       >
-        <p>
-          Real Happiness Of Life Foundation (RHLF) is registered in India under
-          Section 8 of the Indian Companies Act, 2013.
-        </p>
         <p>
           &copy; 2024 All Rights Reserved.{" "}
           <a href="#" className="text-pink-800">

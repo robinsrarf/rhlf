@@ -6,76 +6,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bgtexture from "../../assets/images/testimonals/PaperTexture.jpg";
 import { Link } from "react-router-dom";
+import img1 from "../../assets/images/Blogs/img1.jpg";
+import img2 from "../../assets/images/Blogs/img2.jpg";
+import img3 from "../../assets/images/Blogs/img3.jpg";
 const dummydata = [
   {
     date: 5,
     month: "Mar",
     title: "NGO Launches Education Initiative",
     id: 1,
-    image: "https://placehold.co/600x400/EEE/31343C",
+    image: img1,
   },
   {
     date: 12,
     month: "Apr",
-    title: "Health Camp for Underprivileged Communities",
+    title: "Environmental Awareness Drive",
     id: 2,
-    image: "https://placehold.co/600x400/EEE/31343C",
+    image: img2,
   },
   {
     date: 22,
     month: "May",
-    title: "Environmental Awareness Drive",
+    title: "Women Empowerment",
     id: 3,
-    image: "https://placehold.co/600x400/EEE/31343C",
-  },
-  {
-    date: 8,
-    month: "Jun",
-    title: "Women Empowerment Workshop",
-    id: 4,
-    image: "https://placehold.co/600x400/EEE/31343C",
-  },
-  {
-    date: 15,
-    month: "Jul",
-    title: "Fundraising Campaign for Rural Development",
-    id: 5,
-    image: "https://placehold.co/600x400/EEE/31343C",
-  },
-  {
-    date: 30,
-    month: "Aug",
-    title: "Disaster Relief Program Launched",
-    id: 6,
-    image: "https://placehold.co/600x400/EEE/31343C",
-  },
-  {
-    date: 10,
-    month: "Sep",
-    title: "Skill Development Training for Youth",
-    id: 7,
-    image: "https://placehold.co/600x400/EEE/31343C",
-  },
-  {
-    date: 25,
-    month: "Oct",
-    title: "Annual Report on NGO Achievements",
-    id: 8,
-    image: "https://placehold.co/600x400/EEE/31343C",
-  },
-  {
-    date: 5,
-    month: "Nov",
-    title: "Food Distribution Drive Before Winter",
-    id: 9,
-    image: "https://placehold.co/600x400/EEE/31343C",
-  },
-  {
-    date: 20,
-    month: "Dec",
-    title: "Volunteer Appreciation Event",
-    id: 10,
-    image: "https://placehold.co/600x400/EEE/31343C",
+    image: img3,
   },
 ];
 export default function NewsAndArticles() {
@@ -108,7 +62,7 @@ export default function NewsAndArticles() {
       <div className="w-full max-w-7xl">
         <h2 className="mb-6 w-full text-center font-quicksand text-4xl font-bold text-gray-800">
           Latest <span className="font-quicksand text-pink-400">News</span> &{" "}
-          <span className="font-quicksand text-pink-400">Articles</span>
+          <span className="font-quicksand text-pink-400">Blogs</span>
         </h2>
         <Slider {...settings}>
           {dummydata.map((data, index) => (

@@ -1,4 +1,4 @@
-import { CircleDotDashed } from "lucide-react";
+
 import SaveLife from "../../assets/images/WorldwideNonProfitCharity/SaveLife.jpg";
 import EducationProgram from "../../assets/images/WorldwideNonProfitCharity/EducationProgram.jpg";
 import ZeroHunger from "../../assets/images/WorldwideNonProfitCharity/ZeroHunger.jpg";
@@ -31,13 +31,7 @@ const items = [
 export default function WorldwideNonprofitCharity() {
   return (
     <>
-      <section className="flex min-h-screen w-full flex-col p-5">
-        <div className="my-3 flex w-full items-center gap-2 self-center pb-2 lg:ml-[620px]">
-          <CircleDotDashed size={25} className="text-pink-500" />
-          <p className="font-semibold text-black">
-            World Wide Non Profit Charity
-          </p>
-        </div>
+      <section className="flex w-full flex-col p-5">
         <h1 className="my-4 self-center text-center font-quicksand text-4xl font-semibold lg:w-[600px] lg:whitespace-nowrap">
           Give a Helping
           <span className="font-quicksand text-pink-500"> Hand </span> For{" "}

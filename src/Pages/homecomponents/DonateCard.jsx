@@ -1,4 +1,4 @@
-import { CircleAlert } from "lucide-react";
+import { CircleAlert, Share2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -8,13 +8,14 @@ export default function DonateCard({
   title,
   author,
   totalRaised,
-  progress,
   backers,
+  required,
 }) {
+  const progress = Math.min((totalRaised / required) * 100, 100);
   return (
     <motion.div
       key={id}
-      className="w-full rounded-xl bg-white shadow-lg lg:w-96 lg:overflow-hidden"
+      className="flex w-[45vh] flex-col rounded-xl bg-white shadow-lg md:w-[80vh] lg:w-96 lg:overflow-hidden"
       whileHover={{ scale: 1.01, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
       transition={{ duration: 0.3 }}
     >
@@ -22,7 +23,7 @@ export default function DonateCard({
       <div className="relative">
         <img
           src={image}
-          alt={image}
+          alt={title}
           className="h-48 w-full rounded-t-lg object-cover"
           loading="lazy"
         />
@@ -42,14 +43,17 @@ export default function DonateCard({
 
         {/* Progress Bar */}
         <div className="mt-3">
-          <div className="flex justify-between font-medium text-gray-700">
-            <span>{totalRaised}</span>
-            <span>Raised</span>
+          <div className="flex w-full justify-between font-medium text-gray-700">
+            <span>₹{totalRaised.toLocaleString()} Raised</span>
+
+            <span className="mt-auto">
+              ₹{(required - totalRaised).toLocaleString()} Required
+            </span>
           </div>
-          <div className="mt-1 h-2 w-full rounded-full bg-gray-200">
+          <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-gray-200">
             <div
-              className="h-2 rounded-full bg-pink-500"
-              style={{ width: progress }}
+              className="h-2 bg-pink-500 transition-all duration-300"
+              style={{ width: `${progress}%` }}
             ></div>
           </div>
           <p className="mt-1 text-sm text-gray-500">{backers} Backers</p>
@@ -57,8 +61,8 @@ export default function DonateCard({
 
         {/* Action Buttons */}
         <div className="mt-4 flex justify-between">
-          <button className="rounded-lg border border-gray-300 px-4 py-2 text-gray-600 hover:bg-gray-100">
-            Share
+          <button className="rounded-lg border flex items-center gap-2 border-gray-300 px-4 py-2 text-gray-600 hover:bg-gray-100">
+            <Share2 size={20} /> <span>Share</span>
           </button>
           <Link
             to={`/donate/${id}`}

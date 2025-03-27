@@ -35,10 +35,9 @@ const campaigns = [
     id: 4,
     title: "Flood Relief Fund",
     author: "By Disaster Relief Org",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 10049,
+    totalRequired: 250000,
     backers: 114,
-    progress: "4%",
     category: "Disaster-Relief",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -47,10 +46,9 @@ const campaigns = [
     id: 5,
     title: "Emergency Medical Aid",
     author: "By Health Aid",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 10049,
+    totalRequired: 25000,
     backers: 114,
-    progress: "4%",
     category: "Urgent",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -59,10 +57,9 @@ const campaigns = [
     id: 6,
     title: "Urgent Shelter for Homeless",
     author: "By Shelter Foundation",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 10400,
+    totalRequired: 250000,
     backers: 114,
-    progress: "4%",
     category: "Disaster-Relief",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -71,10 +68,9 @@ const campaigns = [
     id: 7,
     title: "Critical Food Supplies",
     author: "By Hunger Relief",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 10400,
+    totalRequired: 20000,
     backers: 114,
-    progress: "4%",
     category: "Elderly",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -83,10 +79,10 @@ const campaigns = [
     id: 8,
     title: "Winter Clothing Drive",
     author: "By Warmth Project",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 49600,
+    totalRequired: 80000,
     backers: 114,
-    progress: "4%",
+
     category: "Urgent",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -95,10 +91,9 @@ const campaigns = [
     id: 9,
     title: "Fire Recovery Fund",
     author: "By Fire Relief Org",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 1960,
+    totalRequired: 2500,
     backers: 114,
-    progress: "4%",
     category: "Urgent",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -107,10 +102,9 @@ const campaigns = [
     id: 10,
     title: "Help Abandoned Dogs",
     author: "By Animal Rescue",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 1960,
+    totalRequired: 20000,
     backers: 114,
-    progress: "4%",
     category: "Childern",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -119,10 +113,10 @@ const campaigns = [
     id: 11,
     title: "Save Injured Wildlife",
     author: "By Wildlife Care",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 1040,
+    totalRequired: 25000,
     backers: 114,
-    progress: "4%",
+
     category: "Animals",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -131,10 +125,10 @@ const campaigns = [
     id: 12,
     title: "Stray Cat Shelter",
     author: "By Pet Haven",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 1049,
+    totalRequired: 25000,
     backers: 114,
-    progress: "4%",
+
     category: "Faith",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -143,10 +137,10 @@ const campaigns = [
     id: 13,
     title: "Animal Vaccination Drive",
     author: "By Health for Pets",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 10496,
+    totalRequired: 25000,
     backers: 114,
-    progress: "4%",
+
     category: "Animals",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -155,10 +149,9 @@ const campaigns = [
     id: 14,
     title: "Feed Stray Animals",
     author: "By Food for Pets",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 1049,
+    totalRequired: 25000,
     backers: 114,
-    progress: "4%",
     category: "Animals",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -167,10 +160,9 @@ const campaigns = [
     id: 15,
     title: "Rescue Farm Animals",
     author: "By Farm Friend Org",
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 1049,
+    totalRequired: 25000,
     backers: 114,
-    progress: "4%",
     category: "Childern",
     image:
       "https://dkprodimages.gumlet.io/campaign/cover/Help-Krishna-Prasad1317770230.jpg?format=webp&w=360&dpr=1.3",
@@ -188,7 +180,8 @@ function CategorySection() {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: false,
-
+    speed: 500,
+    centerMode: false,
     responsive: [
       {
         breakpoint: 1024, // For tablets
@@ -197,7 +190,6 @@ function CategorySection() {
           infinite: true,
           autoplay: true,
           autoplaySpeed: 3000,
-          speed: 500,
         },
       },
       {
@@ -235,7 +227,7 @@ function CategorySection() {
 
       {/* Category Scroller (Combined for Desktop & Mobile) */}
       <div className="flex w-full flex-col items-center justify-center overflow-hidden">
-        <div className="scrollbar-hide flex w-full gap-3 overflow-x-auto px-3 py-0 sm:w-fit lg:w-fit">
+        <div className="scrollbar-hide flex w-full gap-3 overflow-x-auto px-3 py-0 lg:w-fit">
           {categories.map((category) => (
             <div
               key={category.id}
@@ -254,30 +246,54 @@ function CategorySection() {
         </div>
 
         {/* Campaign Cards */}
-        <div className="w-full bg-pink-300 py-1">
-          <div className="mx-auto w-full lg:w-[64%]">
-            {filteredCampaigns.length > 0 ? (
-              <Slider {...sliderSettings}>
-                {filteredCampaigns.map((campaign) => (
-                  <div key={campaign.id} className="px-3 py-2">
-                    <DonateCard
-                      id={campaign.id}
-                      image={campaign.image}
-                      title={campaign.title}
-                      author={campaign.author}
-                      totalRaised={campaign.totalRaised}
-                      progress={campaign.progress}
-                      backers={campaign.backers}
-                    />
-                  </div>
-                ))}
-              </Slider>
-            ) : (
-              <div className="flex h-[440px] items-center justify-center text-center text-lg font-medium text-gray-600">
-                <p>This category is empty.</p>
-              </div>
-            )}
-          </div>
+        <div className="w-full bg-pink-300 py-5">
+          {filteredCampaigns.length > 0 ? (
+            // <div className="mx-auto lg:w-[64%]">
+            //   <Slider {...sliderSettings}>
+            //     {filteredCampaigns.map((campaign) => (
+            //       <div key={campaign.id} className="px-2">
+            //         <DonateCard
+            //           id={campaign.id}
+            //           author={campaign.author}
+            //           title={campaign.title}
+            //           image={campaign.image}
+            //           progress={
+            //             (campaign.totalRaised / campaign.totalRequired) * 100
+            //           }
+            //           totalRaised={campaign.totalRaised}
+            //           backers={campaign.backers}
+            //           required={campaign.totalRequired}
+            //         />
+            //       </div>
+            //     ))}
+            //   </Slider>
+            // </div>
+            <div className="flex w-[100%] justify-evenly overflow-x-auto md:w-[100%] md:pl-[0%] lg:w-[100%] lg:justify-center lg:gap-5 lg:px-0">
+              {filteredCampaigns.map((campaign) => (
+                <div
+                  key={campaign.id}
+                  className="lg:px-auto my-5 px-[3%] md:px-[1.5%] lg:mx-0 lg:px-0"
+                >
+                  <DonateCard
+                    id={campaign.id}
+                    author={campaign.author}
+                    title={campaign.title}
+                    image={campaign.image}
+                    progress={
+                      (campaign.totalRaised / campaign.totalRequired) * 100
+                    }
+                    totalRaised={campaign.totalRaised}
+                    backers={campaign.backers}
+                    required={campaign.totalRequired}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex h-[440px] items-center justify-center text-center text-lg font-medium text-gray-600">
+              <p>This category is empty.</p>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ import {
 
 const sidebarLinks = [
   { title: "Home", path: "/", sublinks: [] },
-  { title: "About Us", path: "/aboutus", sublinks: [] },
+  { title: "About Us", path: "/about", sublinks: [] },
   {
     title: "Programmes",
     path: "/programmes",

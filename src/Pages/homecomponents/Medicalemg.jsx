@@ -13,30 +13,27 @@ const emergencyData = [
     title: "Urgent Help Needed for a Child with Heart Disease",
     author: "By Krishna Prasad",
     image: img1,
-    totalRaised: "₹1,04,960",
-    totalRequired: "₹2,500,000",
+    totalRaised: 22000,
+    totalRequired: 25000,
     backers: 114,
-    progress: "4%",
   },
   {
     id: 2,
     title: "Urgent Help Needed for a Child with Heart Disease",
     author: "By Anjali Verma",
     image: social1,
-    totalRaised: "₹500,000",
-    totalRequired: "₹1,000,000",
+    totalRaised: 5000,
+    totalRequired: 10000,
     backers: 220,
-    progress: "50%",
   },
   {
     id: 3,
     title: "Help This Family Recover from a Fire Disaster",
     author: "By Rohit Sharma",
     image: social2,
-    totalRaised: "₹300,000",
-    totalRequired: "₹800,000",
+    totalRaised: 3000,
+    totalRequired: 8000,
     backers: 150,
-    progress: "37.5%",
   },
 ];
 
@@ -54,14 +51,11 @@ export default function MedicalEmergency() {
           <ArrowRight size={15} />
         </Link>
       </div>
-      <h1 className="my-1 w-full text-center font-quicksand text-2xl font-bold text-gray-800 lg:text-4xl">
-        Medical{" "}
-        <span className="font-quicksand text-pink-500">Emergencies</span>
-      </h1>
+
       {/* Single Section for Both Mobile & Desktop */}
       <div className="w-full py-1">
         <div
-          className="mx-auto flex w-[95%] gap-5 overflow-x-auto lg:w-[65%] lg:flex-wrap lg:justify-center lg:px-4"
+          className="flex w-[100%] justify-evenly overflow-x-auto md:w-[100%] md:pl-[0%] lg:w-[100%] lg:justify-center lg:gap-5 lg:px-0"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -70,16 +64,17 @@ export default function MedicalEmergency() {
           {emergencyData.map((data) => (
             <div
               key={data.id}
-              className="lg:px-auto mx-auto my-5 w-full flex-shrink-0 lg:mx-0 lg:w-auto"
+              className="lg:px-auto my-5 px-[3%] md:px-[1.5%] lg:mx-0 lg:px-0"
             >
               <DonateCard
                 id={data.id}
                 author={data.author}
                 title={data.title}
                 image={data.image}
-                progress={data.progress}
+                progress={(data.totalRaised / data.totalRequired) * 100}
                 totalRaised={data.totalRaised}
                 backers={data.backers}
+                required={data.totalRequired}
               />
             </div>
           ))}

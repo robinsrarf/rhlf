@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Star } from "lucide-react";
+import { Star, StarHalf } from "lucide-react";
 import bgImage from "../../assets/images/testimonals/bg2.jpg";
 import bgtestimonial from "../../assets/images/testimonals/testimonials.jpg";
 import bgtexture from "../../assets/images/testimonals/PaperTexture.jpg";
@@ -12,7 +12,7 @@ const testimonialData = [
     testimonial:
       "This NGO has truly changed lives. Their commitment to education and healthcare is inspiring.",
     role: "Volunteer",
-    rating: 5,
+    rating: 4.5,
     image: "",
   },
   {
@@ -20,7 +20,7 @@ const testimonialData = [
     testimonial:
       "The impact this organization has made in our community is incredible. I'm grateful to be a part of it.",
     role: "Donor",
-    rating: 4,
+    rating: 3.5,
     image: "",
   },
   {
@@ -99,9 +99,52 @@ const Testimonals = () => {
 };
 
 const TestimonialCard = ({ testimonial }) => {
+  const renderStars = (rating) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    // Add full stars
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(
+        <Star
+          key={`full-${i}`}
+          strokeWidth="0px"
+          className="fill-yellow-500 text-yellow-500"
+        />,
+      );
+    }
+
+    // Add half star if needed
+    if (hasHalfStar) {
+      stars.push(
+        <StarHalf
+          key="half"
+          strokeWidth="0px"
+          className="fill-yellow-500 text-yellow-500"
+        />,
+      );
+    }
+
+    // Add remaining empty stars
+    const emptyStars = 5 - Math.ceil(rating);
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(
+        <Star
+          key={`empty-${i}`}
+          strokeWidth="1.5px"
+          className="text-yellow-500"
+          fill="none"
+        />,
+      );
+    }
+
+    return stars;
+  };
+
   return (
     <div
-      className="flex h-72 flex-col justify-between rounded-b-lg bg-white bg-cover p-10 shadow-md lg:h-64"
+      className="flex h-72 flex-col justify-between rounded-b-lg bg-white bg-cover px-3 py-10 shadow-md lg:h-64 lg:p-10"
       style={{ backgroundImage: `url(${bgtexture})` }}
     >
       <div className="flex items-center gap-5 lg:gap-4">
@@ -110,18 +153,15 @@ const TestimonialCard = ({ testimonial }) => {
           src={testimonial.image === "" ? profile : testimonial.image}
           alt="profile"
         />
-
         <div className="flex flex-col border-r-2 pr-2 lg:pr-11">
-          <p className="font-semibold lg:text-xl">{testimonial.author}</p>
-          <p className="text-sm font-semibold text-pink-600 lg:text-base">
+          <p className="lg:text-center text-sm font-semibold lg:text-xl">
+            {testimonial.author}
+          </p>
+          <p className="lg:text-center text-sm font-semibold text-pink-600 lg:text-base">
             {testimonial.role}
           </p>
         </div>
-        <div className="flex gap-1">
-          {Array.from({ length: testimonial.rating }).map((_, index) => (
-            <Star key={index} className="text-yellow-500" />
-          ))}
-        </div>
+        <div className="flex gap-1">{renderStars(testimonial.rating)}</div>
       </div>
 
       <p className="mt-1 text-xl font-bold italic text-gray-700 lg:mt-1 lg:text-2xl">

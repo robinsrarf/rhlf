@@ -1,26 +1,28 @@
 import { Link } from "react-router-dom";
-
+import img1 from "../../assets/images/Blogs/img1.jpg";
+import img2 from "../../assets/images/Blogs/img2.jpg";
+import img3 from "../../assets/images/Blogs/img3.jpg";
 const dummydata = [
   {
     date: 5,
     month: "Mar",
     title: "NGO Launches Education Initiative",
     id: 1,
-    image: "https://placehold.co/600x400/EEE/31343C",
+    image: img1,
   },
   {
     date: 12,
     month: "Apr",
     title: "Health Camp for Underprivileged Communities",
     id: 2,
-    image: "https://placehold.co/600x400/EEE/31343C",
+    image: img2,
   },
   {
     date: 22,
     month: "May",
     title: "Environmental Awareness Drive",
     id: 3,
-    image: "https://placehold.co/600x400/EEE/31343C",
+    image: img3,
   },
   {
     date: 8,

@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import LeftSec from "./CardDetails/LeftSec";
 import RightSec from "./CardDetails/RightSec";
