@@ -43,7 +43,7 @@ function BigDonateCard() {
               Make A Difference Today!
             </h2>
             <p className="text-md mt-5 text-wrap text-gray-200">
-              Partner with Real Happiness Of Life Foundation to drive meaningful
+              Partner with Action Relief Foundation to drive meaningful
               change through Corporate Social Responsibility, impactful
               donations, and thoughtful grantmaking strategies.
             </p>
@@ -57,7 +57,7 @@ function BigDonateCard() {
                   key={index}
                   className="flex w-full items-center gap-4 px-3 py-2 lg:py-0"
                 >
-                  <span className="text-pink-600">
+                  <span className="text-red-600">
                     <Check strokeWidth={4} />
                   </span>
                   <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-sm">
@@ -68,7 +68,7 @@ function BigDonateCard() {
             </ul>
           </div>
           <button className="flex w-44 items-center gap-3 rounded-full border-2 border-white p-2 font-semibold text-white shadow-md backdrop-blur-lg transition duration-300 hover:bg-white hover:text-black">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-600 text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-600 text-white">
               <ChevronsRight strokeWidth={3} size={24} />
             </span>
             Read More
@@ -121,9 +121,9 @@ function BigDonateCard() {
                     key={value}
                     className={`${
                       amount == value
-                        ? "border-pink-600 bg-pink-600"
+                        ? "border-red-600 bg-red-600"
                         : "bg-transparent backdrop-blur-lg"
-                    } rounded-full border-2 px-5 py-2 text-sm text-white transition duration-300 hover:border-pink-600 hover:bg-pink-600`}
+                    } rounded-full border-2 px-5 py-2 text-sm text-white transition duration-300 hover:border-red-600 hover:bg-red-600`}
                     onClick={() => setAmount(value)}
                   >
                     ₹{value}
@@ -135,7 +135,7 @@ function BigDonateCard() {
 
           {/* Donate Button */}
           <button className="mt-4 flex w-44 items-center gap-3 rounded-full border-2 border-white p-2 font-semibold text-white shadow-md backdrop-blur-lg transition duration-300 hover:bg-white hover:text-black">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-600 text-white">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-600 text-white">
               <ChevronsRight strokeWidth={3} size={24} />
             </span>
             <p>Donate Now</p>

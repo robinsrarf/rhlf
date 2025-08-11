@@ -28,7 +28,7 @@ const Hero = () => {
 
           <div className="flex flex-col items-center justify-center text-lg text-gray-500">
             <p>
-              Real Happiness Of Life Foundation for social change and inclusion
+              Action Relief Foundation for social change and inclusion
               works for the social
             </p>
             <p>

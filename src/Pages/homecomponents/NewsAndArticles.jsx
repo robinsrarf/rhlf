@@ -61,8 +61,8 @@ export default function NewsAndArticles() {
 
       <div className="w-full max-w-7xl">
         <h2 className="mb-6 w-full text-center font-quicksand text-4xl font-bold text-gray-800">
-          Latest <span className="font-quicksand text-pink-400">News</span> &{" "}
-          <span className="font-quicksand text-pink-400">Blogs</span>
+          Latest <span className="font-quicksand text-red-400">News</span> &{" "}
+          <span className="font-quicksand text-red-400">Blogs</span>
         </h2>
         <Slider {...settings}>
           {dummydata.map((data, index) => (
@@ -117,7 +117,7 @@ function NewsCard({ date, month, title, id, image }) {
 
         <div className="absolute top-5 z-20 ml-6 mt-1 flex h-14 w-14 flex-col items-center justify-center rounded-full bg-white text-sm font-bold text-black">
           <motion.div
-            className="absolute inset-0 z-30 rounded-full bg-pink-500"
+            className="absolute inset-0 z-30 rounded-full bg-red-500"
             variants={{
               initial: { scale: 0 },
               onHover: { scale: 1.1 },
@@ -132,7 +132,7 @@ function NewsCard({ date, month, title, id, image }) {
           style={{ backgroundImage: `url(${bgtexture})` }}
         >
           <h3 className="mt-20 text-lg font-semibold text-gray-900">{title}</h3>
-          <div className="mb-10 mt-4 flex items-center text-pink-500">
+          <div className="mb-10 mt-4 flex items-center text-red-500">
             <span className="font-medium">Read More</span>
             <ChevronRight className="ml-2 h-5 w-5" />
           </div>

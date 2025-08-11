@@ -34,8 +34,8 @@ export default function WorldwideNonprofitCharity() {
       <section className="flex w-full flex-col p-5">
         <h1 className="my-4 self-center text-center font-quicksand text-4xl font-semibold lg:w-[600px] lg:whitespace-nowrap">
           Give a Helping
-          <span className="font-quicksand text-pink-500"> Hand </span> For{" "}
-          <span className="font-quicksand text-pink-500"> Needy People</span>
+          <span className="font-quicksand text-red-500"> Hand </span> For{" "}
+          <span className="font-quicksand text-red-500"> Needy People</span>
         </h1>
         <div className="mx-auto flex w-full flex-wrap items-center justify-center lg:h-[70%] lg:w-[70%]">
           {items.map((value, index) => {
@@ -117,7 +117,7 @@ function DonationCard({ image, title, link }) {
                 {title}
               </motion.p>
               <motion.button
-                className="rounded-full bg-pink-500 p-2 font-semibold text-white"
+                className="rounded-full bg-red-500 p-2 font-semibold text-white"
                 variants={{
                   rest: { color: "#e7e5e4" },
                   hover: { color: "#44403c" },

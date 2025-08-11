@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   const [loaded, setLoaded] = useState(false);
   return (
-    <footer className="w-full border-t-8 border-pink-600 bg-gray-100 pt-2 text-gray-800">
+    <footer className="w-full border-t-8 border-red-600 bg-gray-100 pt-2 text-gray-800">
       <div className="container mx-auto grid grid-cols-1 gap-12 px-6 md:grid-cols-3 lg:px-20">
         {/* Address Section */}
         <div className="text-center md:text-left">
@@ -32,6 +32,7 @@ function Footer() {
             Registration no.{" "}
             <span className="font-medium">U85300MH2021NPL368070</span>
           </p>
+          <span className="loading loading-spinner text-secondary"></span>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.360039332275!2d73.0417286!3d19.2713426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bdaa5aaaaaab%3A0x6cfa52641767c98!2sReal%20Happiness%20Of%20Life%20Foundation!5e0!3m2!1sen!2sin!4v1700000000000"
             className={`${loaded ? "" : "scale-0"} mt-4 h-40 w-full rounded-lg border`}
@@ -46,43 +47,43 @@ function Footer() {
           <div>
             <h3 className="mb-3 text-xl font-bold">Get in Touch!</h3>
             <p className="flex items-center gap-2">
-              <i className="fa-solid fa-location-dot text-pink-500"></i> THANE,
+              <i className="fa-solid fa-location-dot text-red-500"></i> THANE,
               MAHARASHTRA, INDIA
             </p>
             <p className="flex items-center gap-2">
-              <i className="fa-solid fa-phone text-pink-500"></i> +91 9607753148
+              <i className="fa-solid fa-phone text-red-500"></i> +91 9607753148
             </p>
             <p className="flex items-center gap-2">
-              <i className="fa-solid fa-envelope text-pink-500"></i>{" "}
-              info@rhlf.org
+              <i className="fa-solid fa-envelope text-red-500"></i>{" "}
+              info@arf.org
             </p>
           </div>
           <div>
             <h3 className="mb-3 text-xl font-bold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link to="privacy-policy" className="w-fit hover:text-pink-500">
+              <Link to="privacy-policy" className="w-fit hover:text-red-500">
                 Privacy Policy
               </Link>
               <Link
                 to="terms-and-conditions"
-                className="w-fit hover:text-pink-500"
+                className="w-fit hover:text-red-500"
               >
                 Terms & Conditions
               </Link>
-              <Link to="refund-policy" className="w-fit hover:text-pink-500">
+              <Link to="refund-policy" className="w-fit hover:text-red-500">
                 Refund Policy
               </Link>
               <a
                 href="/Child_Protection_Policy.pdf"
                 target="_blank"
-                className="w-fit hover:text-pink-500"
+                className="w-fit hover:text-red-500"
               >
                 Child Protection Policy
               </a>
               <a
                 href="/POSH_at_workplace.pdf"
                 target="_blank"
-                className="w-fit hover:text-pink-500"
+                className="w-fit hover:text-red-500"
               >
                 POSH Policy
               </a>
@@ -112,7 +113,7 @@ function Footer() {
               />
               <button
                 type="submit"
-                className="w-full rounded bg-pink-500 p-2 text-white hover:bg-pink-600"
+                className="w-full rounded bg-red-500 p-2 text-white hover:bg-red-600"
               >
                 Subscribe
               </button>
@@ -139,23 +140,23 @@ function Footer() {
           <FaFacebookF size={24} />
         </a>
         <a
-          href="https://x.com/rhlfofficial"
+          href="https://x.com/arfofficial"
           target="_"
           className="text-blue-500"
         >
           <FaTwitter size={24} />
         </a>
         <a
-          href="https://www.youtube.com/@rhlfofficialngo"
+          href="https://www.youtube.com/@arfofficialngo"
           target="_"
           className="text-red-500"
         >
           <FaYoutube size={24} />
         </a>
         <a
-          href="https://www.instagram.com/rhlfofficial/"
+          href="https://www.instagram.com/arfofficial/"
           target="_"
-          className="text-pink-600"
+          className="text-red-600"
         >
           <FaInstagram size={24} />
         </a>
@@ -170,8 +171,8 @@ function Footer() {
       >
         <p>
           &copy; 2024 All Rights Reserved.{" "}
-          <a href="#" className="text-pink-800">
-            Real Happiness Of Life Foundation
+          <a href="#" className="text-red-800">
+            Action Relief Foundation
           </a>
         </p>
       </div>

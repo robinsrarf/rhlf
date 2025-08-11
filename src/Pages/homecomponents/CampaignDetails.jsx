@@ -50,7 +50,7 @@ export default function CampaignDetails() {
         <div className="flex flex-col items-center justify-center gap-3 text-center">
           <h1 className="my-1 w-full text-center font-quicksand text-2xl font-bold text-gray-800 lg:text-4xl">
             Donate to one of our {""}
-            <span className="font-quicksand text-pink-500">campaigns</span>
+            <span className="font-quicksand text-red-500">campaigns</span>
           </h1>
           <p className="mt-3 text-lg text-[#5a5a5a]">
             By donating, you take a step towards creating a better world. Every
@@ -89,7 +89,7 @@ function CampaignCard({ image, title, description, id }) {
         <p className="text-start text-sm text-gray-600">{description}</p>
         <Link
           to={`/donate/${id}`}
-          className="mt-3 inline-block rounded-xl bg-pink-500 px-4 py-2 text-white transition hover:bg-pink-600 hover:no-underline lg:self-start"
+          className="mt-3 inline-block rounded-xl bg-red-500 px-4 py-2 text-white transition hover:bg-red-600 hover:no-underline lg:self-start"
           aria-label={`Donate to ${title}`}
         >
           Donate Now

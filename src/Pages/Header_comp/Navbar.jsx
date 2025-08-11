@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu } from "lucide-react";
-import logo from "/src/assets/images/LOGO1.jpg";
+import logo from "/src/assets/images/ARF.png";
 import SideBar from "./SideBar";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Function for active NavLink styling
 function navClass({ isActive }) {
   return isActive
-    ? "text-pink-400 font-bold pr-2 pl-2 hover:no-underline"
+    ? "text-red-400 font-bold pr-2 pl-2 hover:no-underline"
     : "font-bold pr-2 pl-2 hover:no-underline";
 }
 
@@ -30,7 +30,7 @@ function DropDownItem({ programName, directTo }) {
     >
       <NavLink
         to={directTo}
-        className="duration:200 block px-4 py-2 text-black transition-colors hover:bg-pink-50 hover:text-pink-500 hover:no-underline"
+        className="duration:200 block px-4 py-2 text-black transition-colors hover:bg-red-50 hover:text-red-500 hover:no-underline"
       >
         {programName}
       </NavLink>

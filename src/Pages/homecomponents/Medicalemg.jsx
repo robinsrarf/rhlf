@@ -45,7 +45,7 @@ export default function MedicalEmergency() {
 
         <Link
           to="/clinic"
-          className="ml-auto flex items-center pb-2 pr-5 pt-6 text-pink-500 hover:text-pink-700 hover:no-underline"
+          className="ml-auto flex items-center pb-2 pr-5 pt-6 text-red-500 hover:text-red-700 hover:no-underline"
         >
           <p>View All</p>
           <ArrowRight size={15} />

@@ -64,7 +64,7 @@ const Testimonals = () => {
     <section
       className="flex h-[700px] w-full flex-col items-center justify-center bg-cover p-6"
       style={{
-        backgroundImage: `linear-gradient(rgba(219, 39, 119, 0.7), rgba(219, 39, 119, 0.7)), url(${bgImage})`,
+        backgroundImage: `linear-gradient(rgba(220, 38, 38, 0.7), rgba(153, 27, 27, 0.7)), url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -154,10 +154,10 @@ const TestimonialCard = ({ testimonial }) => {
           alt="profile"
         />
         <div className="flex flex-col border-r-2 pr-2 lg:pr-11">
-          <p className="lg:text-center text-sm font-semibold lg:text-xl">
+          <p className="text-sm font-semibold lg:text-center lg:text-xl">
             {testimonial.author}
           </p>
-          <p className="lg:text-center text-sm font-semibold text-pink-600 lg:text-base">
+          <p className="text-sm font-semibold text-red-600 lg:text-center lg:text-base">
             {testimonial.role}
           </p>
         </div>

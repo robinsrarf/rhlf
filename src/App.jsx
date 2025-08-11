@@ -38,21 +38,26 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
-          <Route path="about" element={<Aboutus />} />
-          <Route path="clinic" element={<Clinic />} />
-          <Route path="get-involved" element={<Getinvolved />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="media" element={<Media />} />
-          <Route path="programmes" element={<Programmes />} />
-          <Route path="donate/:donateId" element={<DonatePage />} />
-          <Route path="blogs" element={<Blog />} />
-          <Route path="blogs/:blogId" element={<BlogPost />} />
+          <Route path="/about" element={<Aboutus />} />
+          <Route path="/clinic" element={<Clinic />} />
+          <Route path="/get-involved" element={<Getinvolved />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/media" element={<Media />} />
+          <Route path="/programmes" element={<Programmes />} />
+          <Route path="/donate/:donateId" element={<DonatePage />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/blogs/:blogId" element={<BlogPost />} />
 
           {/* Quick Links */}
-          <Route path="terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="refund-policy" element={<RefundPolicy />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="donor-list" element={<DonorList />} />
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+          <Route path="/donor-list" element={<DonorList />} />
+
 
           {/* 404 Not Found Route */}
           <Route path="*" element={<NotFound />} />

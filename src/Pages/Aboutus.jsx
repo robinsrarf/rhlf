@@ -117,7 +117,7 @@ function Aboutus() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-pink-50 px-6 py-12">
+    <div className="min-h-screen bg-gradient-to-b from-white to-red-50 px-6 py-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ function Aboutus() {
         className="mb-16 text-center"
       >
         <h1 className="mb-4 font-quicksand text-5xl font-bold text-gray-800">
-          The <span className="text-pink-500">Team</span>
+          The <span className="text-red-500">Team</span>
         </h1>
         <p className="mx-auto max-w-2xl text-lg text-gray-600">
           Meet the visionaries behind Real Heart Foundation who are dedicated to
@@ -165,7 +165,7 @@ function MemberCard({ name, role, image, links }) {
         />
       </div>
       <h3 className="mb-1 text-xl font-bold text-gray-800">{name}</h3>
-      <p className="text-md rounded-full bg-pink-100 px-4 py-1 font-medium text-pink-600">
+      <p className="text-md rounded-full bg-red-100 px-4 py-1 font-medium text-red-600">
         {role}
       </p>
       <div className="mt-4 flex gap-5 py-2">

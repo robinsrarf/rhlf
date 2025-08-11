@@ -15,7 +15,7 @@ export default function DonateCard({
   return (
     <motion.div
       key={id}
-      className="flex w-[45vh] flex-col rounded-xl bg-white shadow-lg md:w-[80vh] lg:w-96 lg:overflow-hidden"
+      className="flex w-[95vw] flex-col rounded-xl bg-white shadow-lg md:w-[60vw] lg:w-96 lg:overflow-hidden"
       whileHover={{ scale: 1.01, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
       transition={{ duration: 0.3 }}
     >
@@ -52,7 +52,7 @@ export default function DonateCard({
           </div>
           <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-gray-200">
             <div
-              className="h-2 bg-pink-500 transition-all duration-300"
+              className="h-2 bg-red-500 transition-all duration-300"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
@@ -61,12 +61,12 @@ export default function DonateCard({
 
         {/* Action Buttons */}
         <div className="mt-4 flex justify-between">
-          <button className="rounded-lg border flex items-center gap-2 border-gray-300 px-4 py-2 text-gray-600 hover:bg-gray-100">
+          <button className="flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-gray-600 hover:bg-gray-100">
             <Share2 size={20} /> <span>Share</span>
           </button>
           <Link
             to={`/donate/${id}`}
-            className="rounded-lg bg-pink-500 px-6 py-2 text-white transition hover:bg-pink-600 hover:no-underline"
+            className="rounded-lg bg-red-500 px-6 py-2 text-white transition hover:bg-red-600 hover:no-underline"
           >
             Donate Now
           </Link>

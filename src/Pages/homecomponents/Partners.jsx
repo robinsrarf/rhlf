@@ -61,7 +61,7 @@ export default function Partners() {
   return (
     <>
       <section className="my-4 w-full">
-        <h1 className="mx-auto mb-4 w-fit border-b-4 border-pink-500 pb-2 text-center text-lg font-semibold lg:text-3xl">
+        <h1 className="mx-auto mb-4 w-fit border-b-4 border-red-500 pb-2 text-center text-lg font-semibold lg:text-3xl">
           Our Partners
         </h1>
         <Slider {...settings}>

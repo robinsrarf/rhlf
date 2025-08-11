@@ -33,7 +33,7 @@ const Cards = [
   },
   {
     title:
-      "Disability Elimination Program, led by the Real Happiness Of Life Foundation (RHLF), is focused on early detection, treatment, and rehabilitation of children with birth defects and developmental delays.",
+      "Disability Elimination Program, led by the Action Relief Foundation (ARF), is focused on early detection, treatment, and rehabilitation of children with birth defects and developmental delays.",
 
     keyValue: {
       "Children impacted daily": "40L",
@@ -49,7 +49,7 @@ function ProgramImpact() {
     <>
       <section className="flex w-full flex-col justify-center py-10">
         <h1 className="my-1 w-full text-center font-quicksand text-4xl font-bold text-gray-800">
-          Program <span className="font-quicksand text-pink-400">Impacts</span>
+          Program <span className="font-quicksand text-red-400">Impacts</span>
         </h1>
         <p className="w-full px-2 py-3 text-center font-normal text-gray-700 lg:text-2xl">
           Our various programmes help us reach out to those in need and provide
@@ -126,7 +126,7 @@ function ProgramCard({ text, keyValue, link, bgImg }) {
               className="flex flex-col items-center justify-center lg:flex-row lg:gap-2 lg:py-4"
             >
               <span
-                className={`${index ? "text-white" : "text-pink-500"} w-full text-3xl font-semibold lg:w-fit lg:text-6xl`}
+                className={`${index ? "text-white" : "text-red-500"} w-full text-3xl font-semibold lg:w-fit lg:text-6xl`}
               >
                 {keyValue[key]}
               </span>
@@ -146,13 +146,13 @@ function ProgramCard({ text, keyValue, link, bgImg }) {
           transition={{ duration: 0.3 }}
         >
           <Link
-            className="mr-auto rounded-full bg-pink-500 p-2 text-sm text-white transition duration-300 hover:bg-white hover:text-pink-500 hover:no-underline lg:p-3 lg:text-base"
+            className="mr-auto rounded-full bg-red-500 p-2 text-sm text-white transition duration-300 hover:bg-white hover:text-red-500 hover:no-underline lg:p-3 lg:text-base"
             to={link}
           >
             Donate Now
           </Link>
           <Link
-            className="flex items-center justify-center text-sm text-pink-500 hover:no-underline lg:text-base"
+            className="flex items-center justify-center text-sm text-red-500 hover:no-underline lg:text-base"
             to={link}
           >
             Read More <ArrowRight size={20} />

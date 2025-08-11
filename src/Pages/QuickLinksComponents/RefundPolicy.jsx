@@ -6,24 +6,24 @@ export default function RefundPolicy() {
       </h1>
       <ul className="list-disc space-y-5 lg:pl-5">
         <li>
-          Real Happiness Of Life Foundation has instituted a donation refund
+          Action Relief Foundation has instituted a donation refund
           policy to ensure fair and transparent processing of requests for
           refund of donations as digital payments are becoming more frequent.
         </li>
         <li>
-          Real Happiness Of Life Foundation expects that all donors will
+          Action Relief Foundation expects that all donors will
           exercise due care and diligence while making donations.
         </li>
         <li>
-          Real Happiness Of Life Foundation also recognizes that a donation may
+          Action Relief Foundation also recognizes that a donation may
           be made erroneously or donors may change their mind.
         </li>
         <li>
-          Real Happiness Of Life Foundation will examine request for refund of
+          Action Relief Foundation will examine request for refund of
           donation and endeavour to make the refund.
         </li>
         <li>
-          Real Happiness Of Life Foundation may also seek proper explanation and
+          Action Relief Foundation may also seek proper explanation and
           reason from the user.
         </li>
         <li>
@@ -31,14 +31,14 @@ export default function RefundPolicy() {
           documents of proof as well as for donation.
         </li>
         <li>
-          Real Happiness Of Life Foundation is not obliged to make refunds and
+          Action Relief Foundation is not obliged to make refunds and
           may, in its discretion, decline any requests for refund of donations,
           particularly if a tax exemption certificate has been issued.
         </li>
       </ul>
       <div className="mt-4">
         <h2 className="text-lg font-semibold">
-          Real Happiness Of Life Foundation Solutions for Sustainable
+          Action Relief Foundation Solutions for Sustainable
           Development
         </h2>
         <p>
@@ -49,8 +49,8 @@ export default function RefundPolicy() {
       <div className="mt-4">
         <h2 className="text-lg font-semibold">WRITE TO US</h2>
         <p>
-          <a href="mailto:donor@rhlf.org" className="text-blue-500">
-            donor@rhlf.org
+          <a href="mailto:donor@arf.org" className="text-blue-500">
+            donor@arf.org
           </a>
         </p>
       </div>
@@ -63,7 +63,7 @@ export default function RefundPolicy() {
           <li>Mode of Donation i.e. Credit Card or Online Payment</li>
         </ul>
         <p className="mt-2">
-          and should reach Real Happiness Of Life Foundation office within 7
+          and should reach Action Relief Foundation office within 7
           (Seven) days from the date on which you made the donation:
         </p>
         <ul className="list-disc space-y-5 pl-5">
@@ -73,12 +73,12 @@ export default function RefundPolicy() {
           </li>
           <li>
             OR The date on which you Handed over the cheque / demand draft to
-            Real Happiness Of Life Foundation or someone authorized by Real
+            Action Relief Foundation or someone authorized by Real
             Happiness Of Life Foundation for this purpose,
           </li>
           <li>
             OR The date on which you Dispatched the cheque / demand draft to
-            Real Happiness Of Life Foundation by other means.
+            Action Relief Foundation by other means.
           </li>
         </ul>
         <p className="mt-2">

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { X, Mail, Phone, ChevronDown } from "lucide-react";
-import logo from "/src/assets/images/LOGO1.jpg";
+import logo from "/src/assets/images/ARF.png";
 import {
   FaFacebookF,
   FaTwitter,
@@ -45,7 +45,7 @@ const sidebarLinks = [
 ];
 
 function navClass({ isActive }) {
-  return `font-bold px-2 hover:no-underline ${isActive ? "text-pink-400" : ""}`;
+  return `font-bold px-2 hover:no-underline ${isActive ? "text-red-400" : ""}`;
 }
 
 export default function SideBar({ isOpen, setIsOpen }) {
@@ -56,7 +56,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
       {/* Sidebar Background Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-pink-900 bg-opacity-50"
+          className="fixed inset-0 z-40 bg-red-900 bg-opacity-50"
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -85,7 +85,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
               {sublinks.length > 0 ? (
                 <div>
                   <button
-                    className="flex w-full items-center justify-between pl-2 font-bold hover:text-pink-400 focus:outline-none"
+                    className="flex w-full items-center justify-between pl-2 font-bold hover:text-red-400 focus:outline-none"
                     onClick={() =>
                       setOpenDropdown(openDropdown === title ? null : title)
                     }
@@ -93,7 +93,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
                     <span>{title}</span>
                     <ChevronDown
                       size={20}
-                      className={`rounded-3xl bg-pink-500 p-1 text-gray-900 transition-transform duration-300 ${
+                      className={`rounded-3xl bg-red-500 p-1 text-gray-900 transition-transform duration-300 ${
                         openDropdown === title ? "rotate-180" : ""
                       }`}
                     />
@@ -112,7 +112,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
                         <li key={path}>
                           <NavLink
                             to={path}
-                            className="hover:text-pink-400 hover:no-underline"
+                            className="hover:text-red-400 hover:no-underline"
                             onClick={() => setIsOpen(false)}
                           >
                             {title}
@@ -139,7 +139,7 @@ export default function SideBar({ isOpen, setIsOpen }) {
         {/* Donate Button */}
         <NavLink
           to="/donate"
-          className="rounded-3xl border-2 border-black p-2 text-center font-bold hover:bg-pink-400 hover:text-white hover:no-underline"
+          className="rounded-3xl border-2 border-black p-2 text-center font-bold hover:bg-red-400 hover:text-white hover:no-underline"
           onClick={() => setIsOpen(false)}
         >
           ❤️ DONATE
@@ -148,11 +148,11 @@ export default function SideBar({ isOpen, setIsOpen }) {
         {/* Contact Links */}
         <div className="flex flex-col space-y-2">
           <a
-            href="mailto:contact@rhlf.org"
+            href="mailto:contact@arf.org"
             className="flex items-center gap-3 px-3 hover:no-underline"
           >
             <Mail size={30} strokeWidth={3} className="p-1 text-black" />
-            <span className="font-medium text-gray-800">contact@rhlf.org</span>
+            <span className="font-medium text-gray-800">contact@arf.org</span>
           </a>
           <a
             href="tel:+9102269719935"
@@ -169,23 +169,23 @@ export default function SideBar({ isOpen, setIsOpen }) {
             <FaFacebookF size={24} />
           </a>
           <a
-            href="https://x.com/rhlfofficial"
+            href="https://x.com/arfofficial"
             target="_"
             className="text-blue-500"
           >
             <FaTwitter size={24} />
           </a>
           <a
-            href="https://www.youtube.com/@rhlfofficialngo"
+            href="https://www.youtube.com/@arfofficialngo"
             target="_"
             className="text-red-500"
           >
             <FaYoutube size={24} />
           </a>
           <a
-            href="https://www.instagram.com/rhlfofficial/"
+            href="https://www.instagram.com/arfofficial/"
             target="_"
-            className="text-pink-600"
+            className="text-red-600"
           >
             <FaInstagram size={24} />
           </a>

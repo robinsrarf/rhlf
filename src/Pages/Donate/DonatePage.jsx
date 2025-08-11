@@ -93,7 +93,7 @@ function GoalProgress({ raisedAmount, targetAmount }) {
 
   return (
     <div className="w-full space-y-3 rounded-lg bg-white p-4 shadow-sm">
-      <h1 className="w-fit border-b-2 border-b-pink-500 pb-1 font-semibold text-gray-800">
+      <h1 className="w-fit border-b-2 border-b-red-500 pb-1 font-semibold text-gray-800">
         Help Us Reach Our Goal
       </h1>
       <div className="flex justify-between pt-2">
@@ -106,7 +106,7 @@ function GoalProgress({ raisedAmount, targetAmount }) {
       </div>
       <div className="h-2 w-full rounded-full bg-gray-100">
         <div
-          className="h-full rounded-full bg-pink-500 transition-all duration-500"
+          className="h-full rounded-full bg-red-500 transition-all duration-500"
           style={{ width: `${progress}%` }}
         ></div>
       </div>
@@ -123,7 +123,7 @@ function GoalProgress({ raisedAmount, targetAmount }) {
 function RecentDonations({ donors }) {
   return (
     <div className="w-full space-y-4 rounded-lg bg-white p-4 shadow-sm">
-      <h3 className="w-fit border-b-2 border-b-pink-500 pb-1 font-semibold text-gray-800">
+      <h3 className="w-fit border-b-2 border-b-red-500 pb-1 font-semibold text-gray-800">
         Recent Donations
       </h3>
       <div className="max-h-[300px] space-y-4 overflow-y-auto">
@@ -131,7 +131,7 @@ function RecentDonations({ donors }) {
           <div key={index} className="space-y-1 border-b pb-3">
             <div className="flex items-center justify-between">
               <p className="font-medium text-gray-800">{donor.name}</p>
-              <p className="text-pink-500">₹{donor.amount.toLocaleString()}</p>
+              <p className="text-red-500">₹{donor.amount.toLocaleString()}</p>
             </div>
             {donor.message && (
               <p className="text-sm text-gray-600">{donor.message}</p>
@@ -170,7 +170,7 @@ function DonatePage() {
               <p className="py-2 leading-relaxed text-gray-800">{children}</p>
             ),
             a: ({ href, children }) => (
-              <a className="text-pink-400" href={href}>
+              <a className="text-red-400" href={href}>
                 {children}
               </a>
             ),
@@ -185,7 +185,7 @@ function DonatePage() {
           {donation.About}
         </ReactMarkdown>
         <div>
-          <h1 className="mb-5 w-fit border-b-2 border-b-pink-500 py-3 text-2xl font-semibold">
+          <h1 className="mb-5 w-fit border-b-2 border-b-red-500 py-3 text-2xl font-semibold">
             Documents
           </h1>
           <div className="flex w-full space-x-5 overflow-x-auto p-5">
@@ -246,7 +246,7 @@ function Donate() {
   };
   return (
     <div className="w-full space-y-6 rounded-lg bg-white p-4 shadow-sm">
-      <h2 className="w-fit border-b-2 border-b-pink-500 pb-1 text-lg font-semibold text-gray-800">
+      <h2 className="w-fit border-b-2 border-b-red-500 pb-1 text-lg font-semibold text-gray-800">
         Make a Donation
       </h2>
       <div className="top-0 flex flex-col items-center justify-center gap-2 lg:flex-row lg:items-stretch">
@@ -262,7 +262,7 @@ function Donate() {
               <button
                 key={am}
                 onClick={() => setAmount(am)}
-                className={`rounded-md border border-pink-500 px-4 py-2 ${amount === am ? "bg-pink-500 text-white" : "text-pink-600 hover:bg-pink-50"}`}
+                className={`rounded-md border border-red-500 px-4 py-2 ${amount === am ? "bg-red-500 text-white" : "text-red-600 hover:bg-red-50"}`}
               >
                 ₹{am.toLocaleString()}
               </button>
@@ -273,7 +273,7 @@ function Donate() {
             <input
               type="number"
               placeholder="Custom amount"
-              className="w-full rounded-md border px-3 py-2 outline-none focus:border-pink-500"
+              className="w-full rounded-md border px-3 py-2 outline-none focus:border-red-500"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
             />
@@ -282,7 +282,7 @@ function Donate() {
               type="text"
               placeholder="Full Name"
               name="name"
-              className="w-full rounded-md border px-3 py-2 outline-none focus:border-pink-500"
+              className="w-full rounded-md border px-3 py-2 outline-none focus:border-red-500"
               // value={userData.name}
               onChange={handleInput}
             />
@@ -291,7 +291,7 @@ function Donate() {
               type="mail"
               placeholder="Email"
               name="email"
-              className="w-full rounded-md border px-3 py-2 outline-none focus:border-pink-500"
+              className="w-full rounded-md border px-3 py-2 outline-none focus:border-red-500"
               // value={userData.email}
               onChange={handleInput}
             />
@@ -299,13 +299,13 @@ function Donate() {
               type="number"
               name="phone"
               placeholder="Phone Number"
-              className="w-full rounded-md border px-3 py-2 outline-none focus:border-pink-500"
+              className="w-full rounded-md border px-3 py-2 outline-none focus:border-red-500"
               // value={userData.phone}
               onChange={handleInput}
             />
           </div>
           <button
-            className="mt-2 whitespace-nowrap rounded-md bg-pink-500 px-4 py-2 text-white hover:bg-pink-600"
+            className="mt-2 whitespace-nowrap rounded-md bg-red-500 px-4 py-2 text-white hover:bg-red-600"
             onClick={onSubmit}
           >
             Donate Now

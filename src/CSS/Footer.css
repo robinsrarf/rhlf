@@ -59,11 +59,11 @@ h3 {
   color: rgba(51, 51, 51, 0.7);
 }
 
-.text-custompink {
-  color: #e91e63; /* Retain the custom pink color */
+.text-customred {
+  color: #e91e63; /* Retain the custom red color */
 }
 
-.text-custompink:hover {
+.text-customred:hover {
   text-decoration: underline;
 }
 
@@ -246,7 +246,7 @@ h3 {
   margin-top: 20px;
 }
 
-.text-pink-500 {
+.text-red-500 {
   color: #e91e63; /* Adjust color as necessary */
 }
 
@@ -262,7 +262,7 @@ h3 {
   margin-top: 20px;
 }
 
-.text-pink-500 {
+.text-red-500 {
   color: #e91e63; /* Adjust color as necessary */
 }
 .footer-lines {

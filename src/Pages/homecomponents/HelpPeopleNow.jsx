@@ -16,7 +16,7 @@ const volen = [
 
 export default function HelpPeopleNow() {
   return (
-    <section className="flex min-h-[620px] w-full flex-col items-center justify-center bg-pink-500 px-5 py-10">
+    <section className="flex min-h-[620px] w-full flex-col items-center justify-center bg-red-500 px-5 py-10">
       <h1 className="mb-5 text-center font-quicksand text-xl font-bold text-white md:mb-10 md:text-4xl lg:mb-10 lg:text-4xl">
         Join Our Family
       </h1>
@@ -52,12 +52,12 @@ export default function HelpPeopleNow() {
         </motion.div>
 
         {/* Text and Action Section */}
-        <div className="flex w-full flex-col items-center gap-6 md:w-[40%] md:items-start lg:w-[40%] lg:items-start">
-          <h1 className="text-center font-quicksand text-3xl font-bold text-white md:text-4xl md:text-5xl lg:text-5xl">
+        <div className="flex w-full flex-col items-center gap-6 md:w-[90vw] md:items-center lg:w-[40%] lg:items-start">
+          <h1 className="text-center font-quicksand text-3xl font-bold text-white md:text-5xl lg:text-5xl">
             Charity For The People You Care About
           </h1>
           <p className="text-center text-lg text-zinc-200 md:text-left lg:text-left">
-            At Real Happiness of Life Foundation, we believe that together, we
+            At Action Relief Foundation, we believe that together, we
             can rewrite stories of despair into tales of hope and joy.
             Volunteering is a powerful way to create change—not just in the
             lives of others, but in your own life too. It's your chance to make

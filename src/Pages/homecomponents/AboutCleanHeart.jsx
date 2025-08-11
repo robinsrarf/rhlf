@@ -11,7 +11,7 @@ export default function AboutCleanHeat() {
       <SectionHeader title={"About Clean Heart"} />
       <section className="my-10 hidden w-full flex-col justify-center px-10 lg:flex">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <h2 className="font-quicksand mt-2 text-5xl font-bold leading-tight text-pink-600">
+          <h2 className="font-quicksand mt-2 text-5xl font-bold leading-tight text-red-600">
             Helping Each Other Can Make the World Better
           </h2>
         </div>
@@ -29,16 +29,16 @@ export default function AboutCleanHeat() {
           <div className="flex flex-col items-center">
             <HeartHandshake
               size={50}
-              className="transform text-pink-400 transition duration-300 hover:scale-110 hover:text-black"
+              className="transform text-red-400 transition duration-300 hover:scale-110 hover:text-black"
             />
             <p className="mt-2 text-lg font-semibold">Join Our Team</p>
-            <p className="text-xl font-bold text-pink-400">120+</p>
+            <p className="text-xl font-bold text-red-400">120+</p>
           </div>
 
           <div className="flex flex-col items-center">
             <HandCoins
               size={50}
-              className="transform text-pink-400 transition duration-300 hover:scale-110 hover:text-black"
+              className="transform text-red-400 transition duration-300 hover:scale-110 hover:text-black"
             />
             <p className="mt-2 text-lg font-semibold">Donate Now</p>
           </div>
@@ -46,10 +46,10 @@ export default function AboutCleanHeat() {
           <div className="flex flex-col items-center">
             <PiggyBank
               size={50}
-              className="transform text-pink-400 transition duration-300 hover:scale-110 hover:text-black"
+              className="transform text-red-400 transition duration-300 hover:scale-110 hover:text-black"
             />
             <p className="mt-2 text-lg font-semibold">Total Fund Raised</p>
-            <p className="text-xl font-bold text-pink-400">15 Lakhs+</p>
+            <p className="text-xl font-bold text-red-400">15 Lakhs+</p>
           </div>
         </div>
       </section>
@@ -69,23 +69,23 @@ export default function AboutCleanHeat() {
               for everyone.
             </p>
           </div>
-          <hr className="w-full border-pink-200" />
+          <hr className="w-full border-red-200" />
           <div className="flex w-full justify-between p-1">
             {/* Join Our Team */}
             <div className="flex flex-col items-center">
               <HeartHandshake
                 size={40}
-                className="text-pink-500 transition duration-300 hover:scale-110 hover:text-black"
+                className="text-red-500 transition duration-300 hover:scale-110 hover:text-black"
               />
               <p className="text-sm">Join Our Team</p>
-              <p className="font-semibold text-pink-500">120+</p>
+              <p className="font-semibold text-red-500">120+</p>
             </div>
 
             {/* Donate Now */}
             <div className="flex flex-col items-center">
               <HandCoins
                 size={40}
-                className="text-pink-500 transition duration-300 hover:scale-110 hover:text-black"
+                className="text-red-500 transition duration-300 hover:scale-110 hover:text-black"
               />
               <p className="text-sm">Donate Now</p>
             </div>
@@ -94,13 +94,13 @@ export default function AboutCleanHeat() {
             <div className="flex flex-col items-center">
               <PiggyBank
                 size={40}
-                className="text-pink-500 transition duration-300 hover:scale-110 hover:text-black"
+                className="text-red-500 transition duration-300 hover:scale-110 hover:text-black"
               />
               <p className="text-sm">Total Fund Raised</p>
-              <p className="font-semibold text-pink-500">15 Lakhs+</p>
+              <p className="font-semibold text-red-500">15 Lakhs+</p>
             </div>
           </div>
-          <hr className="w-full border-pink-200" />
+          <hr className="w-full border-red-200" />
         </div>
       </section>
     </>
