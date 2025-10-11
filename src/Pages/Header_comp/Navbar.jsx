@@ -188,7 +188,7 @@ function Navbar() {
                     <ul className="py-2">
                       <DropDownItem
                         programName="Contact Us"
-                        directTo="/about/contact"
+                        directTo="/contact"
                       />
                     </ul>
                   </motion.div>
