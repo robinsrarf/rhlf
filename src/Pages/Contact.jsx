@@ -39,7 +39,7 @@ function ContactUs() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-black"
                 placeholder="Enter your name"
               />
             </div>
@@ -53,7 +53,7 @@ function ContactUs() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-black"
                 placeholder="Enter your email"
               />
             </div>
@@ -67,7 +67,7 @@ function ContactUs() {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-black"
                 placeholder="Enter your phone number"
               />
             </div>
@@ -81,7 +81,7 @@ function ContactUs() {
                 onChange={handleChange}
                 required
                 rows="4"
-                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-black"
                 placeholder="Write your message..."
               ></textarea>
             </div>
